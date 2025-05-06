@@ -52,12 +52,15 @@ img {
 .container-1 {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
   height: 100vh;
   background: url('images/background.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -73,13 +76,9 @@ img {
 .header-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  margin-top: 3.75rem;
-  margin-bottom: 2.5rem;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
+  align-items: center;
+  margin: 1.875rem 0;
+  position: relative;
   z-index: 10;
 }
 
@@ -233,7 +232,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 11.25rem 0 2rem 0;
+  margin: 2rem 0;
 }
 
 .center-image-relative {
