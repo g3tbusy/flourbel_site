@@ -670,13 +670,13 @@ html, body {
   padding-top: 0;
 }
 .bottom-block {
-  width: 120rem;
+  width: 100vw;
   height: 8.625rem;
   background: #000;
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  transform: none;
 }
 
 .center-block-videoeditor {
