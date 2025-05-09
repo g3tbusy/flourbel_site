@@ -10,6 +10,10 @@
   font-family: var(--font-family-montserrat);
 }
 
+.title-1 {
+  font-size: 3rem;
+}
+
 .title-2 {
   font-family: var(--font-family-montserrat);
   font-size: 4rem;
@@ -38,7 +42,9 @@
   font-family: var(--font-family-montserrat);
 }
 
-body {
+body, .container-1 {
+  margin-top: 0;
+  padding-top: 0;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -73,12 +79,23 @@ img {
   height: auto;
 }
 
-.header-wrapper {
+.center-image-outer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1.875rem 0;
+  width: 100%;
   position: relative;
+}
+
+.header-wrapper {
+  position: absolute;
+  top: -5rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 1.875rem 0;
   z-index: 10;
 }
 
@@ -104,6 +121,7 @@ img {
   text-align: center;
   width: 100%;
   text-shadow: 0 0.25rem 1rem rgba(0,0,0,0.35), 0 0.125rem 0.5rem rgba(0,0,0,0.25);
+  line-height: 1;
 }
 
 .card-5 {
@@ -237,6 +255,8 @@ img {
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
+  transform: scale(1.1);
+  transform-origin: center;
 }
 
 .center-image-relative {
@@ -255,10 +275,9 @@ img {
   z-index: 1;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+html, body, .container-1, .header-wrapper, .text-3 {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .card-12-center {
