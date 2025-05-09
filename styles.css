@@ -680,8 +680,6 @@ html, body {
 .fullscreen-bg {
   width: 100vw;
   height: 100vh;
-  background: url('images/montajer.png') no-repeat center center;
-  background-size: cover;
   position: relative;
   padding-top: 0;
 }
@@ -806,14 +804,29 @@ html, body {
   transform: none;
 }
 
-body.contacts-page .fullscreen-bg {
-  background: url('images/contacts_bg.png') no-repeat center -5rem;
-  background-size: contain;
+.contacts-page .fullscreen-bg {
+  background: url('images/contacts_bg.png') no-repeat center center !important;
+  background-size: cover !important;
 }
 
-body.videographer-page .fullscreen-bg {
-  background: url('images/videographer.png') no-repeat center -5rem;
-  background-size: contain;
+.portfolio-page .fullscreen-bg {
+  background: url('images/portfolio.png') no-repeat center center;
+  background-size: cover;
+}
+
+.videoeditor-page .fullscreen-bg {
+  background: url('images/montajer.png') no-repeat center center;
+  background-size: cover;
+}
+
+.videographer-page .fullscreen-bg {
+  background: url('images/videographer.png') no-repeat center center !important;
+  background-size: cover !important;
+}
+
+body:not(.portfolio-page):not(.contacts-page) .fullscreen-bg {
+  background: url('images/montajer.png') no-repeat center center;
+  background-size: cover;
 }
 
 a.black-block-title:hover {
@@ -822,4 +835,32 @@ a.black-block-title:hover {
 
 a.videoeditor-btn {
   text-decoration: none;
+}
+
+.contacts-page .fullscreen-bg .text-3 {
+  font-size: 7.75rem !important;
+  font-weight: bold !important;
+  padding-top: 2.4375rem !important;
+  position: relative !important;
+}
+
+.videoeditor-page .fullscreen-bg .text-3 {
+  font-size: 7.75rem !important;
+  font-weight: bold !important;
+  padding-top: 2.4375rem !important;
+  position: relative !important;
+}
+
+.videographer-page .fullscreen-bg .text-3 {
+  font-size: 7.75rem !important;
+  font-weight: bold !important;
+  padding-top: 2.4375rem !important;
+  position: relative !important;
+}
+
+.portfolio-page .fullscreen-bg .text-3 {
+  font-size: 7.75rem !important;
+  font-weight: bold !important;
+  padding-top: 2.4375rem !important;
+  position: relative !important;
 }
