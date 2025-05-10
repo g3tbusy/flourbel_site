@@ -11,8 +11,8 @@
 }
 
 .title-1 {
-  font-size: 3.0109rem;
-  margin-bottom: 3.5rem; /* 56px */
+  font-size: 48px;
+  margin-bottom: 56px;
 }
 
 .title-2 {
@@ -85,42 +85,39 @@ img {
   align-items: center;
   width: 100%;
   position: relative;
+  max-width: 1920px;
+  min-height: 1000px;
 }
 
 .header-wrapper {
   position: absolute;
-  top: -5rem;
+  top: 160px;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 2rem 0;
+  margin: 0 0 32px 0;
   z-index: 10;
 }
 
 .text-3 {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
   font-family: var(--font-family-montserrat);
   font-weight: 700;
-  font-size: 3.5rem;
-  text-decoration: none;
-  text-transform: none;
+  font-size: 56px;
   color: var(--text-white);
   background: rgba(0,0,0,0.0);
   border: none;
-  border-radius: 0.375rem;
-  padding: 0 2rem;
+  border-radius: 6px;
+  padding: 0 32px;
   box-sizing: border-box;
   box-shadow: none;
   position: relative;
   z-index: 2;
-  margin: 0 0 2rem 0;
+  margin: 0 0 32px 0;
   text-align: center;
   width: 100%;
-  text-shadow: 0 0.25rem 1rem rgba(0,0,0,0.35), 0 0.125rem 0.5rem rgba(0,0,0,0.25);
+  text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.25);
   line-height: 1;
 }
 
@@ -196,38 +193,38 @@ img {
 
 .card-11-center {
   position: absolute;
-  left: 16.3089rem;
-  top: 5.0181rem;
-  border-radius: 3.7636rem;
-  box-shadow: 0.5019rem 0.5019rem 0.8782rem 0rem rgba(0,0,0,0.5);
-  width: 13.6429rem;
-  height: 11.8553rem;
+  left: 261px;
+  top: 80px;
+  border-radius: 60px;
+  box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.5);
+  width: 218px;
+  height: 190px;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
 
 .card-11-lower {
-  left: 16.3089rem;
-  top: 18.1906rem;
-  border-radius: 60.217px;
+  left: 261px;
+  top: 303px;
+  border-radius: 60px;
 }
 
 .card-11-center-left {
   position: absolute;
-  left: -15.0543rem;
-  top: 5.0181rem;
-  border-radius: 3.7636rem;
-  box-shadow: 0.5019rem 0.5019rem 0.8782rem 0rem rgba(0,0,0,0.5);
-  width: 13.6429rem;
-  height: 11.8553rem;
+  left: -241px;
+  top: 80px;
+  border-radius: 60px;
+  box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.5);
+  width: 218px;
+  height: 190px;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
 
 .card-11-lower-left {
-  left: -15.0543rem;
-  top: 18.1906rem;
-  border-radius: 3.7636rem;
+  left: -241px;
+  top: 303px;
+  border-radius: 60px;
 }
 
 .group-1-4 {
@@ -254,20 +251,15 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: scale(1.104);
-  transform-origin: center;
-  margin-top: 2rem;
+  margin-top: 32px;
 }
 
-.center-image-block::after {
-  content: "БОЛЬШЕ, ЧЕМ ПРОСТО ВИДЕО";
-  display: block;
+.subtitle-text {
   position: absolute;
-  bottom: -3rem;
-  top: 37rem;
+  bottom: 130px;
   font-family: var(--font-family-montserrat);
-  font-size: 1.25rem; /* 20px */
-  font-weight: 100; /* thin */
+  font-size: 20px;
+  font-weight: 100;
   color: var(--text-white);
   text-align: center;
   width: 100%;
@@ -281,10 +273,10 @@ img {
 }
 
 .card-7-center {
-  border-radius: 3.7636rem;
-  box-shadow: 0.8029rem 0.8029rem 1.405rem 0rem rgba(0,0,0,0.5);
-  width: 15.0543rem;
-  height: 34.8758rem;
+  border-radius: 60px;
+  box-shadow: 13px 13px 23px 0px rgba(0,0,0,0.5);
+  width: 241px;
+  height: 558px;
   background: rgba(34,34,34,0.7);
   z-index: 1;
 }
@@ -296,24 +288,24 @@ html, body, .container-1, .header-wrapper, .text-3 {
 
 .card-12-center {
   position: absolute;
-  left: 31.1754rem;
-  top: 7.5272rem;
-  border-radius: 3.7636rem;
-  box-shadow: 0.8029rem 0.8029rem 1.405rem 0rem rgba(0,0,0,0.5);
-  width: 14.2075rem;
-  height: 20.3861rem;
+  left: 498px;
+  top: 120px;
+  border-radius: 60px;
+  box-shadow: 13px 13px 23px 0px rgba(0,0,0,0.5);
+  width: 227px;
+  height: 333px;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
 
 .card-12-center-left {
   position: absolute;
-  left: -30.5477rem;
-  top: 7.5272rem;
-  border-radius: 3.7636rem;
-  box-shadow: 0.8029rem 0.8029rem 1.405rem 0rem rgba(0,0,0,0.5);
-  width: 14.2075rem;
-  height: 20.3861rem;
+  left: -488px;
+  top: 120px;
+  border-radius: 60px;
+  box-shadow: 13px 13px 23px 0px rgba(0,0,0,0.5);
+  width: 227px;
+  height: 333px;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
