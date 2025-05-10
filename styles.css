@@ -323,8 +323,10 @@ html, body, .container-1, .header-wrapper, .text-3 {
   position: absolute;
   top: 0;
   right: 0;
-  height: 100vh;
+  left: auto;
+  height: 100%;
   width: auto;
+  max-width: none;
   z-index: 10;
 }
 
@@ -332,8 +334,10 @@ html, body, .container-1, .header-wrapper, .text-3 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  right: auto;
+  height: 100%;
   width: auto;
+  max-width: none;
   transform: scaleX(-1);
   z-index: 10;
 }
@@ -915,4 +919,91 @@ a.videoeditor-btn {
   top: 50%;
   transform: translate(-50%, -50%) scale(var(--container-scale, 1));
   transform-origin: center center;
+}
+
+.showreel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url('images/showreel_bg_2.png'), url('images/showreel_bg_1.png');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showreel-signature {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.showreel-title {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  font-size: 5.875rem;
+  color: #DF9D51;
+  font-family: var(--font-family-montserrat);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  z-index: 2;
+}
+
+.showreel-center {
+  width: 1299px;
+  height: 681px;
+  background: rgba(0,0,0,0.0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.showreel-desc {
+  position: absolute;
+  top: 0;
+  right: 10.3125rem;
+  font-size: 2.6875rem;
+  color: #DF9D51;
+  font-family: var(--font-family-montserrat);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  z-index: 2;
+}
+
+.showreel-note {
+  position: absolute;
+  right: 4.3rem;
+  bottom: 0;
+  max-width: 600px;
+  font-size: 1.125rem;
+  color: #fff;
+  font-family: var(--font-family-montserrat);
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: left;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  background: rgba(0,0,0,0.0);
+  z-index: 2;
+}
+
+.showreel-video {
+  position: absolute;
+  left: 0;
+  bottom: 7rem;
+  width: 592.2px;
+  height: 333px;
+  border: none;
+  z-index: 2;
+  background: #000;
 }
