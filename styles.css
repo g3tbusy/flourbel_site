@@ -11,7 +11,8 @@
 }
 
 .title-1 {
-  font-size: 3rem;
+  font-size: 3.0109rem;
+  margin-bottom: 3.5rem; /* 56px */
 }
 
 .title-2 {
@@ -94,7 +95,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 1.875rem 0;
+  margin: 0 0 2rem 0;
   z-index: 10;
 }
 
@@ -116,7 +117,7 @@ img {
   box-shadow: none;
   position: relative;
   z-index: 2;
-  margin-top: 0;
+  margin: 0 0 2rem 0;
   text-align: center;
   width: 100%;
   text-shadow: 0 0.25rem 1rem rgba(0,0,0,0.35), 0 0.125rem 0.5rem rgba(0,0,0,0.25);
@@ -195,38 +196,38 @@ img {
 
 .card-11-center {
   position: absolute;
-  left: 16.25rem;
-  top: 5rem;
-  border-radius: 3.75rem;
-  box-shadow: 0.5rem 0.5rem 0.875rem 0rem rgba(0,0,0,0.5);
-  width: 13.5938rem;
-  height: 11.8125rem;
+  left: 16.3089rem;
+  top: 5.0181rem;
+  border-radius: 3.7636rem;
+  box-shadow: 0.5019rem 0.5019rem 0.8782rem 0rem rgba(0,0,0,0.5);
+  width: 13.6429rem;
+  height: 11.8553rem;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
 
 .card-11-lower {
-  left: 16.25rem;
-  top: 18.125rem;
-  border-radius: 60px;
+  left: 16.3089rem;
+  top: 18.1906rem;
+  border-radius: 60.217px;
 }
 
 .card-11-center-left {
   position: absolute;
-  left: -15rem;
-  top: 5rem;
-  border-radius: 3.75rem;
-  box-shadow: 0.5rem 0.5rem 0.875rem 0rem rgba(0,0,0,0.5);
-  width: 13.5938rem;
-  height: 11.8125rem;
+  left: -15.0543rem;
+  top: 5.0181rem;
+  border-radius: 3.7636rem;
+  box-shadow: 0.5019rem 0.5019rem 0.8782rem 0rem rgba(0,0,0,0.5);
+  width: 13.6429rem;
+  height: 11.8553rem;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
 
 .card-11-lower-left {
-  left: -15rem;
-  top: 18.125rem;
-  border-radius: 3.75rem;
+  left: -15.0543rem;
+  top: 18.1906rem;
+  border-radius: 3.7636rem;
 }
 
 .group-1-4 {
@@ -253,9 +254,23 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
-  transform: scale(1.1);
+  transform: scale(1.104);
   transform-origin: center;
+  margin-top: 2rem;
+}
+
+.center-image-block::after {
+  content: "БОЛЬШЕ, ЧЕМ ПРОСТО ВИДЕО";
+  display: block;
+  position: absolute;
+  bottom: -3rem;
+  top: 37rem;
+  font-family: var(--font-family-montserrat);
+  font-size: 1.25rem; /* 20px */
+  font-weight: 100; /* thin */
+  color: var(--text-white);
+  text-align: center;
+  width: 100%;
 }
 
 .center-image-relative {
@@ -266,10 +281,10 @@ img {
 }
 
 .card-7-center {
-  border-radius: 3.75rem;
-  box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.5);
-  width: 15rem;
-  height: 34.75rem;
+  border-radius: 3.7636rem;
+  box-shadow: 0.8029rem 0.8029rem 1.405rem 0rem rgba(0,0,0,0.5);
+  width: 15.0543rem;
+  height: 34.8758rem;
   background: rgba(34,34,34,0.7);
   z-index: 1;
 }
@@ -281,24 +296,24 @@ html, body, .container-1, .header-wrapper, .text-3 {
 
 .card-12-center {
   position: absolute;
-  left: 31.0625rem;
-  top: 7.5rem;
-  border-radius: 3.75rem;
-  box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.5);
-  width: 14.1563rem;
-  height: 20.3125rem;
+  left: 31.1754rem;
+  top: 7.5272rem;
+  border-radius: 3.7636rem;
+  box-shadow: 0.8029rem 0.8029rem 1.405rem 0rem rgba(0,0,0,0.5);
+  width: 14.2075rem;
+  height: 20.3861rem;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
 
 .card-12-center-left {
   position: absolute;
-  left: -30.4375rem;
-  top: 7.5rem;
-  border-radius: 3.75rem;
-  box-shadow: 8px 8px 14px 0px rgba(0,0,0,0.5);
-  width: 14.1563rem;
-  height: 20.3125rem;
+  left: -30.5477rem;
+  top: 7.5272rem;
+  border-radius: 3.7636rem;
+  box-shadow: 0.8029rem 0.8029rem 1.405rem 0rem rgba(0,0,0,0.5);
+  width: 14.2075rem;
+  height: 20.3861rem;
   background: rgba(34,34,34,0.7);
   z-index: 2;
 }
