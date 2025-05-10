@@ -682,6 +682,12 @@ html, body {
   height: 100vh;
   position: relative;
   padding-top: 0;
+  background-color: #000;
+  will-change: background-image;
+  background-image: url('images/portfolio.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .bottom-block {
   width: 100vw;
@@ -805,27 +811,47 @@ html, body {
 }
 
 .contacts-page .fullscreen-bg {
-  background: url('images/contacts_bg.png') no-repeat center center !important;
-  background-size: cover !important;
+  background-color: #000;
+  will-change: background-image;
+  background-image: url('images/contacts_bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .portfolio-page .fullscreen-bg {
-  background: url('images/portfolio.png') no-repeat center center;
+  background-color: #000;
+  will-change: background-image;
+  background-image: url('images/portfolio.png');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .videoeditor-page .fullscreen-bg {
-  background: url('images/montajer.png') no-repeat center center;
+  background-color: #000;
+  will-change: background-image;
+  background-image: url('images/montajer.png');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .videographer-page .fullscreen-bg {
-  background: url('images/videographer.png') no-repeat center center !important;
-  background-size: cover !important;
+  background-color: #000;
+  will-change: background-image;
+  background-image: url('images/videographer.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body:not(.portfolio-page):not(.contacts-page) .fullscreen-bg {
-  background: url('images/montajer.png') no-repeat center center;
+  background-color: #000;
+  will-change: background-image;
+  background-image: url('images/montajer.png');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
