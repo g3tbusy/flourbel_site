@@ -890,3 +890,13 @@ a.videoeditor-btn {
   padding-top: 2.4375rem !important;
   position: relative !important;
 }
+
+.section-2-signature,
+.section-2-signature-left,
+.image-block-4-wrapper img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
