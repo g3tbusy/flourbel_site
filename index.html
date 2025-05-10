@@ -108,7 +108,13 @@ Blender (3D). Также в этом ролике <br>
 ему отдельная благодарность за <br>
 прекрасную озвучку.
         </div>
-        <iframe class="showreel-video" src="https://vk.com/video_ext.php?oid=537084431&id=456242127" width="592.2" height="333" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+        <div class="showreel-video-wrapper">
+          <iframe class="showreel-video" src="https://vk.com/video_ext.php?oid=537084431&id=456242127" width="592.2" height="333" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+          <video class="showreel-mp4" width="592.2" height="333" autoplay muted playsinline>
+            <source src="images/showreel_cutted.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
       </div>
     </div>
     <div class="section-3" id="section-3">
@@ -179,5 +185,15 @@ Blender (3D). Также в этом ролике <br>
       <p class="footer-text"><span class="footer-text-bold">Буду рад сотрудничеству</span><br>Melnikov Media</p>
       <img src="images/footer_qr.svg" alt="QR code" class="footer-qr">
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mp4 = document.querySelector('.showreel-mp4');
+      if (mp4) {
+        mp4.addEventListener('click', function() {
+          mp4.style.display = 'none';
+        });
+      }
+    });
+    </script>
   </body>
 </html>

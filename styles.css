@@ -997,13 +997,26 @@ a.videoeditor-btn {
   z-index: 2;
 }
 
-.showreel-video {
+.showreel-video-wrapper {
   position: absolute;
   left: 0;
   bottom: 7rem;
   width: 592.2px;
   height: 333px;
-  border: none;
   z-index: 2;
-  background: #000;
+}
+
+.showreel-video,
+.showreel-mp4 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 592.2px;
+  height: 333px;
+  border: none;
+}
+
+.showreel-mp4 {
+  z-index: 3;
+  cursor: pointer;
 }
