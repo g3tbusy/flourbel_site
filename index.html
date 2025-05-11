@@ -205,52 +205,12 @@ Blender (3D). Также в этом ролике <br>
     </div>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      function setupSmoothLoop(video) {
-        // Создаем оверлей для плавного перехода
-        const overlay = document.createElement('div');
-        overlay.style.position = 'absolute';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'black';
-        overlay.style.opacity = '0';
-        overlay.style.transition = 'opacity 0.3s';
-        overlay.style.pointerEvents = 'none';
-        video.parentNode.appendChild(overlay);
-
-        // Функция для плавного перезапуска
-        function smoothRestart() {
-          // Плавно затемняем
-          overlay.style.opacity = '1';
-          
-          // После затемнения
-          setTimeout(() => {
-            // Перезапускаем видео
-            video.currentTime = 0;
-            video.play();
-            
-            // Плавно осветляем
-            overlay.style.opacity = '0';
-          }, 300); // Время затемнения
-        }
-
-        // Отслеживаем время воспроизведения
-        video.addEventListener('timeupdate', function() {
-          // Если видео приближается к концу (за 0.3 секунды до конца)
-          if (video.currentTime >= video.duration - 0.3) {
-            smoothRestart();
-          }
-        });
-
-        // Обработчик для случая, если видео все же дошло до конца
-        video.addEventListener('ended', function() {
-          smoothRestart();
+      const mp4 = document.querySelector('.showreel-mp4');
+      if (mp4) {
+        mp4.addEventListener('click', function() {
+          mp4.style.display = 'none';
         });
       }
-
-      // Применяем плавное зацикливание ко всем видео
-      document.querySelectorAll('video').forEach(setupSmoothLoop);
     });
     </script>
   </body>
