@@ -1059,3 +1059,26 @@ a.videoeditor-btn {
   z-index: 3;
   cursor: pointer;
 }
+
+.black-block,
+.card-7-center,
+.card-11-center,
+.card-11-center-left,
+.card-11-lower,
+.card-11-lower-left,
+.card-12-center,
+.card-12-center-left {
+  position: relative;
+}
+
+.black-block video,
+.card-7-center video,
+.card-11-center video,
+.card-11-center-left video,
+.card-11-lower video,
+.card-11-lower-left video,
+.card-12-center video,
+.card-12-center-left video {
+  position: relative;
+  z-index: 1;
+}

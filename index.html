@@ -211,6 +211,42 @@ Blender (3D). Также в этом ролике <br>
           mp4.style.display = 'none';
         });
       }
+
+      // Функция для плавного зацикливания видео
+      function setupSmoothLoop(video) {
+        // Создаем клон видео для плавного перехода
+        const clone = video.cloneNode(true);
+        video.parentNode.appendChild(clone);
+        
+        // Настраиваем обработчики событий
+        video.addEventListener('timeupdate', function() {
+          // Когда видео приближается к концу (за 0.1 секунды до конца)
+          if (video.currentTime >= video.duration - 0.1) {
+            // Плавно уменьшаем прозрачность текущего видео
+            video.style.opacity = '0';
+            // Показываем клон
+            clone.style.opacity = '1';
+            // Перезапускаем текущее видео
+            video.currentTime = 0;
+            video.style.opacity = '1';
+            // Скрываем клон
+            clone.style.opacity = '0';
+          }
+        });
+
+        // Начальные стили для плавного перехода
+        video.style.transition = 'opacity 0.1s';
+        clone.style.transition = 'opacity 0.1s';
+        clone.style.opacity = '0';
+        clone.style.position = 'absolute';
+        clone.style.top = '0';
+        clone.style.left = '0';
+        clone.style.width = '100%';
+        clone.style.height = '100%';
+      }
+
+      // Применяем плавное зацикливание ко всем видео
+      document.querySelectorAll('video').forEach(setupSmoothLoop);
     });
     </script>
   </body>
