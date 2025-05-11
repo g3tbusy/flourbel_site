@@ -205,44 +205,48 @@ Blender (3D). Также в этом ролике <br>
     </div>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const mp4 = document.querySelector('.showreel-mp4');
-      if (mp4) {
-        mp4.addEventListener('click', function() {
-          mp4.style.display = 'none';
-        });
-      }
-
-      // Функция для плавного зацикливания видео
       function setupSmoothLoop(video) {
-        // Создаем клон видео для плавного перехода
-        const clone = video.cloneNode(true);
-        video.parentNode.appendChild(clone);
-        
-        // Настраиваем обработчики событий
-        video.addEventListener('timeupdate', function() {
-          // Когда видео приближается к концу (за 0.1 секунды до конца)
-          if (video.currentTime >= video.duration - 0.1) {
-            // Плавно уменьшаем прозрачность текущего видео
-            video.style.opacity = '0';
-            // Показываем клон
-            clone.style.opacity = '1';
-            // Перезапускаем текущее видео
+        // Создаем оверлей для плавного перехода
+        const overlay = document.createElement('div');
+        overlay.style.position = 'absolute';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'black';
+        overlay.style.opacity = '0';
+        overlay.style.transition = 'opacity 0.3s';
+        overlay.style.pointerEvents = 'none';
+        video.parentNode.appendChild(overlay);
+
+        // Функция для плавного перезапуска
+        function smoothRestart() {
+          // Плавно затемняем
+          overlay.style.opacity = '1';
+          
+          // После затемнения
+          setTimeout(() => {
+            // Перезапускаем видео
             video.currentTime = 0;
-            video.style.opacity = '1';
-            // Скрываем клон
-            clone.style.opacity = '0';
+            video.play();
+            
+            // Плавно осветляем
+            overlay.style.opacity = '0';
+          }, 300); // Время затемнения
+        }
+
+        // Отслеживаем время воспроизведения
+        video.addEventListener('timeupdate', function() {
+          // Если видео приближается к концу (за 0.3 секунды до конца)
+          if (video.currentTime >= video.duration - 0.3) {
+            smoothRestart();
           }
         });
 
-        // Начальные стили для плавного перехода
-        video.style.transition = 'opacity 0.1s';
-        clone.style.transition = 'opacity 0.1s';
-        clone.style.opacity = '0';
-        clone.style.position = 'absolute';
-        clone.style.top = '0';
-        clone.style.left = '0';
-        clone.style.width = '100%';
-        clone.style.height = '100%';
+        // Обработчик для случая, если видео все же дошло до конца
+        video.addEventListener('ended', function() {
+          smoothRestart();
+        });
       }
 
       // Применяем плавное зацикливание ко всем видео
