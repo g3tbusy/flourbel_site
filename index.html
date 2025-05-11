@@ -52,9 +52,23 @@
       }
       window.addEventListener('resize', scaleContainer);
       window.addEventListener('DOMContentLoaded', scaleContainer);
+
+      // Функция для зеркалирования фонов
+      function toggleBackgroundMirror() {
+        const section2Bg = document.querySelector('.section-2-bg');
+        const section4Bg = document.querySelector('.section-4-bg');
+        const currentTransform = section2Bg.style.transform;
+        const newTransform = currentTransform === 'scaleX(-1)' ? 'scaleX(1)' : 'scaleX(-1)';
+        section2Bg.style.transform = newTransform;
+        section4Bg.style.transform = newTransform;
+      }
+
+      // Запускаем переключение каждые 0.5 секунды
+      setInterval(toggleBackgroundMirror, 500);
     </script>
 
     <div class="section-2" id="section-2">
+      <div class="section-2-bg"></div>
       <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature">
       <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature section-2-signature-left">
       <div class="image-block-4-wrapper">
@@ -155,6 +169,7 @@ Blender (3D). Также в этом ролике <br>
       </div>
     </div>
     <div class="section-4" id="whyme">
+      <div class="section-4-bg"></div>
       <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature">
       <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature section-2-signature-left">
       <div class="center-block">
