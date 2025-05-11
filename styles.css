@@ -548,6 +548,17 @@ html, body, .container-1, .header-wrapper, .text-3 {
   overflow: hidden;
 }
 
+.black-block-wrapper a {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.black-block-wrapper a:hover .black-block {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
 .black-block video {
   width: 100%;
   height: 100%;
