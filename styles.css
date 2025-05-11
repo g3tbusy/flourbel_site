@@ -484,11 +484,12 @@ html, body, .container-1, .header-wrapper, .text-3 {
   color: #DF9D51;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .nav-link:hover {
   transform: scale(1.05);
+  color: #9D9D9D;
   opacity: 1;
 }
 
@@ -553,6 +554,13 @@ html, body, .container-1, .header-wrapper, .text-3 {
   text-decoration: none;
   margin-bottom: 2rem;
   display: block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  width: 145px;
+}
+
+.black-block-title:hover {
+  transform: scale(1.05);
+  color: #9D9D9D;
 }
 
 .black-block {
