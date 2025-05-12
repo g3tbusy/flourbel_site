@@ -293,6 +293,26 @@ Blender (3D). Также в этом ролике <br>
 
       // Запускаем анимацию каждые 2 секунды
       setInterval(animateWords, 2000);
+
+      // Анимация облаков при появлении section-3
+      const section3 = document.getElementById('section-3');
+      const skyRight = document.querySelector('.sky-right');
+      const skyLeft = document.querySelector('.sky-left');
+      let cloudsAnimated = false;
+
+      if ('IntersectionObserver' in window && section3 && skyRight && skyLeft) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !cloudsAnimated) {
+              skyRight.classList.add('cloud-animate');
+              skyLeft.classList.add('cloud-animate');
+              cloudsAnimated = true;
+            }
+          });
+        }, { threshold: 0.3 }); // 30% секции должно быть видно
+
+        observer.observe(section3);
+      }
     });
     </script>
   </body>

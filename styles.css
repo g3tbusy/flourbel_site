@@ -561,7 +561,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 
 @keyframes skyRightMove {
   from {
-    right: -230px;
+    right: -120px;
     opacity: 0.86;
   }
   to {
@@ -584,7 +584,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .sky-right {
   position: absolute;
   top: -30px;
-  right: -230px;
+  right: -120px;
   z-index: 10;
   pointer-events: none;
   user-select: none;
@@ -594,7 +594,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   max-width: 1728px;
   max-height: 972px;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-  animation: skyRightMove 100s linear forwards;
 }
 
 .sky-left {
@@ -610,6 +609,12 @@ html, body, .container-1, .header-wrapper, .text-3 {
   max-width: 1975px;
   max-height: 1111px;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.cloud-animate.sky-right {
+  animation: skyRightMove 100s linear forwards;
+}
+.cloud-animate.sky-left {
   animation: skyLeftMove 100s linear forwards;
 }
 
