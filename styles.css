@@ -27,7 +27,6 @@
 .subtitle-2-container {
   position: relative;
   height: 1.5rem;
-  overflow: hidden;
   width: 100%;
   text-align: center;
   margin: 0.1875rem auto 0;
@@ -47,8 +46,8 @@
   width: 100%;
   left: 0;
   opacity: 0;
-  transform: translateX(100%);
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(200px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
 }
 
@@ -58,7 +57,7 @@
 }
 
 .subtitle-2.exit {
-  transform: translateX(-100%);
+  transform: translateX(-200px);
   opacity: 0;
 }
 
