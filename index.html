@@ -289,41 +289,6 @@ Blender (3D). Также в этом ролике <br>
 
       // Запускаем анимацию каждые 2 секунды
       setInterval(animateWords, 2000);
-      
-      // Хаотичное изменение прозрачности фона section-3
-      function randomOpacity() {
-        const section3 = document.querySelector('.section-3');
-        if (!section3) return;
-        
-        // Добавляем стили для ::before, если его еще нет в DOM
-        if (!section3.querySelector('.section-3-bg-overlay')) {
-          const overlay = document.createElement('div');
-          overlay.className = 'section-3-bg-overlay';
-          overlay.style.position = 'absolute';
-          overlay.style.top = '0';
-          overlay.style.left = '0';
-          overlay.style.width = '100%';
-          overlay.style.height = '100%';
-          overlay.style.backgroundImage = 'url("images/lamp.png")';
-          overlay.style.backgroundSize = 'cover';
-          overlay.style.backgroundPosition = 'center';
-          overlay.style.backgroundRepeat = 'no-repeat';
-          overlay.style.zIndex = '1';
-          section3.insertBefore(overlay, section3.firstChild);
-        }
-        
-        const overlay = section3.querySelector('.section-3-bg-overlay');
-        
-        // Генерируем случайное значение прозрачности от 0.5 до 1 (не ниже 50%)
-        const randomValue = 0.5 + (Math.random() * 0.5);
-        overlay.style.opacity = randomValue;
-        
-        // Планируем следующее изменение каждые 0.05 секунды (50 мс)
-        setTimeout(randomOpacity, 50);
-      }
-      
-      // Запускаем анимацию прозрачности
-      randomOpacity();
     });
     </script>
   </body>

@@ -546,10 +546,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 }
 
 .section-3::before {
-  display: none; /* Скрываем стандартный ::before, так как теперь используем JS для создания overlay */
-}
-
-.section-3-bg-overlay {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -560,7 +557,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
-  opacity: 1;
 }
 
 .section-3-content {
