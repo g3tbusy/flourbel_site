@@ -5,6 +5,22 @@
   --font-family-montserrat: 'Montserrat', Arial, sans-serif;
 }
 
+/* Предзагрузка изображений */
+body:after {
+  content: '';
+  display: none;
+  background-image: 
+    url('images/background.png'),
+    url('images/2-2-2.png'),
+    url('images/showreel_bg_1.png'),
+    url('images/showreel_bg_2.png'),
+    url('images/lamp.png'),
+    url('images/videographer.png'),
+    url('images/portfolio.png'),
+    url('images/montajer.png'),
+    url('images/contacts_bg.png');
+}
+
 .text-white {
   color: var(--text-white);
   font-family: var(--font-family-montserrat);
@@ -86,7 +102,7 @@ img {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('images/background.png') center center/cover no-repeat;
+  background: #000 url('images/background.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -374,6 +390,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background-color: #000;
 }
 
 .section-2-bg {
@@ -529,7 +546,10 @@ html, body, .container-1, .header-wrapper, .text-3 {
 }
 
 .section-3::before {
-  content: '';
+  display: none; /* Скрываем стандартный ::before, так как теперь используем JS для создания overlay */
+}
+
+.section-3-bg-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -540,6 +560,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
+  opacity: 1;
 }
 
 .section-3-content {
@@ -646,6 +667,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background-color: #000;
 }
 
 .section-4-bg {
@@ -1058,6 +1080,7 @@ a.videoeditor-btn {
   width: 100vw;
   height: 100vh;
   position: relative;
+  background-color: #000;
   background-image: url('images/showreel_bg_2.png'), url('images/showreel_bg_1.png');
   background-size: cover, cover;
   background-position: center, center;
