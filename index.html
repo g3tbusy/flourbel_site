@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lirili larila</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+      // Функция для предзагрузки изображений
+      function preloadImages() {
+        const images = [
+          'images/background.png',
+          'images/2-2-2.png',
+          'images/showreel_bg_1.png',
+          'images/showreel_bg_2.png',
+          'images/lamp.png',
+          'images/videographer.png',
+          'images/portfolio.png',
+          'images/montajer.png',
+          'images/contacts_bg.png',
+          'images/image-4.png',
+          'images/DANIEL MELNIKOV.svg',
+          'images/footer_qr.png'
+        ];
+        
+        images.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+      }
+      
+      // Запускаем предзагрузку при загрузке страницы
+      window.addEventListener('load', preloadImages);
+    </script>
   </head>
 
   <body>
