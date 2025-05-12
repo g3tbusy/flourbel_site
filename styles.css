@@ -50,8 +50,6 @@
   transform: translateX(100%);
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
-  mask-image: linear-gradient(to right, black 50%, transparent 75%);
-  mask-size: 200%;
 }
 
 .subtitle-2.active {
