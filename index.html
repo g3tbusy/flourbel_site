@@ -74,7 +74,11 @@
       <div class="image-block-4-wrapper">
         <div class="titles-wrapper">
           <p class="title-2">Я создаю</p>
-          <p class="subtitle-2">МОНТАЖ МОУШН СЪЕМКА</p>
+          <div class="subtitle-2-container">
+            <p class="subtitle-2">МОУШН</p>
+            <p class="subtitle-2">СЪЕМКА</p>
+            <p class="subtitle-2">МОНТАЖ</p>
+          </div>
         </div>
         <div class="image-container">
           <img src="images/image-4.png" alt="image-4" />
@@ -230,6 +234,34 @@ Blender (3D). Также в этом ролике <br>
           mp4.style.display = 'none';
         });
       }
+
+      // Анимация для subtitle-2
+      const words = document.querySelectorAll('.subtitle-2');
+      let currentIndex = 0;
+
+      function animateWords() {
+        // Убираем все классы
+        words.forEach(word => {
+          word.classList.remove('active', 'exit');
+        });
+
+        // Добавляем класс active текущему слову
+        words[currentIndex].classList.add('active');
+
+        // Через 1 секунду добавляем класс exit
+        setTimeout(() => {
+          words[currentIndex].classList.add('exit');
+        }, 1000);
+
+        // Переходим к следующему слову
+        currentIndex = (currentIndex + 1) % words.length;
+      }
+
+      // Запускаем анимацию сразу
+      animateWords();
+
+      // Запускаем анимацию каждые 2 секунды
+      setInterval(animateWords, 2000);
     });
     </script>
   </body>
