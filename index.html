@@ -146,10 +146,17 @@
     <div class="showreel">
       <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature">
       <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature-left">
+      
+      <img src="images/showreel/flower_1.png" alt="Flower 1" class="flower-repel" id="flower1">
+      <img src="images/showreel/flower_2.png" alt="Flower 2" class="flower-repel" id="flower2">
+      <img src="images/showreel/flower_3.png" alt="Flower 3" class="flower-repel" id="flower3">
+      <img src="images/showreel/flower_4.png" alt="Flower 4" class="flower-repel" id="flower4">
+      <img src="images/showreel/flower_5.png" alt="Flower 5" class="flower-repel" id="flower5">
+      
       <div class="showreel-center">
-        <span class="showreel-title">SHOWREEL</span>
-        <span class="showreel-desc">Какая работа<br> проделана:</span>
-        <div class="showreel-note">
+        <span class="showreel-title mouse-repel">SHOWREEL</span>
+        <span class="showreel-desc mouse-repel">Какая работа<br> проделана:</span>
+        <div class="showreel-note mouse-repel">
 Идея: создать для себя <br>
 такую рекламу, будто ее делала целая <br>
 команда, чтобы привлечь клиентов и <br>
@@ -169,7 +176,7 @@ Blender (3D). Также в этом ролике <br>
 ему отдельная благодарность за <br>
 прекрасную озвучку.
         </div>
-        <div class="showreel-video-wrapper">
+        <div class="showreel-video-wrapper mouse-repel">
           <iframe class="showreel-video" src="https://vk.com/video_ext.php?oid=537084431&id=456242127" width="592.2" height="333" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
           <video class="showreel-mp4" width="592.2" height="333" autoplay muted playsinline loop>
             <source src="videos/showreel/showreel_cutted.mp4" type="video/mp4">
@@ -313,6 +320,61 @@ Blender (3D). Также в этом ролике <br>
 
         observer.observe(section3);
       }
+      
+      // Эффект отталкивания цветов от курсора
+      const flowers = document.querySelectorAll('.flower-repel');
+      const showreel = document.querySelector('.showreel');
+      
+      // Настройки эффекта
+      const maxDistance = 800; // Максимальное расстояние воздействия курсора (в пикселях)
+      const maxMove = 100; // Максимальное смещение элемента (в пикселях)
+      
+      // Обработчик движения мыши
+      showreel.addEventListener('mousemove', (e) => {
+        // Получаем координаты мыши относительно окна
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        
+        // Для каждого цветка
+        flowers.forEach(flower => {
+          // Получаем размеры и позицию цветка
+          const rect = flower.getBoundingClientRect();
+          
+          // Центр цветка
+          const flowerCenterX = rect.left + rect.width / 2;
+          const flowerCenterY = rect.top + rect.height / 2;
+          
+          // Расстояние от курсора до центра цветка
+          const distanceX = mouseX - flowerCenterX;
+          const distanceY = mouseY - flowerCenterY;
+          
+          // Общее расстояние (по теореме Пифагора)
+          const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+          
+          // Если курсор находится близко к цветку
+          if (distance < maxDistance) {
+            // Насколько близко курсор (0 = далеко, 1 = очень близко)
+            const proximity = 1 - (distance / maxDistance);
+            
+            // Вычисляем смещение (противоположно направлению от курсора)
+            const moveX = -distanceX * proximity * (maxMove / maxDistance);
+            const moveY = -distanceY * proximity * (maxMove / maxDistance);
+            
+            // Применяем трансформацию
+            flower.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          } else {
+            // Возвращаем в исходное положение
+            flower.style.transform = 'translate(0, 0)';
+          }
+        });
+      });
+      
+      // Сбрасываем позиции цветов при уходе курсора
+      showreel.addEventListener('mouseleave', () => {
+        flowers.forEach(flower => {
+          flower.style.transform = 'translate(0, 0)';
+        });
+      });
     });
     </script>
   </body>
