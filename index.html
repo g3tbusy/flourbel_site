@@ -360,8 +360,28 @@ Blender (3D). Также в этом ролике <br>
             const moveX = -distanceX * proximity * (maxMove / maxDistance);
             const moveY = -distanceY * proximity * (maxMove / maxDistance);
             
+            // Применяем трансформацию с учетом ограничений по направлениям
+            let finalMoveX = moveX;
+            let finalMoveY = moveY;
+            
+            // flower_1 не может двигаться вправо
+            if (flower.id === 'flower1' && moveX > 0) {
+              finalMoveX = 0;
+            }
+            
+            // flower_2 не может двигаться вверх
+            if (flower.id === 'flower2' && moveY < 0) {
+              finalMoveY = 0;
+            }
+            
+            // flower_3 не может двигаться влево и вверх
+            if (flower.id === 'flower3') {
+              if (moveX < 0) finalMoveX = 0;
+              if (moveY < 0) finalMoveY = 0;
+            }
+            
             // Применяем трансформацию
-            flower.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            flower.style.transform = `translate(${finalMoveX}px, ${finalMoveY}px)`;
           } else {
             // Возвращаем в исходное положение
             flower.style.transform = 'translate(0, 0)';
