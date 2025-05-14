@@ -5,6 +5,17 @@
   --font-family-montserrat: 'Montserrat', Arial, sans-serif;
 }
 
+/* Глобальные стили для всех страниц */
+html, body {
+  scroll-behavior: smooth;
+  overflow: hidden; /* Убираем скроллбар у body */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-family-montserrat);
+}
+
 /* Предзагрузка изображений */
 body:after {
   content: '';
@@ -239,9 +250,13 @@ img {
 .card-11-lower,
 .card-11-lower-left,
 .card-12-center,
-.card-12-center-left {
+.card-12-center-left,
+.card-7-center {
   object-fit: cover;
   overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+  transform-origin: center center;
 }
 
 .card-11-center video,
@@ -819,9 +834,17 @@ html, body, .container-1, .header-wrapper, .text-3 {
 /* Футер внизу страницы */
 .footer {
   width: 100vw;
-  height: 9.52rem; /* было 11.2rem, уменьшено на 15% */
+  height: 9.52rem; /* возвращаем оригинальный размер */
   background: #000;
   position: relative;
+}
+
+/* Отключаем snap-align для футера, чтобы он не занимал весь экран */
+.container-1, .section-2, .showreel, .section-3, .section-4 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  max-width: 100vw;
+  width: 100vw;
 }
 
 /* Текст по центру футера */
@@ -880,12 +903,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
 }
 
 /* Стили для страницы videoeditor.html */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
 .fullscreen-bg {
   width: 100vw;
   height: 100vh;
@@ -898,6 +915,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .bottom-block {
   width: 100vw;
   height: 8.625rem;
@@ -1300,4 +1318,61 @@ a.videoeditor-btn {
   top: 0;
   left: 0;
   width: 280px;
+}
+
+/* Стили для постраничной прокрутки */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #DF9D51 #000;
+  width: 100%;
+  max-width: 100vw;
+  position: fixed; /* Фиксируем контейнер на всю страницу */
+  top: 0;
+  left: 0;
+}
+
+.container-1, .section-2, .showreel, .section-3, .section-4, .footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  max-width: 100vw;
+  width: 100vw;
+}
+
+/* Стилизация полосы прокрутки */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #DF9D51;
+  border-radius: 4px;
+}
+
+.video-container {
+  position: relative;
+  width: 592.2px;
+  height: 333px;
+}
+
+.click-text {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 300;
+  color: #DF9D51;
+  font-family: var(--font-family-montserrat);
+  pointer-events: none;
+  z-index: 5;
+  text-shadow: 0px 1px 3px rgba(0,0,0,0.8);
 }
