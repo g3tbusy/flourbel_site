@@ -69,7 +69,7 @@
             </video>
           </div>
           </div>
-          <div class="subtitle-text">БОЛЬШЕ, ЧЕМ<br>ПРОСТО ВИДЕО</div>
+          <div class="subtitle-text" id="animated-subtitle"></div>
         </div>
       </div>
     </div>
@@ -80,6 +80,98 @@
         const scale = Math.min(window.innerWidth / baseWidth, window.innerHeight / baseHeight);
         document.documentElement.style.setProperty('--container-scale', scale);
       }
+      
+      // Функция для анимации подзаголовка
+      document.addEventListener('DOMContentLoaded', function() {
+        const subtitleElement = document.getElementById('animated-subtitle');
+        
+        // Структура для двух строк текста
+        const firstLine = ["БОЛЬШЕ,\u00A0", "\u00A0ЧЕМ"];
+        const secondLine = ["ПРОСТО\u00A0", "\u00A0ВИДЕО"];
+        
+        function resetAnimation() {
+          subtitleElement.innerHTML = "";
+          // Создаем первую строку
+          const line1 = document.createElement('div');
+          line1.className = 'line';
+          
+          // Создаем вторую строку
+          const line2 = document.createElement('div');
+          line2.className = 'line';
+          
+          // Добавляем строки в контейнер
+          subtitleElement.appendChild(line1);
+          subtitleElement.appendChild(line2);
+          
+          // Добавляем слова первой строки, но скрываем их
+          firstLine.forEach(word => {
+            const span = document.createElement('span');
+            span.textContent = word;
+            line1.appendChild(span);
+          });
+          
+          // Добавляем слова второй строки, но скрываем их
+          secondLine.forEach(word => {
+            const span = document.createElement('span');
+            span.textContent = word;
+            line2.appendChild(span);
+          });
+          
+          return {
+            firstLineSpans: Array.from(line1.querySelectorAll('span')),
+            secondLineSpans: Array.from(line2.querySelectorAll('span'))
+          };
+        }
+        
+        function animateSubtitle() {
+          // Инициализируем структуру
+          const spans = resetAnimation();
+          
+          // Показываем слова последовательно с задержкой
+          let delay = 300; // Начальная задержка для первого слова
+          const wordDelay = 1000; // 1 секунда между словами
+          
+          // Анимируем первую строку
+          spans.firstLineSpans.forEach((span, index) => {
+            setTimeout(() => {
+              span.classList.add('visible');
+            }, delay);
+            delay += wordDelay;
+          });
+          
+          // Анимируем вторую строку
+          spans.secondLineSpans.forEach((span, index) => {
+            setTimeout(() => {
+              span.classList.add('visible');
+            }, delay);
+            delay += wordDelay;
+          });
+          
+          // Полный текст виден некоторое время
+          setTimeout(() => {
+            // Затем скрываем весь текст
+            subtitleElement.classList.add('subtitle-disappear');
+            
+            // Через 1 секунду начинаем заново
+            setTimeout(() => {
+              // Полностью очищаем текст, пока он невидим
+              subtitleElement.innerHTML = '';
+              // Затем убираем эффект исчезновения
+              subtitleElement.classList.remove('subtitle-disappear');
+              
+              // Небольшая пауза перед новым циклом для гарантии полного сброса
+              setTimeout(() => {
+                // Вызываем animateSubtitle после небольшой паузы
+                animateSubtitle();
+              }, 100);
+            }, 1000);
+          }, delay + 1000);
+        }
+        
+        // Запускаем анимацию
+        animateSubtitle();
+      });
+      
       window.addEventListener('resize', scaleContainer);
       window.addEventListener('DOMContentLoaded', scaleContainer);
 
