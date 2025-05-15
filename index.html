@@ -1,232 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lirili larila</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-      function preloadImages() {
-        const images = [
-          'images/background.png',
-          'images/2-2-2.png',
-          'images/showreel_bg_1.png',
-          'images/showreel_bg_2.png',
-          'images/lamp.png',
-          'images/videographer.png',
-          'images/portfolio.png',
-          'images/montajer.png',
-          'images/contacts_bg.png',
-          'images/image-4.png',
-          'images/DANIEL MELNIKOV.svg',
-          'images/footer_qr.png',
-          'images/section-3/sky_right.png',
-          'images/section-3/sky_left.png'
-        ];
-        
-        images.forEach(src => {
-          const img = new Image();
-          img.src = src;
-        });
-      }
-      
-      window.addEventListener('load', preloadImages);
-    </script>
+    <title>Melnikov Media</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/preload.js" defer></script>
   </head>
 
   <body>
     <div class="scroll-container">
-    <div class="container-1" id="container-1">
-      <div class="container-1-inner">
-      <div class="center-image-outer">
-        <div class="header-wrapper">
-          <p class="text-3"><span class="title-1">Melnikov Media</span></p>
-        </div>
-        <div class="center-image-block">
-          <div class="center-image-relative">
-            <video class="card-11-center-left" autoplay muted loop playsinline>
-              <source src="videos/main_page/main_2.mp4" type="video/mp4">
-            </video>
-            <video class="card-11-lower-left card-11-center-left" autoplay muted loop playsinline>
-              <source src="videos/main_page/main_3.mp4" type="video/mp4">
-            </video>
-            <video class="card-12-center-left" autoplay muted loop playsinline>
-              <source src="videos/main_page/main_1.mp4" type="video/mp4">
-            </video>
-            <video class="card-7-center" autoplay muted loop playsinline>
-              <source src="videos/main_page/main_4.mp4" type="video/mp4">
-            </video>
-            <video class="card-11-center" autoplay muted loop playsinline>
-              <source src="videos/main_page/main_5.mp4" type="video/mp4">
-            </video>
-            <video class="card-11-center card-11-lower" autoplay muted loop playsinline>
-              <source src="videos/main_page/main_6.mp4" type="video/mp4">
-            </video>
-            <video class="card-12-center" autoplay muted loop playsinline>
-              <source src="videos/main_page/main_7.mp4" type="video/mp4">
-            </video>
+      <header class="container-1" id="container-1">
+        <div class="container-1-inner">
+          <div class="center-image-outer">
+            <div class="header-wrapper">
+              <p class="text-3"><span class="title-1">Melnikov Media</span></p>
+            </div>
+            <div class="center-image-block">
+              <div class="center-image-relative">
+                <video class="card-11-center-left" autoplay muted loop playsinline>
+                  <source src="videos/main_page/main_2.mp4" type="video/mp4">
+                </video>
+                <video class="card-11-lower-left card-11-center-left" autoplay muted loop playsinline>
+                  <source src="videos/main_page/main_3.mp4" type="video/mp4">
+                </video>
+                <video class="card-12-center-left" autoplay muted loop playsinline>
+                  <source src="videos/main_page/main_1.mp4" type="video/mp4">
+                </video>
+                <video class="card-7-center" autoplay muted loop playsinline>
+                  <source src="videos/main_page/main_4.mp4" type="video/mp4">
+                </video>
+                <video class="card-11-center" autoplay muted loop playsinline>
+                  <source src="videos/main_page/main_5.mp4" type="video/mp4">
+                </video>
+                <video class="card-11-center card-11-lower" autoplay muted loop playsinline>
+                  <source src="videos/main_page/main_6.mp4" type="video/mp4">
+                </video>
+                <video class="card-12-center" autoplay muted loop playsinline>
+                  <source src="videos/main_page/main_7.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="subtitle-text" id="animated-subtitle"></div>
           </div>
-          </div>
-          <div class="subtitle-text" id="animated-subtitle"></div>
         </div>
-      </div>
-    </div>
-    <script>
-      function scaleContainer() {
-        const baseWidth = 1920;
-        const baseHeight = 1000;
-        const scale = Math.min(window.innerWidth / baseWidth, window.innerHeight / baseHeight);
-        document.documentElement.style.setProperty('--container-scale', scale);
-      }
-      
-      document.addEventListener('DOMContentLoaded', function() {
-        const subtitleElement = document.getElementById('animated-subtitle');
-        
-        const firstLine = ["БОЛЬШЕ,\u00A0", "\u00A0ЧЕМ"];
-        const secondLine = ["ПРОСТО\u00A0", "\u00A0ВИДЕО"];
-        
-        function resetAnimation() {
-          subtitleElement.innerHTML = "";
-          const line1 = document.createElement('div');
-          line1.className = 'line';
-          
-          const line2 = document.createElement('div');
-          line2.className = 'line';
-          
-          subtitleElement.appendChild(line1);
-          subtitleElement.appendChild(line2);
-          
-          firstLine.forEach(word => {
-            const span = document.createElement('span');
-            span.textContent = word;
-            line1.appendChild(span);
-          });
-          
-          secondLine.forEach(word => {
-            const span = document.createElement('span');
-            span.textContent = word;
-            line2.appendChild(span);
-          });
-          
-          return {
-            firstLineSpans: Array.from(line1.querySelectorAll('span')),
-            secondLineSpans: Array.from(line2.querySelectorAll('span'))
-          };
-        }
-        
-        function animateSubtitle() {
-          const spans = resetAnimation();
-          
-          let delay = 300;
-          const wordDelay = 1000;
-          
-          spans.firstLineSpans.forEach((span, index) => {
-            setTimeout(() => {
-              span.classList.add('visible');
-            }, delay);
-            delay += wordDelay;
-          });
-          
-          spans.secondLineSpans.forEach((span, index) => {
-            setTimeout(() => {
-              span.classList.add('visible');
-            }, delay);
-            delay += wordDelay;
-          });
-          
-          setTimeout(() => {
-            subtitleElement.classList.add('subtitle-disappear');
-            
-            setTimeout(() => {
-              subtitleElement.innerHTML = '';
-              subtitleElement.classList.remove('subtitle-disappear');
-              
-              setTimeout(() => {
-                animateSubtitle();
-              }, 100);
-            }, 1000);
-          }, delay + 1000);
-        }
-        
-        animateSubtitle();
-      });
-      
-      window.addEventListener('resize', scaleContainer);
-      window.addEventListener('DOMContentLoaded', scaleContainer);
+      </header>
 
-      function toggleBackgroundMirror() {
-        const section2Bg = document.querySelector('.section-2-bg');
-        const section4Bg = document.querySelector('.section-4-bg');
-        const currentTransform = section2Bg.style.transform;
-        const newTransform = currentTransform === 'scaleX(-1)' ? 'scaleX(1)' : 'scaleX(-1)';
-        section2Bg.style.transform = newTransform;
-        section4Bg.style.transform = newTransform;
-      }
-
-      setInterval(toggleBackgroundMirror, 500);
-    </script>
-
-    <div class="section-2" id="section-2">
-      <div class="section-2-bg"></div>
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature">
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature section-2-signature-left">
-      <div class="image-block-4-wrapper">
-        <div class="titles-wrapper">
-          <p class="title-2">Я создаю</p>
-          <div class="subtitle-2-container">
-            <p class="subtitle-2">МОУШН</p>
-            <p class="subtitle-2">СЪЕМКА</p>
-            <p class="subtitle-2">МОНТАЖ</p>
+      <section class="section-2" id="section-2">
+        <div class="section-2-bg"></div>
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature" loading="lazy">
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature section-2-signature-left" loading="lazy">
+        <div class="image-block-4-wrapper">
+          <div class="titles-wrapper">
+            <p class="title-2">Я создаю</p>
+            <div class="subtitle-2-container">
+              <p class="subtitle-2">МОУШН</p>
+              <p class="subtitle-2">СЪЕМКА</p>
+              <p class="subtitle-2">МОНТАЖ</p>
+            </div>
           </div>
-        </div>
-        <div class="image-container">
-          <img src="images/image-4.png" alt="image-4" />
-          <div class="image-caption">
-            <span class="image-caption-name">Даниил Мельников</span>
-            <span class="image-caption-role">режиссер монтажа</span>
+          <div class="image-container">
+            <img src="images/image-4.png" alt="Даниил Мельников" loading="lazy">
+            <div class="image-caption">
+              <span class="image-caption-name">Даниил Мельников</span>
+              <span class="image-caption-role">режиссер монтажа</span>
+            </div>
           </div>
-        </div>
-        <div class="about-block">
-          <p>Привет! Я режиссер монтажа и оператор постановщик<br>
+          <article class="about-block">
+            <p>Привет! Я режиссер монтажа и оператор постановщик<br>
 с более чем 7-летним стажем в видеопродакшне.<br>
 Благодаря моим навыкам и опыту, могу реализовать<br>
 проекты практически любой сложности.</p>
 
-          <br>
-          <p><b>Этапы работы над видео:</b></p>
-          <br>
-          
-            Обработка звука, цветокоррекция, нарезка, разделение на главы
-            Создание уникального стиля (вставки, плашки и т.д.)
-            Музыка без авторских прав и sound дизайн
-          
-          <br>
-          <br>
-          <p><b>Опыт:</b> 3D графика, дизайн, съемка видео, промо-ролики, корпоративные, моушн графика.</p>
-          <br>
-          <p>Работаю в автономном режиме: кидаешь исходники либо организуем съемку, ждешь 1-2 дня, получаешь крутой ролик — никаких сотен правок и нервотрепки, всё на чилле.</p>
-          <div class="nav-menu">
-            <a href="portfolio.html" class="nav-link">ПОРТФОЛИО</a>
-            <a href="contacts.html" class="nav-link">КОНТАКТЫ</a>
-            <a href="#whyme" class="nav-link">ПОЧЕМУ Я?</a>
-          </div>
+            <br>
+            <p><b>Этапы работы над видео:</b></p>
+            <br>
+            
+              Обработка звука, цветокоррекция, нарезка, разделение на главы
+              Создание уникального стиля (вставки, плашки и т.д.)
+              Музыка без авторских прав и sound дизайн
+            
+            <br>
+            <br>
+            <p><b>Опыт:</b> 3D графика, дизайн, съемка видео, промо-ролики, корпоративные, моушн графика.</p>
+            <br>
+            <p>Работаю в автономном режиме: кидаешь исходники либо организуем съемку, ждешь 1-2 дня, получаешь крутой ролик — никаких сотен правок и нервотрепки, всё на чилле.</p>
+            <nav class="nav-menu">
+              <a href="portfolio.html" class="nav-link">ПОРТФОЛИО</a>
+              <a href="contacts.html" class="nav-link">КОНТАКТЫ</a>
+              <a href="#whyme" class="nav-link">ПОЧЕМУ Я?</a>
+            </nav>
+          </article>
         </div>
-      </div>
-    </div>
-    <div class="showreel" id="showreel">
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature">
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature-left">
-      
-      <img src="images/showreel/flower_1.png" alt="Flower 1" class="flower-repel" id="flower1">
-      <img src="images/showreel/flower_2.png" alt="Flower 2" class="flower-repel" id="flower2">
-      <img src="images/showreel/flower_3.png" alt="Flower 3" class="flower-repel" id="flower3">
-      <img src="images/showreel/flower_4.png" alt="Flower 4" class="flower-repel" id="flower4">
-      <img src="images/showreel/flower_5.png" alt="Flower 5" class="flower-repel" id="flower5">
-      
-      <div class="showreel-center">
-        <span class="showreel-title mouse-repel">SHOWREEL</span>
-        <span class="showreel-desc mouse-repel">Какая работа<br> проделана:</span>
-        <div class="showreel-note mouse-repel">
+      </section>
+
+      <section class="showreel" id="showreel">
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature" loading="lazy">
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature-left" loading="lazy">
+        
+        <img src="images/showreel/flower_1.png" alt="Flower 1" class="flower-repel" id="flower1" loading="lazy">
+        <img src="images/showreel/flower_2.png" alt="Flower 2" class="flower-repel" id="flower2" loading="lazy">
+        <img src="images/showreel/flower_3.png" alt="Flower 3" class="flower-repel" id="flower3" loading="lazy">
+        <img src="images/showreel/flower_4.png" alt="Flower 4" class="flower-repel" id="flower4" loading="lazy">
+        <img src="images/showreel/flower_5.png" alt="Flower 5" class="flower-repel" id="flower5" loading="lazy">
+        
+        <div class="showreel-center">
+          <span class="showreel-title mouse-repel">SHOWREEL</span>
+          <span class="showreel-desc mouse-repel">Какая работа<br> проделана:</span>
+          <div class="showreel-note mouse-repel">
 Идея: создать для себя <br>
 такую рекламу, будто ее делала целая <br>
 команда, чтобы привлечь клиентов и <br>
@@ -245,363 +126,111 @@ Blender (3D). Также в этом ролике <br>
 принял участие диктор - Борис Рыбаков, <br>
 ему отдельная благодарность за <br>
 прекрасную озвучку.
-        </div>
-        <div class="showreel-video-wrapper mouse-repel">
-          <iframe class="showreel-video" src="https://vk.com/video_ext.php?oid=537084431&id=456242127" width="592.2" height="333" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
-          <div class="video-container">
-            <video class="showreel-mp4" width="592.2" height="333" autoplay muted playsinline loop>
-              <source src="videos/showreel/showreel_cutted.mp4" type="video/mp4">
-              Ваш браузер не поддерживает видео.
-            </video>
-            <div class="click-text">Клик</div>
+          </div>
+          <div class="showreel-video-wrapper mouse-repel">
+            <iframe class="showreel-video" src="https://vk.com/video_ext.php?oid=537084431&id=456242127" width="592.2" height="333" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+            <div class="video-container">
+              <video class="showreel-mp4" width="592.2" height="333" autoplay muted playsinline loop>
+                <source src="videos/showreel/showreel_cutted.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+              </video>
+              <div class="click-text">Клик</div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="section-3" id="section-3">
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature">
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature section-2-signature-left">
-      <img src="images/section-3/sky_right.png" alt="Sky Right" class="sky-right">
-      <img src="images/section-3/sky_left.png" alt="Sky Left" class="sky-left">
-      <div class="section-3-content">
-        <h2 class="section-3-title">КЕЙСЫ</h2>
-        <div class="black-block-wrapper">
-          <a class="black-block-title" href="videoeditor.html">Монтажер</a>
-          <a href="videoeditor.html">
-            <video class="black-block" autoplay muted loop playsinline>
-              <source src="videos/cases/case_1.mp4" type="video/mp4">
-            </video>
-          </a>
+      </section>
+
+      <section class="section-3" id="section-3">
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature" loading="lazy">
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature-left" loading="lazy">
+        <img src="images/section-3/sky_right.png" alt="Sky Right" class="sky-right" loading="lazy">
+        <img src="images/section-3/sky_left.png" alt="Sky Left" class="sky-left" loading="lazy">
+        <div class="section-3-content">
+          <h2 class="section-3-title">КЕЙСЫ</h2>
+          <div class="black-block-wrapper">
+            <a class="black-block-title" href="videoeditor.html">Монтажер</a>
+            <a href="videoeditor.html">
+              <video class="black-block" autoplay muted loop playsinline>
+                <source src="videos/cases/case_1.mp4" type="video/mp4">
+              </video>
+            </a>
+          </div>
+          <div class="black-block-wrapper second-block">
+            <a class="black-block-title" href="videographer.html">Оператор</a>
+            <a href="videographer.html">
+              <video class="black-block" autoplay muted loop playsinline>
+                <source src="videos/cases/case_2.mp4" type="video/mp4">
+              </video>
+            </a>
+          </div>
         </div>
-        <div class="black-block-wrapper second-block">
-          <a class="black-block-title" href="videographer.html">Оператор</a>
-          <a href="videographer.html">
-            <video class="black-block" autoplay muted loop playsinline>
-              <source src="videos/cases/case_2.mp4" type="video/mp4">
-            </video>
-          </a>
+      </section>
+
+      <section class="section-4" id="whyme">
+        <div class="section-4-bg"></div>
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature" loading="lazy">
+        <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature-left" loading="lazy">
+        <div class="center-block">
+          <h2 class="center-block-title">ПОЧЕМУ Я?</h2>
+          <h3 class="center-block-qa-title">Ответы на вопросы</h3>
+          <div class="center-block-qa-body">
+            <p>1. Какие направления?<br>
+            - В последнее время в большей степени заинтересован в блогерском направлении, но готов рассмотреть как корпоративные ролики, интервью и подкасты, так и промо/креативы.</p>
+            <br>
+            <p>2. Есть ли опыт ведения соцсетей?<br>
+            - Да, есть 2 кейса: группа ВКонтакте — 30 тыс. подписчиков, TikTok — 35 тыс. При необходимости готов предоставить доказательства.</p>
+            <br>
+            <p>3. Есть ли опыт съемки видео?<br>
+            - Да, снимал концептуальные ролики на Sony a6300. Разбираюсь в тонкостях съемки, таких как композиция кадра, настройки камеры, освещение и т.д.</p>
+            <br>
+            <p>4. Сколько правок?<br>
+            - Обычно 3 правки бесплатные, далее идет доплата в зависимости от сложности, но все обсуждается индивидуально. Чаще проекты закрываются без правок.</p>
+          </div>
+          <div class="center-block-text">
+            <p>Я очень замотивированный и<br>
+            амбициозный человек,<br>
+            отлично умеющий приспосабливаться<br>
+            к разным стилям монтажа и визуала.<br>
+            Так же обладаю операторскими и режиссерскими<br>
+            знаниями.</p>
+            <br>
+            <p>У меня есть большой опыт<br>
+            в различных сферах, связанных как с<br>
+            монтажом, так и с видеопродакшеном<br>
+            и дизайном в целом. Я представляю собой<br>
+            многопрофильного специалиста, который<br>
+            обеспечивает: скорость, качество и сервис.</p>
+            <br>
+            <p>Я берусь только за те проекты, в которых<br>
+            уверен и которые принесут мне удовольствие.<br>
+            Я очень дорожу своей репутацией, поэтому<br>
+            при работе со мной никогда нет никаких<br>
+            казусов, всегда стараюсь идти на уступки.</p>
+            <br>
+            <p>В общем, обращайтесь!</p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="section-4" id="whyme">
-      <div class="section-4-bg"></div>
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature">
-      <img src="images/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature section-2-signature-left">
-      <div class="center-block">
-        <p class="center-block-title">ПОЧЕМУ Я?</p>
-        <p class="center-block-qa-title">Ответы на вопросы</p>
-        <div class="center-block-qa-body">
-          <p>1. Какие направления?<br>
-          - В последнее время в большей степени заинтересован в блогерском направлении, но готов рассмотреть как корпоративные ролики, интервью и подкасты, так и промо/креативы.</p>
-          <br>
-          <p>2. Есть ли опыт ведения соцсетей?<br>
-          - Да, есть 2 кейса: группа ВКонтакте — 30 тыс. подписчиков, TikTok — 35 тыс. При необходимости готов предоставить доказательства.</p>
-          <br>
-          <p>3. Есть ли опыт съемки видео?<br>
-          - Да, снимал концептуальные ролики на Sony a6300. Разбираюсь в тонкостях съемки, таких как композиция кадра, настройки камеры, освещение и т.д.</p>
-          <br>
-          <p>4. Сколько правок?<br>
-          - Обычно 3 правки бесплатные, далее идет доплата в зависимости от сложности, но все обсуждается индивидуально. Чаще проекты закрываются без правок.</p>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-links">
+          <p class="footer-link-text">Напишите мне</p>
+          <p class="footer-link-text"><a href="mailto:melnikmedia.info@gmail.com">melnikmedia.info@gmail.com</a></p>
+          <p class="footer-link-text"><a href="https://t.me/flourbel" target="_blank" rel="noopener">Tg: @Flourbel</a></p>
         </div>
-        <div class="center-block-text">
-          <p>Я очень замотивированный и<br>
-          амбициозный человек,<br>
-          отлично умеющий приспосабливаться<br>
-          к разным стилям монтажа и визуала.<br>
-          Так же обладаю операторскими и режиссерскими<br>
-          знаниями.</p>
-          <br>
-          <p>У меня есть большой опыт<br>
-          в различных сферах, связанных как с<br>
-          монтажом, так и с видеопродакшеном<br>
-          и дизайном в целом. Я представляю собой<br>
-          многопрофильного специалиста, который<br>
-          обеспечивает: скорость, качество и сервис.</p>
-          <br>
-          <p>Я берусь только за те проекты, в которых<br>
-          уверен и которые принесут мне удовольствие.<br>
-          Я очень дорожу своей репутацией, поэтому<br>
-          при работе со мной никогда нет никаких<br>
-          казусов, всегда стараюсь идти на уступки.</p>
-          <br>
-          <p>В общем, обращайтесь!</p>
-        </div>
-      </div>
+        <p class="footer-text"><span class="footer-text-bold">Буду рад сотрудничеству</span><br>Melnikov Media</p>
+        <img src="images/footer_qr.png" alt="QR code" class="footer-qr" loading="lazy">
+      </footer>
     </div>
-    <div class="footer">
-      <div class="footer-links">
-        <p class="footer-link-text">Напишите мне</p>
-        <p class="footer-link-text"><a href="mailto:melnikmedia.info@gmail.com">melnikmedia.info@gmail.com</a></p>
-        <p class="footer-link-text"><a href="https://t.me/flourbel" target="_blank" rel="noopener">Tg: @Flourbel</a></p>
-      </div>
-      <p class="footer-text"><span class="footer-text-bold">Буду рад сотрудничеству</span><br>Melnikov Media</p>
-      <img src="images/footer_qr.png" alt="QR code" class="footer-qr">
-    </div>
-    </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mp4 = document.querySelector('.showreel-mp4');
-      const clickText = document.querySelector('.click-text');
-      const videoContainer = document.querySelector('.video-container');
-      const vkIframe = document.querySelector('.showreel-video');
-      
-      if (mp4) {
-        mp4.addEventListener('click', function() {
-          mp4.style.display = 'none';
-          if (clickText) clickText.style.display = 'none';
-          if (videoContainer) videoContainer.style.display = 'none';
-          if (vkIframe) {
-            vkIframe.style.zIndex = '5';
-            vkIframe.style.position = 'relative';
-          }
-        });
-      }
 
-      const words = document.querySelectorAll('.subtitle-2');
-      let currentIndex = 0;
-
-      function animateWords() {
-        words.forEach(word => {
-          word.classList.remove('active', 'exit');
-        });
-
-        words[currentIndex].classList.add('active');
-
-        setTimeout(() => {
-          words[currentIndex].classList.add('exit');
-        }, 1000);
-
-        currentIndex = (currentIndex + 1) % words.length;
-      }
-
-      animateWords();
-
-      setInterval(animateWords, 2000);
-      
-      const container1 = document.querySelector('.container-1');
-      const cards = document.querySelectorAll('.card-11-center-left, .card-11-lower-left, .card-12-center-left, .card-7-center, .card-11-center, .card-11-lower, .card-12-center');
-      
-      const cardMaxDistance = 600;
-      const cardMaxMove = 40;
-      const cardMaxRotate = 2.5;
-      
-      const cardPositions = {};
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const transform = window.getComputedStyle(card).transform;
-        const isIdentity = transform === 'none' || transform === 'matrix(1, 0, 0, 1, 0, 0)';
-        
-        cardPositions[card.className] = {
-          left: rect.left + rect.width / 2,
-          top: rect.top + rect.height / 2,
-          originalTransform: isIdentity ? '' : transform
-        };
-      });
-      
-      container1.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        
-        cards.forEach(card => {
-          const cardInfo = cardPositions[card.className];
-          
-          if (!cardInfo) return;
-          
-          const distanceX = mouseX - cardInfo.left;
-          const distanceY = mouseY - cardInfo.top;
-          
-          const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-          
-          if (distance < cardMaxDistance) {
-            const proximity = 1 - (distance / cardMaxDistance);
-            
-            const randomFactor = 0.7 + Math.random() * 0.6;
-            const moveX = distanceX * proximity * (cardMaxMove / cardMaxDistance) * randomFactor;
-            const moveY = distanceY * proximity * (cardMaxMove / cardMaxDistance) * randomFactor;
-            
-            const rotateZ = (Math.atan2(distanceY, distanceX) * 180 / Math.PI) * 0.05 * proximity * randomFactor;
-            const rotate = Math.min(Math.abs(rotateZ), cardMaxRotate) * Math.sign(rotateZ);
-            
-            card.style.transform = `${cardInfo.originalTransform} translate(${moveX}px, ${moveY}px) rotate(${rotate}deg)`;
-          } else {
-            card.style.transform = cardInfo.originalTransform;
-          }
-        });
-      });
-      
-      container1.addEventListener('mouseleave', () => {
-        cards.forEach(card => {
-          const cardInfo = cardPositions[card.className];
-          if (cardInfo) {
-            card.style.transform = cardInfo.originalTransform;
-          }
-        });
-      });
-
-      const section3 = document.getElementById('section-3');
-      const skyRight = document.querySelector('.sky-right');
-      const skyLeft = document.querySelector('.sky-left');
-      let cloudsAnimated = false;
-
-      if ('IntersectionObserver' in window && section3 && skyRight && skyLeft) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && !cloudsAnimated) {
-              skyRight.classList.add('cloud-animate');
-              skyLeft.classList.add('cloud-animate');
-              cloudsAnimated = true;
-            }
-          });
-        }, { threshold: 0.3 });
-
-        observer.observe(section3);
-      }
-      
-      const flowers = document.querySelectorAll('.flower-repel');
-      const showreel = document.querySelector('.showreel');
-      
-      const flowerMaxDistance = 800;
-      const flowerMaxMove = 100;
-      
-      showreel.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        
-        flowers.forEach(flower => {
-          const rect = flower.getBoundingClientRect();
-          
-          const flowerCenterX = rect.left + rect.width / 2;
-          const flowerCenterY = rect.top + rect.height / 2;
-          
-          const distanceX = mouseX - flowerCenterX;
-          const distanceY = mouseY - flowerCenterY;
-          
-          const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-          
-          if (distance < flowerMaxDistance) {
-            const proximity = 1 - (distance / flowerMaxDistance);
-            
-            const moveX = -distanceX * proximity * (flowerMaxMove / flowerMaxDistance);
-            const moveY = -distanceY * proximity * (flowerMaxMove / flowerMaxDistance);
-            
-            let finalMoveX = moveX;
-            let finalMoveY = moveY;
-            
-            if (flower.id === 'flower1' && moveX > 0) {
-              finalMoveX = 0;
-            }
-            
-            if (flower.id === 'flower2' && moveY < 0) {
-              finalMoveY = 0;
-            }
-            
-            if (flower.id === 'flower3') {
-              if (moveX < 0) finalMoveX = 0;
-              if (moveY < 0) finalMoveY = 0;
-            }
-            
-            flower.style.transform = `translate(${finalMoveX}px, ${finalMoveY}px)`;
-          } else {
-            flower.style.transform = 'translate(0, 0)';
-          }
-        });
-      });
-      
-      showreel.addEventListener('mouseleave', () => {
-        flowers.forEach(flower => {
-          flower.style.transform = 'translate(0, 0)';
-        });
-      });
-
-      const allSections = [
-        document.querySelector('.container-1'),
-        document.querySelector('.section-2'),
-        document.querySelector('.showreel'),
-        document.querySelector('.section-3'),
-        document.querySelector('.section-4'),
-        document.querySelector('.footer')
-      ];
-      
-      let currentSectionIndex = 0;
-      
-      function getCurrentSection() {
-        const scrollPosition = window.scrollY;
-        let index = 0;
-        
-        for (let i = 0; i < allSections.length; i++) {
-          const section = allSections[i];
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          
-          if (scrollPosition >= sectionTop - window.innerHeight/2 && 
-              scrollPosition < sectionTop + sectionHeight - window.innerHeight/2) {
-            index = i;
-            break;
-          }
-        }
-        
-        return index;
-      }
-      
-      currentSectionIndex = getCurrentSection();
-      
-      let isScrolling = false;
-      
-      window.addEventListener('wheel', function(e) {
-        e.preventDefault();
-        
-        if (!isScrolling) {
-          isScrolling = true;
-          
-          if (e.deltaY > 0) {
-            if (currentSectionIndex < allSections.length - 1) {
-              currentSectionIndex++;
-            }
-          } else {
-            if (currentSectionIndex > 0) {
-              currentSectionIndex--;
-            }
-          }
-          
-          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-          
-          setTimeout(() => {
-            isScrolling = false;
-          }, 800);
-        }
-      }, { passive: false });
-      
-      window.addEventListener('keydown', function(e) {
-        switch(e.key) {
-          case 'ArrowDown':
-          case 'PageDown':
-            e.preventDefault();
-            if (currentSectionIndex < allSections.length - 1) {
-              currentSectionIndex++;
-              allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-            }
-            break;
-          case 'ArrowUp':
-          case 'PageUp':
-            e.preventDefault();
-            if (currentSectionIndex > 0) {
-              currentSectionIndex--;
-              allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-            }
-            break;
-          case 'Home':
-            e.preventDefault();
-            currentSectionIndex = 0;
-            allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-            break;
-          case 'End':
-            e.preventDefault();
-            currentSectionIndex = allSections.length - 1;
-            allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-            break;
-        }
-      });
-    });
-    </script>
+    <script src="scripts/container-scale.js" defer></script>
+    <script src="scripts/subtitle-animation.js" defer></script>
+    <script src="scripts/background-mirror.js" defer></script>
+    <script src="scripts/showreel-video.js" defer></script>
+    <script src="scripts/subtitle-rotation.js" defer></script>
+    <script src="scripts/cards-movement.js" defer></script>
+    <script src="scripts/cloud-animation.js" defer></script>
+    <script src="scripts/flower-movement.js" defer></script>
+    <script src="scripts/smooth-scroll.js" defer></script>
   </body>
 </html>

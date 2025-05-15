@@ -19,15 +19,15 @@ body:after {
   content: '';
   display: none;
   background-image: 
-    url('images/background.png'),
-    url('images/2-2-2.png'),
-    url('images/showreel_bg_1.png'),
-    url('images/showreel_bg_2.png'),
-    url('images/lamp.png'),
-    url('images/videographer.png'),
-    url('images/portfolio.png'),
-    url('images/montajer.png'),
-    url('images/contacts_bg.png');
+    url('../images/background.png'),
+    url('../images/2-2-2.png'),
+    url('../images/showreel_bg_1.png'),
+    url('../images/showreel_bg_2.png'),
+    url('../images/lamp.png'),
+    url('../images/videographer.png'),
+    url('../images/portfolio.png'),
+    url('../images/montajer.png'),
+    url('../images/contacts_bg.png');
 }
 
 .text-white {
@@ -132,7 +132,7 @@ img {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #000 url('images/background.png') center center/cover no-repeat;
+  background: #000 url('../images/background.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -491,7 +491,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('images/2-2-2.png') center center/cover no-repeat;
+  background: url('../images/2-2-2.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -644,7 +644,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('images/lamp.png');
+  background-image: url('../images/lamp.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -822,7 +822,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('images/2-2-2.png') center center/cover no-repeat;
+  background: url('../images/2-2-2.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -975,7 +975,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   padding-top: 0;
   background-color: #000;
   will-change: background-image;
-  background-image: url('images/portfolio.png');
+  background-image: url('../images/portfolio.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1116,7 +1116,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .contacts-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('images/contacts_bg.png');
+  background-image: url('../images/contacts_bg.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1125,7 +1125,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .portfolio-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('images/portfolio.png');
+  background-image: url('../images/portfolio.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1134,7 +1134,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .videoeditor-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('images/montajer.png');
+  background-image: url('../images/montajer.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1143,7 +1143,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .videographer-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('images/videographer.png');
+  background-image: url('../images/videographer.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1152,7 +1152,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 body:not(.portfolio-page):not(.contacts-page) .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('images/montajer.png');
+  background-image: url('../images/montajer.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1220,7 +1220,7 @@ a.videoeditor-btn {
   position: relative;
   background-color: #000;
   background-image: 
-    url("images/showreel/main_bg.png");
+    url("../images/showreel/main_bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1444,4 +1444,61 @@ a.videoeditor-btn {
   pointer-events: none;
   z-index: 5;
   text-shadow: 0px 1px 3px rgba(0,0,0,0.8);
+}
+
+.contacts-page .center-block-videoeditor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20.5625rem;
+  height: 18.6875rem;
+  background: none;
+  border-radius: 1.5rem;
+}
+
+.portfolio-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20.5625rem;
+  height: 12.8125rem;
+  background: none;
+  border-radius: 1.5rem;
+}
+
+.portfolio-links .videoeditor-btn {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.videographer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20.5625rem;
+  height: 18.6875rem;
+  background: none;
+  border-radius: 1.5rem;
 }
