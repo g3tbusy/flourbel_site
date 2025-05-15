@@ -6,7 +6,6 @@
     <title>lirili larila</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-      // Функция для предзагрузки изображений
       function preloadImages() {
         const images = [
           'images/background.png',
@@ -31,7 +30,6 @@
         });
       }
       
-      // Запускаем предзагрузку при загрузке страницы
       window.addEventListener('load', preloadImages);
     </script>
   </head>
@@ -81,36 +79,29 @@
         document.documentElement.style.setProperty('--container-scale', scale);
       }
       
-      // Функция для анимации подзаголовка
       document.addEventListener('DOMContentLoaded', function() {
         const subtitleElement = document.getElementById('animated-subtitle');
         
-        // Структура для двух строк текста
         const firstLine = ["БОЛЬШЕ,\u00A0", "\u00A0ЧЕМ"];
         const secondLine = ["ПРОСТО\u00A0", "\u00A0ВИДЕО"];
         
         function resetAnimation() {
           subtitleElement.innerHTML = "";
-          // Создаем первую строку
           const line1 = document.createElement('div');
           line1.className = 'line';
           
-          // Создаем вторую строку
           const line2 = document.createElement('div');
           line2.className = 'line';
           
-          // Добавляем строки в контейнер
           subtitleElement.appendChild(line1);
           subtitleElement.appendChild(line2);
           
-          // Добавляем слова первой строки, но скрываем их
           firstLine.forEach(word => {
             const span = document.createElement('span');
             span.textContent = word;
             line1.appendChild(span);
           });
           
-          // Добавляем слова второй строки, но скрываем их
           secondLine.forEach(word => {
             const span = document.createElement('span');
             span.textContent = word;
@@ -124,14 +115,11 @@
         }
         
         function animateSubtitle() {
-          // Инициализируем структуру
           const spans = resetAnimation();
           
-          // Показываем слова последовательно с задержкой
-          let delay = 300; // Начальная задержка для первого слова
-          const wordDelay = 1000; // 1 секунда между словами
+          let delay = 300;
+          const wordDelay = 1000;
           
-          // Анимируем первую строку
           spans.firstLineSpans.forEach((span, index) => {
             setTimeout(() => {
               span.classList.add('visible');
@@ -139,7 +127,6 @@
             delay += wordDelay;
           });
           
-          // Анимируем вторую строку
           spans.secondLineSpans.forEach((span, index) => {
             setTimeout(() => {
               span.classList.add('visible');
@@ -147,35 +134,26 @@
             delay += wordDelay;
           });
           
-          // Полный текст виден некоторое время
           setTimeout(() => {
-            // Затем скрываем весь текст
             subtitleElement.classList.add('subtitle-disappear');
             
-            // Через 1 секунду начинаем заново
             setTimeout(() => {
-              // Полностью очищаем текст, пока он невидим
               subtitleElement.innerHTML = '';
-              // Затем убираем эффект исчезновения
               subtitleElement.classList.remove('subtitle-disappear');
               
-              // Небольшая пауза перед новым циклом для гарантии полного сброса
               setTimeout(() => {
-                // Вызываем animateSubtitle после небольшой паузы
                 animateSubtitle();
               }, 100);
             }, 1000);
           }, delay + 1000);
         }
         
-        // Запускаем анимацию
         animateSubtitle();
       });
       
       window.addEventListener('resize', scaleContainer);
       window.addEventListener('DOMContentLoaded', scaleContainer);
 
-      // Функция для зеркалирования фонов
       function toggleBackgroundMirror() {
         const section2Bg = document.querySelector('.section-2-bg');
         const section4Bg = document.querySelector('.section-4-bg');
@@ -185,7 +163,6 @@
         section4Bg.style.transform = newTransform;
       }
 
-      // Запускаем переключение каждые 0.5 секунды
       setInterval(toggleBackgroundMirror, 500);
     </script>
 
@@ -365,56 +342,52 @@ Blender (3D). Также в этом ролике <br>
     document.addEventListener('DOMContentLoaded', function() {
       const mp4 = document.querySelector('.showreel-mp4');
       const clickText = document.querySelector('.click-text');
+      const videoContainer = document.querySelector('.video-container');
+      const vkIframe = document.querySelector('.showreel-video');
       
       if (mp4) {
         mp4.addEventListener('click', function() {
           mp4.style.display = 'none';
           if (clickText) clickText.style.display = 'none';
+          if (videoContainer) videoContainer.style.display = 'none';
+          if (vkIframe) {
+            vkIframe.style.zIndex = '5';
+            vkIframe.style.position = 'relative';
+          }
         });
       }
 
-      // Анимация для subtitle-2
       const words = document.querySelectorAll('.subtitle-2');
       let currentIndex = 0;
 
       function animateWords() {
-        // Убираем все классы
         words.forEach(word => {
           word.classList.remove('active', 'exit');
         });
 
-        // Добавляем класс active текущему слову
         words[currentIndex].classList.add('active');
 
-        // Через 1 секунду добавляем класс exit
         setTimeout(() => {
           words[currentIndex].classList.add('exit');
         }, 1000);
 
-        // Переходим к следующему слову
         currentIndex = (currentIndex + 1) % words.length;
       }
 
-      // Запускаем анимацию сразу
       animateWords();
 
-      // Запускаем анимацию каждые 2 секунды
       setInterval(animateWords, 2000);
       
-      // Эффект разъезжания карточек на первой странице
       const container1 = document.querySelector('.container-1');
       const cards = document.querySelectorAll('.card-11-center-left, .card-11-lower-left, .card-12-center-left, .card-7-center, .card-11-center, .card-11-lower, .card-12-center');
       
-      // Настройки эффекта
-      const cardMaxDistance = 600; // Увеличено с 500 до 600
-      const cardMaxMove = 40; // Увеличено с 20 до 40
-      const cardMaxRotate = 2.5; // Максимальный угол поворота в градусах
+      const cardMaxDistance = 600;
+      const cardMaxMove = 40;
+      const cardMaxRotate = 2.5;
       
-      // Получаем исходные позиции карточек
       const cardPositions = {};
       cards.forEach(card => {
         const rect = card.getBoundingClientRect();
-        // Сохраняем оригинальную трансформацию, если она есть
         const transform = window.getComputedStyle(card).transform;
         const isIdentity = transform === 'none' || transform === 'matrix(1, 0, 0, 1, 0, 0)';
         
@@ -425,51 +398,37 @@ Blender (3D). Также в этом ролике <br>
         };
       });
       
-      // Обработчик движения мыши
       container1.addEventListener('mousemove', (e) => {
-        // Получаем координаты мыши относительно окна
         const mouseX = e.clientX;
         const mouseY = e.clientY;
         
-        // Для каждой карточки
         cards.forEach(card => {
-          // Используем сохраненные позиции
           const cardInfo = cardPositions[card.className];
           
           if (!cardInfo) return;
           
-          // Расстояние от курсора до центра карточки
           const distanceX = mouseX - cardInfo.left;
           const distanceY = mouseY - cardInfo.top;
           
-          // Общее расстояние по теореме Пифагора
           const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
           
-          // Если курсор находится в зоне влияния
           if (distance < cardMaxDistance) {
-            // Насколько близко курсор (0 = далеко, 1 = очень близко)
             const proximity = 1 - (distance / cardMaxDistance);
             
-            // Вычисляем смещение (пропорционально расстоянию)
-            // Добавляем фактор случайности для более естественного движения
-            const randomFactor = 0.7 + Math.random() * 0.6; // Увеличен разброс 0.7-1.3 вместо 0.8-1.2
+            const randomFactor = 0.7 + Math.random() * 0.6;
             const moveX = distanceX * proximity * (cardMaxMove / cardMaxDistance) * randomFactor;
             const moveY = distanceY * proximity * (cardMaxMove / cardMaxDistance) * randomFactor;
             
-            // Добавляем небольшой наклон в зависимости от положения курсора
             const rotateZ = (Math.atan2(distanceY, distanceX) * 180 / Math.PI) * 0.05 * proximity * randomFactor;
             const rotate = Math.min(Math.abs(rotateZ), cardMaxRotate) * Math.sign(rotateZ);
             
-            // Применяем трансформацию с учетом наклона
             card.style.transform = `${cardInfo.originalTransform} translate(${moveX}px, ${moveY}px) rotate(${rotate}deg)`;
           } else {
-            // Возвращаем в исходное положение
             card.style.transform = cardInfo.originalTransform;
           }
         });
       });
       
-      // Сбрасываем позиции при уходе курсора
       container1.addEventListener('mouseleave', () => {
         cards.forEach(card => {
           const cardInfo = cardPositions[card.className];
@@ -479,7 +438,6 @@ Blender (3D). Также в этом ролике <br>
         });
       });
 
-      // Анимация облаков при появлении section-3
       const section3 = document.getElementById('section-3');
       const skyRight = document.querySelector('.sky-right');
       const skyLeft = document.querySelector('.sky-left');
@@ -494,87 +452,67 @@ Blender (3D). Также в этом ролике <br>
               cloudsAnimated = true;
             }
           });
-        }, { threshold: 0.3 }); // 30% секции должно быть видно
+        }, { threshold: 0.3 });
 
         observer.observe(section3);
       }
       
-      // Эффект отталкивания цветов от курсора
       const flowers = document.querySelectorAll('.flower-repel');
       const showreel = document.querySelector('.showreel');
       
-      // Настройки эффекта
-      const flowerMaxDistance = 800; // Максимальное расстояние воздействия курсора (в пикселях)
-      const flowerMaxMove = 100; // Максимальное смещение элемента (в пикселях)
+      const flowerMaxDistance = 800;
+      const flowerMaxMove = 100;
       
-      // Обработчик движения мыши
       showreel.addEventListener('mousemove', (e) => {
-        // Получаем координаты мыши относительно окна
         const mouseX = e.clientX;
         const mouseY = e.clientY;
         
-        // Для каждого цветка
         flowers.forEach(flower => {
-          // Получаем размеры и позицию цветка
           const rect = flower.getBoundingClientRect();
           
-          // Центр цветка
           const flowerCenterX = rect.left + rect.width / 2;
           const flowerCenterY = rect.top + rect.height / 2;
           
-          // Расстояние от курсора до центра цветка
           const distanceX = mouseX - flowerCenterX;
           const distanceY = mouseY - flowerCenterY;
           
-          // Общее расстояние (по теореме Пифагора)
           const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
           
-          // Если курсор находится близко к цветку
           if (distance < flowerMaxDistance) {
-            // Насколько близко курсор (0 = далеко, 1 = очень близко)
             const proximity = 1 - (distance / flowerMaxDistance);
             
-            // Вычисляем смещение (противоположно направлению от курсора)
             const moveX = -distanceX * proximity * (flowerMaxMove / flowerMaxDistance);
             const moveY = -distanceY * proximity * (flowerMaxMove / flowerMaxDistance);
             
-            // Применяем трансформацию с учетом ограничений по направлениям
             let finalMoveX = moveX;
             let finalMoveY = moveY;
             
-            // flower_1 не может двигаться вправо
             if (flower.id === 'flower1' && moveX > 0) {
               finalMoveX = 0;
             }
             
-            // flower_2 не может двигаться вверх
             if (flower.id === 'flower2' && moveY < 0) {
               finalMoveY = 0;
             }
             
-            // flower_3 не может двигаться влево и вверх
             if (flower.id === 'flower3') {
               if (moveX < 0) finalMoveX = 0;
               if (moveY < 0) finalMoveY = 0;
             }
             
-            // Применяем трансформацию
             flower.style.transform = `translate(${finalMoveX}px, ${finalMoveY}px)`;
           } else {
-            // Возвращаем в исходное положение
             flower.style.transform = 'translate(0, 0)';
           }
         });
       });
       
-      // Сбрасываем позиции цветов при уходе курсора
       showreel.addEventListener('mouseleave', () => {
         flowers.forEach(flower => {
           flower.style.transform = 'translate(0, 0)';
         });
       });
 
-      // Получаем все секции в правильном порядке
       const allSections = [
         document.querySelector('.container-1'),
         document.querySelector('.section-2'),
@@ -584,10 +522,8 @@ Blender (3D). Также в этом ролике <br>
         document.querySelector('.footer')
       ];
       
-      // Индекс текущей секции
       let currentSectionIndex = 0;
       
-      // Определяем начальный индекс на основе текущей позиции прокрутки
       function getCurrentSection() {
         const scrollPosition = window.scrollY;
         let index = 0;
@@ -607,43 +543,34 @@ Blender (3D). Также в этом ролике <br>
         return index;
       }
       
-      // Устанавливаем начальный индекс
       currentSectionIndex = getCurrentSection();
       
-      // Обработка колеса мыши для плавной прокрутки по секциям
       let isScrolling = false;
       
       window.addEventListener('wheel', function(e) {
-        // Предотвращаем стандартную прокрутку
         e.preventDefault();
         
         if (!isScrolling) {
           isScrolling = true;
           
-          // Определяем направление прокрутки
           if (e.deltaY > 0) {
-            // Прокрутка вниз
             if (currentSectionIndex < allSections.length - 1) {
               currentSectionIndex++;
             }
           } else {
-            // Прокрутка вверх
             if (currentSectionIndex > 0) {
               currentSectionIndex--;
             }
           }
           
-          // Прокручиваем к выбранной секции
           allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
           
-          // Предотвращаем дополнительную прокрутку на время анимации
           setTimeout(() => {
             isScrolling = false;
           }, 800);
         }
       }, { passive: false });
       
-      // Обработка клавиш клавиатуры для навигации
       window.addEventListener('keydown', function(e) {
         switch(e.key) {
           case 'ArrowDown':

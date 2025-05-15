@@ -5,10 +5,9 @@
   --font-family-montserrat: 'Montserrat', Arial, sans-serif;
 }
 
-/* Глобальные стили для всех страниц */
 html, body {
   scroll-behavior: smooth;
-  overflow: hidden; /* Убираем скроллбар у body */
+  overflow: hidden;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -16,7 +15,6 @@ html, body {
   font-family: var(--font-family-montserrat);
 }
 
-/* Предзагрузка изображений */
 body:after {
   content: '';
   display: none;
@@ -110,7 +108,6 @@ body:after {
   opacity: 0;
 }
 
-/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
@@ -811,7 +808,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   margin-bottom: 0;
 }
 
-/* Новая секция 4: полноэкранная страница с фоном */
 .section-4 {
   width: 100vw;
   height: 100vh;
@@ -835,7 +831,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   z-index: 0;
 }
 
-/* Центрированный блок внутри .section-4 */
 .section-4 .center-block {
   position: absolute;
   width: 76.5625rem;
@@ -846,7 +841,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   z-index: 1;
 }
 
-/* Заголовок внутри центрированного блока */
 .section-4 .center-block {
   position: absolute;
   width: 76.5625rem;
@@ -856,41 +850,38 @@ html, body, .container-1, .header-wrapper, .text-3 {
   transform: translate(-50%, -50%);
 }
 
-/* Текст в левом верхнем углу .center-block */
 .section-4 .center-block-title {
   position: absolute;
   top: 1rem;
   left: 0;
   font-family: var(--font-family-montserrat);
-  font-size: 5.875rem;  /* 94px / 16 */
+  font-size: 5.875rem;
   color: #DF9D51;
   font-weight: 700;
   margin: 0;
   padding: 0;
 }
 
-/* Текстовый блок в левом нижнем углу .center-block */
 .section-4 .center-block-text {
   position: absolute;
   left: 0.5rem;
   bottom: 1rem;
-  width: 34.75rem;    /* 556px / 16 */
-  height: 35.875rem;  /* 574px / 16 */
+  width: 34.75rem; 
+  height: 35.875rem; 
   color: var(--text-white);
-  font-size: 1.125rem;  /* 18px / 16 */
+  font-size: 1.125rem; 
   line-height: 1.3;
   overflow: auto;
 }
 
-/* Заголовок справа сверху в .center-block */
 .section-4 .center-block-qa-title {
   position: absolute;
-  top: 3.3rem;  /* 116px / 16 */
+  top: 3.3rem;  
   left: 75%;
   transform: translateX(-50%);
-  width: 23.9375rem;  /* 383px / 16 */
-  height: 2.75rem;    /* 44px / 16 */
-  font-size: 2.25rem; /* 36px / 16 */
+  width: 23.9375rem; 
+  height: 2.75rem;   
+  font-size: 2.25rem;
   font-weight: 700;
   color: #DF9D51;
   font-family: var(--font-family-montserrat);
@@ -900,26 +891,24 @@ html, body, .container-1, .header-wrapper, .text-3 {
 
 .section-4 .center-block-qa-body {
   position: absolute;
-  top: calc(3.3rem + 2.75rem + 1.5rem);  /* под QA-title с увеличенным отступом */
+  top: calc(3.3rem + 2.75rem + 1.5rem); 
   left: 76.5%;
   transform: translateX(-50%);
-  width: 25.8rem;    /* уменьшено для компактности */
-  height: 39.125rem;  /* 626px / 16 */
-  font-size: 1.125rem;   /* 18px / 16 */
+  width: 25.8rem;   
+  height: 39.125rem; 
+  font-size: 1.125rem;  
   line-height: 1.3;
   color: var(--text-white);
   overflow: auto;
 }
 
-/* Футер внизу страницы */
 .footer {
   width: 100vw;
-  height: 9.52rem; /* возвращаем оригинальный размер */
+  height: 9.52rem; 
   background: #000;
   position: relative;
 }
 
-/* Отключаем snap-align для футера, чтобы он не занимал весь экран */
 .container-1, .section-2, .showreel, .section-3, .section-4 {
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -927,7 +916,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   width: 100vw;
 }
 
-/* Текст по центру футера */
 .footer-text {
   position: absolute;
   top: 50%;
@@ -935,7 +923,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   transform: translate(-50%, -50%);
   text-align: center;
   font-family: var(--font-family-montserrat);
-  font-size: 1.8275rem; /* было 2.15rem, уменьшено на 15% */
+  font-size: 1.8275rem; 
   color: var(--text-white);
   font-weight: 300;
   margin: 0;
@@ -945,30 +933,28 @@ html, body, .container-1, .header-wrapper, .text-3 {
   font-weight: 700;
 }
 
-/* QR-код в футере справа */
 .footer-qr {
   position: absolute;
   top: 50%;
-  right: 6.2475rem; /* было 7.35rem, уменьшено на 15% */
+  right: 6.2475rem;
   transform: translateY(-50%);
-  width: 8.5425rem; /* было 10.05rem, уменьшено на 15% */
-  height: 8.5425rem; /* было 10.05rem, уменьшено на 15% */
+  width: 8.5425rem; 
+  height: 8.5425rem; 
 }
 
-/* Блок ссылок слева в футере */
 .footer-links {
   position: absolute;
   top: 50%;
-  left: 6.2475rem; /* было 7.35rem, уменьшено на 15% */
+  left: 6.2475rem;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 0.34rem; /* было 0.4rem, уменьшено на 15% */
+  gap: 0.34rem; 
 }
 
 .footer-link-text {
   font-family: var(--font-family-montserrat);
-  font-size: 0.765rem; /* было 0.9rem, уменьшено на 15% */
+  font-size: 0.765rem; 
   color: var(--text-white);
   font-weight: 700;
   margin: 0;
@@ -982,7 +968,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   text-decoration: underline;
 }
 
-/* Стили для страницы videoeditor.html */
 .fullscreen-bg {
   width: 100vw;
   height: 100vh;
@@ -1091,8 +1076,8 @@ html, body, .container-1, .header-wrapper, .text-3 {
 }
 
 .bottom-block-center {
-  width: 66.625rem;   /* 1066px / 16 */
-  height: 1.625rem;   /* 26px / 16 */
+  width: 66.625rem;  
+  height: 1.625rem;   
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1317,7 +1302,16 @@ a.videoeditor-btn {
   z-index: 2;
 }
 
-.showreel-video,
+.showreel-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 592.2px;
+  height: 333px;
+  border: none;
+  z-index: 1;
+}
+
 .showreel-mp4 {
   position: absolute;
   left: 0;
@@ -1325,9 +1319,6 @@ a.videoeditor-btn {
   width: 592.2px;
   height: 333px;
   border: none;
-}
-
-.showreel-mp4 {
   z-index: 3;
   cursor: pointer;
 }
@@ -1359,7 +1350,6 @@ a.videoeditor-btn {
   z-index: 1;
 }
 
-/* Стили для цветов, которые будут отдаляться от курсора */
 .flower-repel {
   position: absolute;
   z-index: 2;
@@ -1400,7 +1390,6 @@ a.videoeditor-btn {
   width: 280px;
 }
 
-/* Стили для постраничной прокрутки */
 .scroll-container {
   height: 100vh;
   overflow-y: scroll;
@@ -1410,7 +1399,7 @@ a.videoeditor-btn {
   scrollbar-color: #DF9D51 #000;
   width: 100%;
   max-width: 100vw;
-  position: fixed; /* Фиксируем контейнер на всю страницу */
+  position: fixed; 
   top: 0;
   left: 0;
 }
@@ -1422,7 +1411,6 @@ a.videoeditor-btn {
   width: 100vw;
 }
 
-/* Стилизация полосы прокрутки */
 .scroll-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -1440,6 +1428,7 @@ a.videoeditor-btn {
   position: relative;
   width: 592.2px;
   height: 333px;
+  z-index: 2;
 }
 
 .click-text {
