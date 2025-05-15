@@ -122,5 +122,22 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
     }
   });
+
+  // Smooth scroll for "ПОЧЕМУ Я?" link only
+  const whyMeLink = document.querySelector('a.nav-link[href="#whyme"]');
+  if (whyMeLink) {
+    whyMeLink.addEventListener('click', function(e) {
+      const targetSection = document.getElementById('whyme');
+      if (targetSection) {
+        e.preventDefault();
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        // Обновляем currentSectionIndex на индекс whyme
+        const index = allSections.findIndex(section => section && section.id === 'whyme');
+        if (index !== -1) {
+          currentSectionIndex = index;
+        }
+      }
+    });
+  }
 }); 
 //
