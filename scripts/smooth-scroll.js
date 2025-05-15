@@ -39,6 +39,27 @@ document.addEventListener('DOMContentLoaded', function() {
   
   let isScrolling = false;
   
+  // Функция для прокрутки к разделу с универсальным подходом
+  function scrollToSection(index) {
+    // Проверяем, существует ли нужный раздел
+    if (index >= 0 && index < allSections.length) {
+      const section = allSections[index];
+      
+      // Используем более надежный метод прокрутки с запасными вариантами
+      try {
+        // Пытаемся использовать плавную прокрутку
+        section.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      } catch (error) {
+        // Если плавная прокрутка не поддерживается, используем обычную
+        window.scrollTo(0, section.offsetTop);
+        allert("not supported");
+      }
+    }
+  }
+  
   // Handle mouse wheel scrolling
   window.addEventListener('wheel', function(e) {
     e.preventDefault();
@@ -58,11 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
       
-      allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+      scrollToSection(currentSectionIndex);
       
+      // Блокируем скролл на 1.5 секунды, чтобы избежать слишком быстрого пролистывания
       setTimeout(() => {
         isScrolling = false;
-      }, 800);
+      }, 1000);
     }
   }, { passive: false });
   
@@ -72,28 +94,52 @@ document.addEventListener('DOMContentLoaded', function() {
       case 'ArrowDown':
       case 'PageDown':
         e.preventDefault();
-        if (currentSectionIndex < allSections.length - 1) {
+        if (!isScrolling && currentSectionIndex < allSections.length - 1) {
+          isScrolling = true;
           currentSectionIndex++;
-          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+          scrollToSection(currentSectionIndex);
+          
+          setTimeout(() => {
+            isScrolling = false;
+          }, 1500);
         }
         break;
       case 'ArrowUp':
       case 'PageUp':
         e.preventDefault();
-        if (currentSectionIndex > 0) {
+        if (!isScrolling && currentSectionIndex > 0) {
+          isScrolling = true;
           currentSectionIndex--;
-          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+          scrollToSection(currentSectionIndex);
+          
+          setTimeout(() => {
+            isScrolling = false;
+          }, 1500);
         }
         break;
       case 'Home':
         e.preventDefault();
-        currentSectionIndex = 0;
-        allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+        if (!isScrolling) {
+          isScrolling = true;
+          currentSectionIndex = 0;
+          scrollToSection(currentSectionIndex);
+          
+          setTimeout(() => {
+            isScrolling = false;
+          }, 1500);
+        }
         break;
       case 'End':
         e.preventDefault();
-        currentSectionIndex = allSections.length - 1;
-        allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+        if (!isScrolling) {
+          isScrolling = true;
+          currentSectionIndex = allSections.length - 1;
+          scrollToSection(currentSectionIndex);
+          
+          setTimeout(() => {
+            isScrolling = false;
+          }, 1500);
+        }
         break;
     }
   });
