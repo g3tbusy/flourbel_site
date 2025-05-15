@@ -45,18 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (index >= 0 && index < allSections.length) {
       const section = allSections[index];
       
-      // Используем более надежный метод прокрутки с запасными вариантами
-      try {
-        // Пытаемся использовать плавную прокрутку
-        section.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start' 
-        });
-      } catch (error) {
-        // Если плавная прокрутка не поддерживается, используем обычную
-        window.scrollTo(0, section.offsetTop);
-        allert("not supported");
-      }
+      // Простой и надежный метод прокрутки, который работает во всех браузерах
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+      });
+      
+      // Запасной вариант, если smoothScroll не сработает
+      setTimeout(function() {
+        // Проверяем, произошла ли прокрутка
+        if (window.scrollY !== section.offsetTop) {
+          // Используем обычную прокрутку как запасной вариант
+          window.scrollTo(0, section.offsetTop);
+        }
+      }, 100);
     }
   }
   
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       scrollToSection(currentSectionIndex);
       
-      // Блокируем скролл на 1.5 секунды, чтобы избежать слишком быстрого пролистывания
+      // Блокируем скролл на 1 секунду
       setTimeout(() => {
         isScrolling = false;
       }, 1000);
@@ -101,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           setTimeout(() => {
             isScrolling = false;
-          }, 1500);
+          }, 1000);
         }
         break;
       case 'ArrowUp':
@@ -114,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           setTimeout(() => {
             isScrolling = false;
-          }, 1500);
+          }, 1000);
         }
         break;
       case 'Home':
@@ -126,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           setTimeout(() => {
             isScrolling = false;
-          }, 1500);
+          }, 1000);
         }
         break;
       case 'End':
@@ -138,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           setTimeout(() => {
             isScrolling = false;
-          }, 1500);
+          }, 1000);
         }
         break;
     }
