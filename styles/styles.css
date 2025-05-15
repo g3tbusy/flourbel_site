@@ -19,15 +19,13 @@ body:after {
   content: '';
   display: none;
   background-image: 
-    url('../images/background.png'),
-    url('../images/2-2-2.png'),
-    url('../images/showreel_bg_1.png'),
-    url('../images/showreel_bg_2.png'),
-    url('../images/lamp.png'),
-    url('../images/videographer.png'),
-    url('../images/portfolio.png'),
-    url('../images/montajer.png'),
-    url('../images/contacts_bg.png');
+    url('../images/container-1/background.png'),
+    url('../images/general/noise_bg.png'),
+    url('../images/section-3/moon.png'),
+    url('../images/general/videographer_bg.png'),
+    url('../images/general/portfolio_bg.png'),
+    url('../images/general/videoeditor_bg.png'),
+    url('../images/general/contacts_bg.png');
 }
 
 .text-white {
@@ -132,7 +130,7 @@ img {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #000 url('../images/background.png') center center/cover no-repeat;
+  background: #000 url('../images/container-1/background.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -491,7 +489,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/2-2-2.png') center center/cover no-repeat;
+  background: url('../images/general/noise_bg.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -644,7 +642,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/lamp.png');
+  background-image: url('../images/section-3/moon.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -822,7 +820,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/2-2-2.png') center center/cover no-repeat;
+  background: url('../images/general/noise_bg.png') center center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -975,7 +973,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
   padding-top: 0;
   background-color: #000;
   will-change: background-image;
-  background-image: url('../images/portfolio.png');
+  background-image: url('../images/general/portfolio_bg.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1116,7 +1114,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .contacts-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('../images/contacts_bg.png');
+  background-image: url('../images/general/contacts_bg.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1125,7 +1123,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .portfolio-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('../images/portfolio.png');
+  background-image: url('../images/general/portfolio_bg.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1134,7 +1132,7 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .videoeditor-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('../images/montajer.png');
+  background-image: url('../images/general/videoeditor_bg.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1143,16 +1141,16 @@ html, body, .container-1, .header-wrapper, .text-3 {
 .videographer-page .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('../images/videographer.png');
+  background-image: url('../images/general/videographer_bg.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-body:not(.portfolio-page):not(.contacts-page) .fullscreen-bg {
+body:not(.portfolio-page):not(.contacts-page):not(.videographer-page) .fullscreen-bg {
   background-color: #000;
   will-change: background-image;
-  background-image: url('../images/montajer.png');
+  background-image: url('../images/general/videoeditor_bg.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1362,7 +1360,7 @@ a.videoeditor-btn {
   bottom: 0;
   left: 0;
   width: 470px;
-  z-index: 3;
+  z-index: 1;
 }
 
 #flower2 {

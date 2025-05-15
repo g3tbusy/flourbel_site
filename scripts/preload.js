@@ -3,18 +3,16 @@
  */
 function preloadImages() {
   const images = [
-    'images/background.png',
-    'images/2-2-2.png',
-    'images/showreel_bg_1.png',
-    'images/showreel_bg_2.png',
-    'images/lamp.png',
-    'images/videographer.png',
-    'images/portfolio.png',
-    'images/montajer.png',
-    'images/contacts_bg.png',
-    'images/image-4.png',
-    'images/DANIEL MELNIKOV.svg',
-    'images/footer_qr.png',
+    'images/container-1/background.png',
+    'images/general/noise_bg.png',
+    'images/section-3/moon.png',
+    'images/general/videographer_bg.png',
+    'images/general/portfolio_bg.png',
+    'images/general/videoeditor_bg.png',
+    'images/general/contacts_bg.png',
+    'images/general/photo.png',
+    'images/general/DANIEL MELNIKOV.svg',
+    'images/general/footer_qr.png',
     'images/section-3/sky_right.png',
     'images/section-3/sky_left.png'
   ];
