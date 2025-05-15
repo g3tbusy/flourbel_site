@@ -39,29 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   let isScrolling = false;
   
-  // Функция для прокрутки к разделу с универсальным подходом
-  function scrollToSection(index) {
-    // Проверяем, существует ли нужный раздел
-    if (index >= 0 && index < allSections.length) {
-      const section = allSections[index];
-      
-      // Простой и надежный метод прокрутки, который работает во всех браузерах
-      window.scrollTo({
-        top: section.offsetTop,
-        behavior: 'smooth'
-      });
-      
-      // Запасной вариант, если smoothScroll не сработает
-      setTimeout(function() {
-        // Проверяем, произошла ли прокрутка
-        if (window.scrollY !== section.offsetTop) {
-          // Используем обычную прокрутку как запасной вариант
-          window.scrollTo(0, section.offsetTop);
-        }
-      }, 100);
-    }
-  }
-  
   // Handle mouse wheel scrolling
   window.addEventListener('wheel', function(e) {
     e.preventDefault();
@@ -81,9 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
       
-      scrollToSection(currentSectionIndex);
+      allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
       
-      // Блокируем скролл на 1 секунду
       setTimeout(() => {
         isScrolling = false;
       }, 1000);
@@ -99,8 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isScrolling && currentSectionIndex < allSections.length - 1) {
           isScrolling = true;
           currentSectionIndex++;
-          scrollToSection(currentSectionIndex);
-          
+          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => {
             isScrolling = false;
           }, 1000);
@@ -112,8 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isScrolling && currentSectionIndex > 0) {
           isScrolling = true;
           currentSectionIndex--;
-          scrollToSection(currentSectionIndex);
-          
+          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => {
             isScrolling = false;
           }, 1000);
@@ -124,8 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isScrolling) {
           isScrolling = true;
           currentSectionIndex = 0;
-          scrollToSection(currentSectionIndex);
-          
+          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => {
             isScrolling = false;
           }, 1000);
@@ -136,8 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isScrolling) {
           isScrolling = true;
           currentSectionIndex = allSections.length - 1;
-          scrollToSection(currentSectionIndex);
-          
+          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => {
             isScrolling = false;
           }, 1000);

@@ -36,28 +36,8 @@ body:after {
 .title-1 {
   font-size: 48px;
   margin-bottom: 56px;
-  background: linear-gradient(-45deg, #B1FFFF, #EF9DFF, #8CFFD1, #A39DFF, #FFFFFF);
-  background-size: 300%;
+  color: #FFFFFF;
   font-weight: 700;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  animation: animated_gradient 10s ease-in-out infinite;
-  -moz-animation: animated_gradient 10s ease-in-out infinite;
-  -webkit-animation: animated_gradient 10s ease-in-out infinite;
-}
-
-@keyframes animated_gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@-webkit-keyframes animated_gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 .title-2 {
