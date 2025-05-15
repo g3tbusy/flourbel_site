@@ -2,6 +2,15 @@
  * Enables smooth scrolling between sections
  */
 document.addEventListener('DOMContentLoaded', function() {
+  // Add smooth scrolling CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    html {
+      scroll-behavior: smooth;
+    }
+  `;
+  document.head.appendChild(style);
+
   const allSections = [
     document.querySelector('.container-1'),
     document.querySelector('.section-2'),
@@ -12,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
   
   let currentSectionIndex = 0;
+  let isScrolling = false;
+  let lastScrollTime = 0;
+  let scrollAccumulator = 0;
+  const SCROLL_COOLDOWN = 1000; // 1 second cooldown
+  const SCROLL_THRESHOLD = 50; // Threshold for touchpad scroll accumulation
   
   /**
    * Gets the current visible section based on scroll position
@@ -37,32 +51,43 @@ document.addEventListener('DOMContentLoaded', function() {
   
   currentSectionIndex = getCurrentSection();
   
-  let isScrolling = false;
+  function scrollToSection(index) {
+    const currentTime = Date.now();
+    if (currentTime - lastScrollTime < SCROLL_COOLDOWN) {
+      return; // Ignore scroll if cooldown hasn't passed
+    }
+
+    if (index >= 0 && index < allSections.length) {
+      isScrolling = true;
+      currentSectionIndex = index;
+      allSections[index].scrollIntoView({ behavior: 'smooth' });
+      lastScrollTime = currentTime;
+      
+      setTimeout(() => {
+        isScrolling = false;
+      }, SCROLL_COOLDOWN);
+    }
+  }
   
   // Handle mouse wheel scrolling
   window.addEventListener('wheel', function(e) {
     e.preventDefault();
     
     if (!isScrolling) {
-      isScrolling = true;
+      // Accumulate scroll events for touchpad
+      scrollAccumulator += e.deltaY;
       
-      if (e.deltaY > 0) {
-        // Scroll down
-        if (currentSectionIndex < allSections.length - 1) {
-          currentSectionIndex++;
+      // Check if accumulated scroll exceeds threshold
+      if (Math.abs(scrollAccumulator) >= SCROLL_THRESHOLD) {
+        if (scrollAccumulator > 0) {
+          // Scroll down
+          scrollToSection(currentSectionIndex + 1);
+        } else {
+          // Scroll up
+          scrollToSection(currentSectionIndex - 1);
         }
-      } else {
-        // Scroll up
-        if (currentSectionIndex > 0) {
-          currentSectionIndex--;
-        }
+        scrollAccumulator = 0; // Reset accumulator after scroll
       }
-      
-      allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-      
-      setTimeout(() => {
-        isScrolling = false;
-      }, 1000);
     }
   }, { passive: false });
   
@@ -72,47 +97,27 @@ document.addEventListener('DOMContentLoaded', function() {
       case 'ArrowDown':
       case 'PageDown':
         e.preventDefault();
-        if (!isScrolling && currentSectionIndex < allSections.length - 1) {
-          isScrolling = true;
-          currentSectionIndex++;
-          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-          setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
+        if (!isScrolling) {
+          scrollToSection(currentSectionIndex + 1);
         }
         break;
       case 'ArrowUp':
       case 'PageUp':
         e.preventDefault();
-        if (!isScrolling && currentSectionIndex > 0) {
-          isScrolling = true;
-          currentSectionIndex--;
-          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-          setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
+        if (!isScrolling) {
+          scrollToSection(currentSectionIndex - 1);
         }
         break;
       case 'Home':
         e.preventDefault();
         if (!isScrolling) {
-          isScrolling = true;
-          currentSectionIndex = 0;
-          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-          setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
+          scrollToSection(0);
         }
         break;
       case 'End':
         e.preventDefault();
         if (!isScrolling) {
-          isScrolling = true;
-          currentSectionIndex = allSections.length - 1;
-          allSections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-          setTimeout(() => {
-            isScrolling = false;
-          }, 1000);
+          scrollToSection(allSections.length - 1);
         }
         break;
     }
