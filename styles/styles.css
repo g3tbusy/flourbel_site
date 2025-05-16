@@ -1310,7 +1310,6 @@ a.videoeditor-btn {
   border: none;
   z-index: 3;
   cursor: pointer;
-  object-fit: cover;
 }
 
 .portfolio-page .center-block-videoeditor a {
