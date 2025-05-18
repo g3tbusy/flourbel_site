@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Меньший шрифт для мобильных
-  subtitleElement.style.fontSize = '22px';
+  subtitleElement.style.fontSize = '15px';
   subtitleElement.style.fontWeight = '300';
   subtitleElement.style.letterSpacing = '0.02em';
   
