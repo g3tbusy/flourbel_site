@@ -148,7 +148,7 @@ img {
   justify-content: center;
   align-items: center;
   margin: 0 0 32px 0;
-  z-index: 10;
+  z-index: 5;
 }
 
 .text-3 {
@@ -165,8 +165,6 @@ img {
   position: relative;
   z-index: 2;
   margin: 0 0 32px 0;
-  text-align: center;
-  width: 100%;
   text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.25);
   line-height: 1;
 }
@@ -325,6 +323,213 @@ img {
   }
 }
 
+/* Mobile and tablet responsiveness */
+@media (max-width: 992px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .scroll-container {
+    position: relative;
+    height: auto;
+    overflow-y: visible;
+  }
+  
+  .container-1 {
+    background: #000 url('../mobile/images/container-1/mobile_background.png') center center/cover no-repeat;
+    height: 100vh; /* Ensure full height on mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .container-1-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+  }
+  
+  .center-image-outer {
+    min-height: auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .header-wrapper {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: auto;
+    transform: none;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .text-3 {
+    font-size: 90px;
+    padding: 0;
+    text-align: left;
+    opacity: 0.71;
+    line-height: 1;
+  }
+  
+  .title-1 {
+    font-size: 90px;
+    margin: 0;
+    display: inline-block;
+    white-space: pre-line;
+    content: "Melnikov\nMedia";
+  }
+  
+  .text-3 .title-1:after {
+    content: "\AMelnikov\AMedia";
+    white-space: pre;
+  }
+  
+  /* Hide videos on mobile and tablet */
+  .card-11-center,
+  .card-11-center-left,
+  .card-11-lower,
+  .card-11-lower-left,
+  .card-12-center,
+  .card-12-center-left,
+  .card-7-center,
+  .showreel-mp4,
+  .showreel-video {
+    display: none;
+  }
+  
+  .center-image-relative {
+    display: none;
+  }
+  
+  .subtitle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    margin-top: 0;
+    padding: 0 20px;
+    line-height: 1.2;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .subtitle-text .line {
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .container-1-inner,
+  .center-image-outer {
+    display: none !important;
+  }
+
+  .mobile-main-header {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background: none;
+    text-align: left;
+    padding-top: 40px;
+  }
+  .mobile-main-header .text-3 {
+    font-size: 90px;
+    padding-left: 30px;
+    opacity: 0.71;
+    margin: 0;
+    line-height: 1;
+  }
+  .mobile-main-header .title-1 {
+    font-size: 90px;
+    margin: 0;
+    display: inline-block;
+    white-space: pre-line;
+  }
+  .mobile-main-header .subtitle-text {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+    margin-top: 30px;
+    line-height: 1.2;
+  }
+  .mobile-main-header .subtitle-text .line {
+    white-space: nowrap;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 993px) {
+  .mobile-main-header {
+    display: none !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-1 {
+    background-position: center top;
+  }
+  
+  .header-wrapper {
+    top: 20px;
+    position: relative;
+    margin-bottom: 0;
+  }
+  
+  .text-3 {
+    font-size: 72px;
+  }
+  
+  .title-1 {
+    font-size: 72px;
+  }
+  
+  .subtitle-text {
+    font-size: 90px;
+    padding: 0 15px;
+  }
+  
+  .subtitle-text .line {
+    margin: 0;
+    padding: 5px 0;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+  .header-wrapper {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .text-3 {
+    font-size: 56px;
+  }
+  
+  .title-1 {
+    font-size: 56px;
+  }
+  
+  .subtitle-text {
+    font-size: 72px;
+  }
+}
+
 .center-image-block {
   display: flex;
   justify-content: center;
@@ -336,7 +541,7 @@ img {
   bottom: 50px;
   font-family: var(--font-family-montserrat);
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 300;
   color: var(--text-white);
   text-align: center;
   width: 100%;
@@ -381,22 +586,18 @@ img {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @keyframes fadeOut {
   from {
     opacity: 1;
-    transform: translateY(0);
   }
   to {
     opacity: 0;
-    transform: translateY(-10px);
   }
 }
 
@@ -1492,5 +1693,74 @@ a.videoeditor-btn {
   height: 18.6875rem;
   background: none;
   border-radius: 1.5rem;
+}
+
+/* ПОЛНОСТЬЮ ОТДЕЛЬНЫЕ мобильные стили, которые никак не влияют на десктоп */
+@media (max-width: 992px) {
+  .mobile-device .container-1 {
+    background: #000 url('../mobile/images/container-1/mobile_background.png') center center/cover no-repeat;
+  }
+
+  .mobile-device .header-wrapper {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: auto;
+    margin: 0;
+    display: block;
+  }
+
+  .mobile-device .text-3 {
+    font-size: 90px;
+    padding: 0;
+    text-align: left;
+    opacity: 0.71;
+    margin: 0;
+  }
+
+  .mobile-device .title-1 {
+    font-size: 90px;
+    margin: 0;
+  }
+
+  .mobile-device .center-image-relative {
+    display: none;
+  }
+
+  /* Скрываем дублирующийся текст */
+  .mobile-device .text-3:before,
+  .mobile-device .text-3:after {
+    display: none;
+  }
+
+  .mobile-device .text-3 span:before,
+  .mobile-device .text-3 span:after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-device .text-3 {
+    font-size: 72px;
+  }
+
+  .mobile-device .title-1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mobile-device .header-wrapper {
+    top: 20px;
+    left: 20px;
+  }
+
+  .mobile-device .text-3 {
+    font-size: 56px;
+  }
+
+  .mobile-device .title-1 {
+    font-size: 56px;
+  }
 }
 /*  */

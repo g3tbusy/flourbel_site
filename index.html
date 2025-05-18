@@ -2,26 +2,68 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Melnikov Media — Видеомонтаж, съемка и моушн</title>
     <meta name="description" content="Профессиональный видеомонтаж, съемка, моушн-дизайн. Портфолио и контакты.">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preload" href="images/container-1/background.webp" as="image">
+    <link rel="preload" href="mobile/images/container-1/mobile_background.png" as="image">
     <link rel="preload" href="images/general/noise_bg.webp" as="image">
     <link rel="preload" href="images/general/DANIEL MELNIKOV.svg" as="image">
     <script src="scripts/preload.js" defer></script>
+    <script>
+      // Detect mobile and tablet devices
+      function isMobileOrTablet() {
+        return window.matchMedia('(max-width: 992px)').matches;
+      }
+      
+      // Add a class to the body based on device type
+      document.addEventListener('DOMContentLoaded', function() {
+        if (isMobileOrTablet()) {
+          document.body.classList.add('mobile-device');
+          
+          // Add line break for mobile
+          const mainTitle = document.getElementById('main-title');
+          if (mainTitle) {
+            mainTitle.innerHTML = 'Melnikov<br>Media';
+            // Очищаем все псевдоэлементы
+            mainTitle.style.setProperty('content', 'none', 'important');
+          }
+          
+          // Disable heavy animations on mobile
+          const heavyAnimationScripts = [
+            'scripts/cards-movement.js',
+            'scripts/flower-movement.js'
+          ];
+          
+          // Remove heavy animation scripts
+          document.querySelectorAll('script').forEach(script => {
+            if (heavyAnimationScripts.some(src => script.src.includes(src))) {
+              script.remove();
+            }
+          });
+        }
+      });
+    </script>
   </head>
 
   <body>
     <div class="scroll-container">
       <header class="container-1" id="container-1">
+      <!-- Мобильный заголовок и подзаголовок -->
+      <div class="mobile-main-header">
+        <p class="text-3"><span class="title-1">Melnikov<br>Media</span></p>
+        <div class="subtitle-text" id="animated-subtitle-mobile"></div>
+      </div>
+      <!-- /Мобильный заголовок и подзаголовок -->
       <div class="container-1-inner">
       <div class="center-image-outer">
         <div class="header-wrapper">
-          <p class="text-3"><span class="title-1">Melnikov Media</span></p>
+          <p class="text-3"><span class="title-1" id="main-title">Melnikov Media</span></p>
         </div>
         <div class="center-image-block">
           <div class="center-image-relative">
+            <!-- Videos hidden on mobile via CSS -->
             <video class="card-11-center-left" autoplay muted loop playsinline>
               <source src="videos/main_page/main_2.mp4" type="video/mp4">
             </video>
@@ -229,6 +271,7 @@ Blender (3D). Также в этом ролике <br>
 
     <script src="scripts/container-scale.js" defer></script>
     <script src="scripts/subtitle-animation.js" defer></script>
+    <script src="mobile/scripts/subtitle-animation-mobile.js" defer></script>
     <script src="scripts/background-mirror.js" defer></script>
     <script src="scripts/showreel-video.js" defer></script>
     <script src="scripts/subtitle-rotation.js" defer></script>
