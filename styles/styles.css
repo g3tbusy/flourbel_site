@@ -364,8 +364,8 @@ img {
   
   .header-wrapper {
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 8vh;
+    left: 8vw;
     width: auto;
     transform: none;
     margin: 0;
@@ -373,7 +373,7 @@ img {
   }
   
   .text-3 {
-    font-size: 90px;
+    font-size: 5vw;
     padding: 0;
     text-align: left;
     opacity: 0.71;
@@ -381,7 +381,7 @@ img {
   }
   
   .title-1 {
-    font-size: 90px;
+    font-size: 5vw;
     margin: 0;
     display: inline-block;
     white-space: pre-line;
@@ -415,8 +415,8 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 120px;
-    margin-top: 0;
+    font-size: 16vw;
+    margin-top: 2.5vw;
     line-height: 1.2;
     width: 100%;
     max-width: 100%;
@@ -441,19 +441,19 @@ img {
     z-index: 10;
     background: none;
     text-align: left;
-    padding-top: 40px;
+    padding-top: 10vw;
   }
   .mobile-main-header .text-3 {
     position: absolute;
-    left: 20px;
-    top: 60px;
-    font-size: 30px;
+    left: 9vw;
+    top: 26vw;
+    font-size: 5vw;
     opacity: 0.71;
     margin: 0;
     line-height: 1;
   }
   .mobile-main-header .title-1 {
-    font-size: 90px;
+    font-size: 5vw;
     margin: 0;
     display: inline-block;
     white-space: pre-line;
@@ -463,11 +463,11 @@ img {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 4.8vw;
     width: 100vw;
     text-align: center;
     padding-left: 0;
-    margin-top: 0;
+    margin-top: 4vw;
     line-height: 1.2;
     z-index: 100;
   }
@@ -482,7 +482,7 @@ img {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 200px;
+    width: 53.3vw;
     height: auto;
     z-index: 50;
     pointer-events: none;
@@ -494,12 +494,131 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    width: 200px;
+    width: 53.3vw;
     height: auto;
     z-index: 50;
     pointer-events: none;
     user-select: none;
     display: block;
+  }
+  
+  /* Стили для года 2025 в мобильной версии */
+  .mobile-main-header .year-text {
+    position: absolute;
+    bottom: 8vw;
+    right: 9.3vw;
+    font-size: 8vw;
+    display: block; /* Показать на мобильных */
+  }
+  
+  .year-text {
+    display: block; /* Показать на мобильных */
+  }
+  
+  /* Адаптация section-2 для мобильных устройств */
+  .mobile-device .section-2 {
+    background: #000 url('../mobile/images/section-2/main_bg.png') center center/cover no-repeat;
+  }
+  
+  .mobile-device .section-2 .section-2-bg,
+  .mobile-device .section-2 .section-2-signature,
+  .mobile-device .section-2 .section-2-signature-left,
+  .mobile-device .section-2 .image-block-4-wrapper {
+    display: none;
+  }
+  
+  /* Стили для изображения слева в section-2 на мобильных */
+  .mobile-device .section-2-mobile-photo {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40vw; /* 40% от ширины viewport */
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
+  }
+  
+  /* Стили для блока с именем и должностью в section-2 на мобильных */
+  .mobile-device .section-2-mobile-author {
+    display: block;
+    position: absolute;
+    top: 8%;
+    right: calc(10vw - 5.3vw);
+    font-family: var(--font-family-montserrat);
+    font-size: 3.5vw;
+    color: var(--text-white);
+    line-height: 1.3;
+    z-index: 7;
+  }
+  
+  /* Стили для основного изображения в section-2 на мобильных */
+  .mobile-device .section-2-mobile-main-photo {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: auto;
+    z-index: 6;
+    pointer-events: none;
+  }
+  
+  /* Стили для заголовка над фото в section-2 на мобильных */
+  .mobile-device .section-2-mobile-title {
+    display: block;
+    position: absolute;
+    bottom: calc(45% + 30vw + 3.5vw);
+    left: calc(40vw + 3.5vw);
+    right: 2.9vw;
+    font-family: var(--font-family-montserrat);
+    font-size: 8.5vw;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.2;
+    z-index: 7;
+    text-shadow: 0 1vw 0 rgba(0, 0, 0, 0.61);
+  }
+  
+  /* Стили для текстового блока в section-2 на мобильных */
+  .mobile-device .section-2-mobile-text {
+    display: block;
+    position: absolute;
+    top: calc(45% + 30vw + 3.5vw);
+    left: calc(40vw + 3.5vw);
+    right: 2.9vw;
+    font-family: var(--font-family-montserrat);
+    font-size: 3.2vw;
+    color: var(--text-white);
+    line-height: 1.5;
+    z-index: 7;
+  }
+  
+  /* Стили для мобильной навигации в section-2 */
+  .mobile-device .section-2-mobile-nav {
+    display: flex;
+    position: absolute;
+    bottom: 11%;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+    z-index: 8;
+    width: 100%;
+  }
+  
+  .mobile-device .section-2-mobile-nav .mobile-nav-link {
+    font-family: var(--font-family-montserrat);
+    font-weight: 700;
+    font-size: 3.2vw;
+    color: var(--text-white);
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 }
 
@@ -523,47 +642,106 @@ img {
   }
   
   .header-wrapper {
-    top: 20px;
+    top: 5.3vw;
     position: relative;
     margin-bottom: 0;
   }
   
   .text-3 {
-    font-size: 72px;
+    font-size: 8vw;
   }
   
   .title-1 {
-    font-size: 72px;
+    font-size: 8vw;
   }
   
   .subtitle-text {
-    font-size: 90px;
-    padding: 0 15px;
+    font-size: 16vw;
+    padding: 0 4vw;
   }
   
   .subtitle-text .line {
     margin: 0;
-    padding: 5px 0;
+    padding: 1.3vw 0;
+  }
+  
+  .year-text {
+    bottom: 5.3vw;
+    right: 8vw;
+    font-size: 11.2vw;
   }
 }
 
 /* Extra small devices */
 @media (max-width: 375px) {
   .header-wrapper {
-    top: 20px;
-    left: 20px;
+    top: 5.3vw;
+    left: 5.3vw;
   }
   
   .text-3 {
-    font-size: 56px;
+    font-size: 8vw;
   }
   
   .title-1 {
-    font-size: 56px;
+    font-size: 8vw;
   }
   
   .subtitle-text {
-    font-size: 72px;
+    font-size: 19.2vw;
+  }
+  
+  .year-text {
+    bottom: 5.3vw;
+    right: 5.3vw;
+    font-size: 9.6vw;
+  }
+}
+
+/* Стили для года 2025 */
+.year-text {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-family: var(--font-family-montserrat);
+  font-weight: 700;
+  font-size: 56px;
+  color: var(--text-white);
+  text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.25);
+  line-height: 1;
+  z-index: 10;
+  opacity: 0.71;
+  display: none; /* Скрыто по умолчанию для десктопных устройств */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 992px) {
+  .mobile-main-header .year-text {
+    position: absolute;
+    bottom: 100px;
+    right: 80px;
+    font-size: 30px;
+    display: block; /* Показать на мобильных */
+  }
+  
+  .year-text {
+    display: block; /* Показать на мобильных */
+  }
+}
+
+@media (max-width: 576px) {
+  .year-text {
+    bottom: 20px;
+    right: 30px;
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 375px) {
+  .year-text {
+    bottom: 20px;
+    right: 20px;
+    font-size: 36px;
   }
 }
 
@@ -1740,15 +1918,15 @@ a.videoeditor-btn {
 
   .mobile-device .header-wrapper {
     position: fixed;
-    top: 30px;
-    left: 30px;
+    top: 8vw;
+    left: 8vw;
     width: auto;
     margin: 0;
     display: block;
   }
 
   .mobile-device .text-3 {
-    font-size: 90px;
+    font-size: 8vw;
     padding: 0;
     text-align: left;
     opacity: 0.71;
@@ -1756,7 +1934,7 @@ a.videoeditor-btn {
   }
 
   .mobile-device .title-1 {
-    font-size: 90px;
+    font-size: 8vw;
     margin: 0;
   }
 
@@ -1774,30 +1952,202 @@ a.videoeditor-btn {
   .mobile-device .text-3 span:after {
     display: none;
   }
+  
+  /* Адаптация section-2 для мобильных устройств */
+  .mobile-device .section-2 {
+    background: #000 url('../mobile/images/section-2/main_bg.png') center center/cover no-repeat;
+  }
+  
+  .mobile-device .section-2 .section-2-bg,
+  .mobile-device .section-2 .section-2-signature,
+  .mobile-device .section-2 .section-2-signature-left,
+  .mobile-device .section-2 .image-block-4-wrapper {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
   .mobile-device .text-3 {
-    font-size: 72px;
+    font-size: 8vw;
   }
 
   .mobile-device .title-1 {
-    font-size: 30px;
+    font-size: 8vw;
   }
 }
 
 @media (max-width: 375px) {
   .mobile-device .header-wrapper {
-    top: 20px;
-    left: 20px;
+    top: 5.3vw;
+    left: 5.3vw;
   }
 
   .mobile-device .text-3 {
-    font-size: 56px;
+    font-size: 8vw;
   }
 
   .mobile-device .title-1 {
-    font-size: 30px;
+    font-size: 8vw;
   }
 }
-/*  */
+
+/* Адаптация section-2 для мобильных устройств */
+.mobile-device .section-2 {
+  background: #000 url('../mobile/images/section-2/main_bg.png') center center/cover no-repeat;
+}
+
+.mobile-device .section-2 .section-2-bg,
+.mobile-device .section-2 .section-2-signature,
+.mobile-device .section-2 .section-2-signature-left,
+.mobile-device .section-2 .image-block-4-wrapper {
+  display: none;
+}
+
+/* Стили для изображения слева в section-2 на мобильных */
+.section-2-mobile-photo {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-photo {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40vw; /* 40% от ширины viewport */
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Стили для заголовка над фото в section-2 на мобильных */
+.section-2-mobile-title {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-title {
+  display: block;
+  position: absolute;
+  bottom: calc(45% + 30vw + 120px); /* Снизу от верхнего края main_photo с отступом */
+  left: calc(40vw - 50px); /* 40vw (ширина bg_photo.png) + 13px отступ */
+  right: 11px; /* Отступ справа */
+  font-family: var(--font-family-montserrat);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.2;
+  z-index: 7;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.61); /* Тень текста: 4px вниз, четкая, прозрачность 61% */
+}
+
+.mobile-device .section-2-mobile-title p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Стили для основного изображения в section-2 на мобильных */
+.section-2-mobile-main-photo {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-main-photo {
+  display: block;
+  position: absolute;
+  top: 45%; /* Немного выше центра */
+  left: 55%; /* Немного правее центра */
+  transform: translate(-50%, -50%);
+  width: 60vw; /* Ширина относительно viewport */
+  height: auto;
+  z-index: 6; /* Выше чем левое изображение */
+  pointer-events: none;
+}
+
+/* Стили для текстового блока в section-2 на мобильных */
+.section-2-mobile-text {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-text {
+  display: block;
+  position: absolute;
+  top: calc(45% + 30vw + 13px); /* Позиция main_photo + примерная половина высоты + отступ */
+  left: calc(40vw + 13px); /* 40vw (ширина bg_photo.png) + 13px отступ */
+  right: 11px; /* Отступ справа */
+  font-family: var(--font-family-montserrat);
+  font-size: 12px;
+  color: var(--text-white);
+  line-height: 1.5;
+  z-index: 7;
+}
+
+.mobile-device .section-2-mobile-text p {
+  margin-bottom: 10px;
+}
+
+/* Стили для блока с именем и должностью в section-2 на мобильных */
+.section-2-mobile-author {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-author {
+  display: block;
+  position: absolute;
+  top: 8%; /* Позиционирование через top вместо bottom */
+  right: calc(10vw - 20px); /* Такое же смещение, как у других блоков */
+  font-family: var(--font-family-montserrat);
+  font-size: 13px;
+  color: var(--text-white);
+  line-height: 1.3;
+  z-index: 7;
+}
+
+.mobile-device .section-2-mobile-author .author-name {
+  font-weight: 700; /* Bold */
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-device .section-2-mobile-author .author-role {
+  font-weight: 300; /* Light */
+  margin: 0;
+  padding: 0;
+}
+
+/* Стили для заголовка над фото в section-2 на мобильных */
+.section-2-mobile-title {
+  display: none; /* По умолчанию скрыто */
+}
+
+/* Стили для мобильной навигации в section-2 */
+.section-2-mobile-nav {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-nav {
+  display: flex;
+  position: absolute;
+  bottom: 11%; /* Позиция от конца текстового блока + 26px вниз */
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 8;
+  width: 100%;
+}
+
+.mobile-device .section-2-mobile-nav .mobile-nav-link {
+  font-family: var(--font-family-montserrat);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text-white);
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-device .section-2-mobile-nav .mobile-nav-link:active {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
