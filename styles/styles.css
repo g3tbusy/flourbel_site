@@ -482,24 +482,26 @@ img {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 39.6vw;
+    width: 50vw;
     height: auto;
     z-index: 50;
     pointer-events: none;
     user-select: none;
     display: block;
+    border: 1px solid red;
   }
 
   .mobile-video-ramka-right {
     position: absolute;
     right: 0;
     top: 0;
-    width: 39.6vw;
+    width: 50vw;
     height: auto;
     z-index: 50;
     pointer-events: none;
     user-select: none;
     display: block;
+    border: 1px solid blue;
   }
   
   /* Стили для года 2025 в мобильной версии */
