@@ -665,6 +665,88 @@ img {
     text-align: center;
     z-index: 10;
   }
+
+  /* Адаптация showreel для мобильных устройств */
+  .mobile-device .showreel {
+    background-image: url("../mobile/images/showreel/showreel_bg.png");
+    min-height: 100vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mobile-device .showreel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50vw;
+    width: 200vw;
+    height: 45vh;
+    background-image: url("../mobile/images/showreel/maskvector.png");
+    background-size: 100% 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 2;
+    transform: scaleX(-1);
+  }
+
+  .mobile-device .showreel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../mobile/images/showreel/flowers_bg_temp.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .mobile-device .showreel .section-2-signature,
+  .mobile-device .showreel .section-2-signature-left,
+  .mobile-device .showreel .flower-repel,
+  .mobile-device .showreel .showreel-title,
+  .mobile-device .showreel .showreel-center,
+  .mobile-device .showreel .showreel-desc,
+  .mobile-device .showreel .showreel-note,
+  .mobile-device .showreel .showreel-video-wrapper,
+  .mobile-device .showreel .showreel-video,
+  .mobile-device .showreel .showreel-mp4,
+  .mobile-device .showreel .video-container {
+    display: none !important;
+  }
+
+  .showreel-mobile-desc {
+    display: block;
+    position: absolute;
+    top: calc(45vh + 2vw);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70vw;
+    font-size: 13px;
+    color: #fff;
+    text-align: left;
+    padding: 0 16px;
+    z-index: 10;
+    font-family: var(--font-family-montserrat);
+    line-height: 1.5;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .showreel-mobile-desc {
+    display: none !important;
+  }
 }
 
 @media (min-width: 993px) {
