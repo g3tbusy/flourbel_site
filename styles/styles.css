@@ -482,7 +482,7 @@ img {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 32.6vw;
+    width: 39.6vw;
     height: auto;
     z-index: 50;
     pointer-events: none;
@@ -494,7 +494,7 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    width: 32.6vw;
+    width: 39.6vw;
     height: auto;
     z-index: 50;
     pointer-events: none;
