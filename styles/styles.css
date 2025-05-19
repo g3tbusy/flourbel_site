@@ -2214,3 +2214,9 @@ a.videoeditor-btn {
   pointer-events: none;
   margin: 2px 0;
 }
+
+html, body {
+  margin: 0;
+  padding-top: env(safe-area-inset-top); /* Для iPhone с вырезами */
+  background-color: #000; /* Цвет статус-бара */
+}
