@@ -906,25 +906,34 @@ html, body {
     background-color: #000; /* Цвет статус-бара */
   }
 
-  .showreel-mask-vector {
+  .showreel-mp4-mobile {
     display: none;
   }
   
-  .mobile-device .showreel-mask-vector {
+  .mobile-device .showreel-mp4-mobile {
     display: block;
     position: absolute;
     top: 0;
-    left: -50vw;
-    width: 200vw;
-    height: 45vh;
-    background-image: url("../mobile/images/showreel/maskvector.svg");
-    background-size: 100% 100%;
-    background-position: top center;
-    background-repeat: no-repeat;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250vw;
+    max-width: none;
+    height: auto;
     pointer-events: none;
     z-index: 2;
-  }
 
-  .mobile-device .showreel::before {
-    display: none;
-  }
+    /* Маска */
+mask-image: url('../mobile/images/showreel/maskvector.svg'); /* белая звезда на прозрачном фоне */
+mask-size: contain;
+mask-repeat: no-repeat;
+mask-position: center;
+
+/* Для браузеров WebKit (Safari, Chrome) */
+-webkit-mask-image: url('../mobile/images/showreel/maskvector.svg');
+-webkit-mask-size: contain;
+-webkit-mask-repeat: no-repeat;
+-webkit-mask-position: center;
+
+mask-mode: luminance;
+-webkit-mask-mode: luminance;
+    }
