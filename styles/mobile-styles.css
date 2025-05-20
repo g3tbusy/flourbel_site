@@ -928,11 +928,11 @@ mask-size: contain;
 mask-repeat: no-repeat;
 mask-position: center;
 
--webkit-mask-image: url('../mobile/images/showreel/maskvector.png');
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    -webkit-mask-position: center;
-    -webkit-mask-type: alpha;
+/* Для браузеров WebKit (Safari, Chrome) */
+-webkit-mask-image: url('../mobile/images/showreel/maskvector.svg');
+-webkit-mask-size: contain;
+-webkit-mask-repeat: no-repeat;
+-webkit-mask-position: center;
 
 mask-mode: luminance;
 -webkit-mask-mode: luminance;
