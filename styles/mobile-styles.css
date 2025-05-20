@@ -462,22 +462,6 @@ html, body {
       overflow: hidden;
     }
   
-    .mobile-device .showreel::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -50vw;
-      width: 200vw;
-      height: 45vh;
-      background-image: url("../mobile/images/showreel/maskvector.png");
-      background-size: 100% 100%;
-      background-position: top center;
-      background-repeat: no-repeat;
-      pointer-events: none;
-      z-index: 2;
-      transform: scaleX(-1);
-    }
-  
     .mobile-device .showreel::after {
       content: '';
       position: absolute;
@@ -922,3 +906,25 @@ html, body {
     background-color: #000; /* Цвет статус-бара */
   }
 
+  .showreel-mask-vector {
+    display: none;
+  }
+  
+  .mobile-device .showreel-mask-vector {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -50vw;
+    width: 200vw;
+    height: 45vh;
+    background-image: url("../mobile/images/showreel/maskvector.svg");
+    background-size: 100% 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .mobile-device .showreel::before {
+    display: none;
+  }
