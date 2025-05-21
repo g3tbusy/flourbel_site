@@ -1098,3 +1098,122 @@ mask-mode: luminance;
     display: block !important;
   }
 }
+
+@media (max-width: 992px) {
+  .mobile-device .section-4 .section-2-signature,
+  .mobile-device .section-4 .section-2-signature-left,
+  .mobile-device .section-4 .center-block,
+  .mobile-device .section-4 .center-block-title,
+  .mobile-device .section-4 .center-block-qa-title,
+  .mobile-device .section-4 .center-block-qa-body,
+  .mobile-device .section-4 .center-block-text {
+    display: none !important;
+  }
+  
+  .mobile-device .section-4 {
+    min-height: 100vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mobile-device .section-4 .section-4-bg {
+    display: block !important;
+  }
+  
+  /* Скрываем старые псевдоэлементы */
+  .mobile-device .section-4::after,
+  .mobile-device .section-4::before {
+    display: none;
+  }
+  
+  /* Стили для верхнего правого эллипса */
+  .mobile-device .top-right-ellipse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* Стили для нижнего левого эллипса */
+  .mobile-device .bottom-left-ellipse {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70vw;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    transform: scaleX(-1) scaleY(-1);
+  }
+  
+  .mobile-device .section-4 .mobile-section-4-wrapper {
+    width: 85vw;
+    height: 85vh;
+    position: relative;
+    background: rgba(0,0,0,0.0);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-text {
+    display: block;
+    width: 100%;
+    font-size: 13px;
+    font-family: var(--font-family-montserrat);
+    color: var(--text-white);
+    text-align: left;
+    margin-top: 7vh;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq-divider {
+    display: block;
+    width: 292px;
+    height: 51px;
+    background: url('../mobile/images/showreel/faq.svg') center no-repeat;
+    background-size: contain;
+    align-self: flex-start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq-divider span {
+    font-family: var(--font-family-montserrat);
+    font-size: 21px;
+    font-weight: 300; /* light */
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq {
+    display: block;
+    width: 100%;
+    font-size: 13px;
+    font-family: var(--font-family-montserrat);
+    color: var(--text-white);
+    text-align: left;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq .faq-question {
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 5px;
+  }
+
+  .mobile-device .footer {
+    display: none !important;
+  }
+}

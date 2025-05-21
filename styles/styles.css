@@ -1540,3 +1540,32 @@ display: none; /* По умолчанию скрыто */
       display: none !important;
     }
   }
+
+@media (max-width: 992px) {
+  .mobile-device .section-4 .section-2-signature,
+  .mobile-device .section-4 .section-2-signature-left,
+  .mobile-device .section-4 .center-block,
+  .mobile-device .section-4 .center-block-title,
+  .mobile-device .section-4 .center-block-qa-title,
+  .mobile-device .section-4 .center-block-qa-body,
+  .mobile-device .section-4 .center-block-text {
+    display: none !important;
+  }
+  
+  .mobile-device .section-4 {
+    min-height: 100vh;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mobile-device .section-4 .section-4-bg {
+    display: block !important;
+  }
+
+  .mobile-device .footer {
+    display: none !important;
+  }
+}
