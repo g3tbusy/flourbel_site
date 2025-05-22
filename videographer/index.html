@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Оператор - Melnikov Media</title>
   <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="mobile-videographer-styles.css">
   <link rel="preload" href="../images/general/videographer_bg.png" as="image">
   <link rel="preload" href="../images/general/DANIEL MELNIKOV_wt.svg" as="image">
   <link rel="preload" href="../images/general/videographer_bg.webp" as="image">
@@ -13,12 +14,31 @@
       background-color: #000;
     }
   </style>
+  <script>
+    // Detect mobile and tablet devices
+    function isMobileOrTablet() {
+      return window.matchMedia('(max-width: 992px)').matches;
+    }
+    
+    // Add a class to the body based on device type
+    document.addEventListener('DOMContentLoaded', function() {
+      if (isMobileOrTablet()) {
+        document.body.classList.add('mobile-device');
+        
+        // Изменяем заголовок только на мобильных устройствах
+        const heading = document.querySelector('.text-3-centered');
+        if (heading && heading.innerText === 'VIDEOMAKER') {
+          heading.innerHTML = 'VIDEO<br>MAKER';
+        }
+      }
+    });
+  </script>
 </head>
 <body class="videographer-page">
   <img src="../images/general/DANIEL MELNIKOV_wt.svg" alt="DANIEL MELNIKOV" class="section-2-signature" loading="lazy">
   <img src="../images/general/DANIEL MELNIKOV_wt.svg" alt="DANIEL MELNIKOV" class="section-2-signature section-2-signature-left" loading="lazy">
   <main class="fullscreen-bg">
-    <h1 class="text-3-centered">VIDEOGRAPHER</h1>
+    <h1 class="text-3-centered">VIDEOMAKER</h1>
     <nav class="center-block-videoeditor videographer-links">
       <a href="https://disk.yandex.ru/d/Ux7fUlShfZH0Lw" target="_blank" rel="noopener">
         <button class="videoeditor-btn">CONCEPTUAL</button>

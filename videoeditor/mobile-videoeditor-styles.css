@@ -1,0 +1,126 @@
+@media (max-width: 992px) {
+  .mobile-device.videoeditor-page {
+    background-color: #000;
+  }
+  
+  /* Скрываем все лишние элементы */
+  .mobile-device .section-2-signature,
+  .mobile-device .section-2-signature-left,
+  .mobile-device .footer {
+    display: none !important;
+  }
+  
+  /* Установка фона для мобильной версии */
+  .mobile-device .fullscreen-bg {
+    background-image: url('mobile_imgs/mob-videoeditor-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 5vh; /* Уменьшаем верхний отступ контейнера */
+    position: relative; /* Для абсолютного позиционирования заголовка */
+  }
+  
+  /* Стили для заголовка */
+  .mobile-device .text-3-centered {
+    font-size: 61px;
+    margin-bottom: 0;
+    padding-top: 0;
+    text-align: left;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 8vh; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    z-index: 1; /* Поверх других элементов */
+  }
+  
+  /* Стили для контейнера с кнопками - сохраняем позиционирование, но делаем его прокручиваемым */
+  .mobile-device .center-block-videoeditor {
+    position: absolute;
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+    background: transparent !important; /* Полностью прозрачный фон */
+    box-shadow: none !important; /* Убираем тени */
+    border: none !important; /* Убираем границы */
+    z-index: 2; /* Поверх заголовка, если есть наложение */
+  }
+  
+  /* Стили для скроллбара */
+  .mobile-device .center-block-videoeditor::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .mobile-device .center-block-videoeditor::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .mobile-device .center-block-videoeditor::-webkit-scrollbar-thumb {
+    background-color: #DF9D51;
+    border-radius: 10px;
+  }
+
+  /* Сброс стилей для ссылок и кнопок */
+  .mobile-device .center-block-videoeditor a {
+    display: block;
+    text-decoration: none;
+    width: 220px;
+    margin: 0 auto;
+    background: transparent !important; /* Прозрачный фон для ссылок */
+  }
+  
+  /* Полный сброс и переопределение для всех кнопок */
+  .mobile-device .center-block-videoeditor a button.videoeditor-btn,
+  .mobile-device .center-block-videoeditor button.videoeditor-btn {
+    width: 100% !important; 
+    height: 50px !important;
+    font-size: 16px !important;
+    border-radius: 15px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    box-shadow: 0 0.75rem 2rem 0.2rem rgba(0,0,0,0.35), 0 0.25rem 0.75rem 0.1rem rgba(0,0,0,0.18) !important;
+    background: #fff !important;
+    color: #222 !important;
+    font-weight: 500 !important;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s !important;
+    text-transform: uppercase !important;
+    font-family: var(--font-family-montserrat) !important;
+    box-sizing: border-box !important;
+    position: static !important;
+  }
+  
+  /* Стиль при наведении */
+  .mobile-device .center-block-videoeditor a:hover .videoeditor-btn,
+  .mobile-device .center-block-videoeditor button.videoeditor-btn:hover {
+    background: #DF9D51 !important;
+    color: #fff !important;
+    transform: scale(1.05) !important;
+  }
+
+  /* Стили для конкретных кнопок (если нужно) */
+  .mobile-device .center-block-videoeditor a:first-child button.videoeditor-btn,
+  .mobile-device .center-block-videoeditor a:last-child button.videoeditor-btn {
+    /* Дополнительные стили для первой и последней кнопки, если нужно */
+    border-radius: 15px !important;
+  }
+  
+  /* Скрываем нижнюю навигацию */
+  .mobile-device .bottom-block {
+    display: none !important;
+  }
+}

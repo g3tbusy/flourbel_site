@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Видеомонтажер - Melnikov Media</title>
   <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="mobile-videoeditor-styles.css">
   <link rel="preload" href="../images/general/videoeditor_bg.webp" as="image">
   <link rel="preload" href="../images/general/DANIEL MELNIKOV_wt.svg" as="image">
   <style>
@@ -12,6 +13,25 @@
       background-color: #000;
     }
   </style>
+  <script>
+    // Detect mobile and tablet devices
+    function isMobileOrTablet() {
+      return window.matchMedia('(max-width: 992px)').matches;
+    }
+    
+    // Add a class to the body based on device type
+    document.addEventListener('DOMContentLoaded', function() {
+      if (isMobileOrTablet()) {
+        document.body.classList.add('mobile-device');
+        
+        // Изменяем заголовок только на мобильных устройствах
+        const heading = document.querySelector('.text-3-centered');
+        if (heading && heading.innerText === 'VIDEO EDITING') {
+          heading.innerHTML = 'VIDEO<br>EDITING';
+        }
+      }
+    });
+  </script>
 </head>
 <body class="videoeditor-page">
   <img src="../images/general/DANIEL MELNIKOV_wt.svg" alt="DANIEL MELNIKOV" class="section-2-signature" loading="lazy">
@@ -39,7 +59,7 @@
       </a>
     </nav>
     <nav class="bottom-block">
-      <<div class="bottom-block-center">
+      <div class="bottom-block-center">
         <a href="../" class="bottom-block-link">ГЛАВНАЯ</a>
         <a href="../#section-2" class="bottom-block-link bottom-block-link-center left">ОБО МНЕ</a>
         <a href="../contacts" class="bottom-block-link bottom-block-link-center right">КОНТАКТЫ</a>

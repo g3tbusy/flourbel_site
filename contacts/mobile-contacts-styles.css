@@ -1,0 +1,56 @@
+@media (max-width: 992px) {
+  .mobile-device .contacts-page {
+    background-color: #000;
+  }
+  
+  /* Скрываем все лишние элементы */
+  .mobile-device .section-2-signature,
+  .mobile-device .section-2-signature-left,
+  .mobile-device .footer {
+    display: none !important;
+  }
+  
+  /* Установка фона для мобильной версии */
+  .mobile-device .fullscreen-bg {
+    background-image: url('mobile_imgs/mob-contacts-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 15vh;
+  }
+  
+  /* Стили для заголовка */
+  .mobile-device .text-3-centered {
+    font-size: 42px;
+    margin-bottom: 10vh;
+    padding-top: 0;
+  }
+  
+  /* Стили для контейнера с кнопками - сохраняем позиционирование */
+  .mobile-device .center-block-videoeditor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    scale: 1; /* Уменьшаем весь контейнер */
+  }
+  
+  /* Стили для кнопок - делаем их меньше */
+  .mobile-device .center-block-videoeditor .videoeditor-btn {
+    width: 220px; /* Уменьшенная ширина */
+    height: 50px; /* Уменьшенная высота */
+    font-size: 16px; /* Меньший размер шрифта */
+    border-radius: 15px; /* Меньшее закругление краев */
+  }
+  
+  /* Скрываем нижнюю навигацию */
+  .mobile-device .bottom-block {
+    display: none !important;
+  }
+}

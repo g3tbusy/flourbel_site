@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты - Melnikov Media</title>
   <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="mobile-contacts-styles.css">
   <link rel="preload" href="../images/general/contacts_bg.webp" as="image">
   <link rel="preload" href="../images/general/DANIEL MELNIKOV_wt.svg" as="image">
   <style>
@@ -12,6 +13,19 @@
       background-color: #000;
     }
   </style>
+  <script>
+    // Detect mobile and tablet devices
+    function isMobileOrTablet() {
+      return window.matchMedia('(max-width: 992px)').matches;
+    }
+    
+    // Add a class to the body based on device type
+    document.addEventListener('DOMContentLoaded', function() {
+      if (isMobileOrTablet()) {
+        document.body.classList.add('mobile-device');
+      }
+    });
+  </script>
 </head>
 <body class="contacts-page">
   <img src="../images/general/DANIEL MELNIKOV_wt.svg" alt="DANIEL MELNIKOV" class="section-2-signature" loading="lazy">

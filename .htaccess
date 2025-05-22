@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Если запрос не является файлом или директорией
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Перенаправление на соответствующие папки
+RewriteRule ^portfolio$ portfolio/ [L]
+RewriteRule ^contacts$ contacts/ [L]
+RewriteRule ^videoeditor$ videoeditor/ [L]
+RewriteRule ^videographer$ videographer/ [L] 
