@@ -169,6 +169,28 @@ img {
   line-height: 1;
 }
 
+.text-3-centered {
+  font-family: var(--font-family-montserrat);
+  font-weight: 700;
+  font-size: 7.75rem;
+  color: var(--text-white);
+  background: rgba(0,0,0,0.0);
+  border: none;
+  border-radius: 6px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
+  margin: 0 0 32px 0;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.25);
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  padding-top: 2.4375rem;
+}
+
 .card-5 {
   flex-grow: 0;
   flex-shrink: 1;
@@ -851,8 +873,8 @@ html, body, .container-1, .header-wrapper, .text-3 {
   position: absolute;
   top: calc(3.3rem + 2.75rem + 1.5rem); 
   left: 76.5%;
-  transform: translateX(-50%);
-  width: 25.8rem;   
+  transform: translateX(-44%);
+  width: 29.8rem;   
   height: 39.125rem; 
   font-size: 1.125rem;  
   line-height: 1.3;
@@ -1124,43 +1146,6 @@ body:not(.portfolio-page):not(.contacts-page):not(.videographer-page) .fullscree
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-a.black-block-title:hover {
-  color: #DF9D51;
-  transform: scale(1.05);
-}
-
-a.videoeditor-btn {
-  text-decoration: none;
-}
-
-.contacts-page .fullscreen-bg .text-3 {
-  font-size: 7.75rem !important;
-  font-weight: bold !important;
-  padding-top: 2.4375rem !important;
-  position: relative !important;
-}
-
-.videoeditor-page .fullscreen-bg .text-3 {
-  font-size: 7.75rem !important;
-  font-weight: bold !important;
-  padding-top: 2.4375rem !important;
-  position: relative !important;
-}
-
-.videographer-page .fullscreen-bg .text-3 {
-  font-size: 7.75rem !important;
-  font-weight: bold !important;
-  padding-top: 2.4375rem !important;
-  position: relative !important;
-}
-
-.portfolio-page .fullscreen-bg .text-3 {
-  font-size: 7.75rem !important;
-  font-weight: bold !important;
-  padding-top: 2.4375rem !important;
-  position: relative !important;
 }
 
 .section-2-signature,
