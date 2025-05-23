@@ -1007,6 +1007,12 @@ mask-mode: luminance;
     z-index: 2;
   }
 
+@media only screen and (max-width: 375px) {
+  .mobile-device .mobile-cases-wrapper {
+    height: 80vh !important;
+  }
+}
+
 @media (max-width: 992px) {
   .mobile-device .section-3 {
     background: #000 url('../mobile/images/section-3/sect-3-bg.png') center center/cover no-repeat !important;
@@ -1060,7 +1066,7 @@ mask-mode: luminance;
     display: block !important;
     font-family: var(--font-family-montserrat);
     font-weight: 700;
-    font-size: 70px;
+    font-size: 8vh;
     color: #FFFFFF;
     opacity: 0.75;
     margin: 0;
@@ -1077,7 +1083,7 @@ mask-mode: luminance;
   /* Стили для изображения с кейсами */
   .mobile-device .mobile-video-cases {
     display: block !important;
-    width: 50vw;
+    width: 24vh;
     height: auto;
     max-height: 30vh;
     object-fit: contain;
@@ -1090,7 +1096,7 @@ mask-mode: luminance;
     display: block !important;
     font-family: var(--font-family-montserrat);
     font-weight: 300; /* light */
-    font-size: 20px;
+    font-size: 2vh;
     color: #FFFFFF;
     margin: 0;
     margin-bottom: 15px;
