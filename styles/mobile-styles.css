@@ -951,6 +951,7 @@ mask-mode: luminance;
     }
 
 /* Добавляем стили для надписи "Клик" на мобильных устройствах */
+/* Стили закомментированы по запросу
 .mobile-click-text {
   display: none;
 }
@@ -958,17 +959,19 @@ mask-mode: luminance;
 .mobile-device .mobile-click-text {
   display: block;
   position: absolute;
-  bottom: 50px;
-  right: 80px;
+  bottom: 15%;
+  right: 15%;
   font-family: var(--font-family-montserrat);
-  font-size: 20px;
+  font-size: 5vw;
   font-weight: 700;
   color: #FFFFFF;
   text-shadow: 0 2px 1.1px rgba(0, 0, 0, 0.54);
   z-index: 11;
   pointer-events: none;
   text-align: center;
+  transform: translate(0, 0);
 }
+*/
 
 /* Стили для ссылки на мобильное видео */
 .showreel-mobile-link {
