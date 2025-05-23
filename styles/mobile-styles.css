@@ -262,28 +262,32 @@ html, body {
   
     .mobile-video-ramka-left {
       position: absolute;
-      left: 0;
-      bottom: 0;
+      left: auto;
+      right: 56.5vw;
+      top: 57.25vh;
+      bottom: auto;
       width: 50vw;
       height: auto;
       z-index: 50;
       pointer-events: none;
       user-select: none;
       display: block;
-      border: 1px solid red;
+      /* border: 1px solid red; */
     }
   
     .mobile-video-ramka-right {
       position: absolute;
-      right: 0;
-      top: 0;
+      right: auto;
+      left: 56.5vw;
+      top: auto;
+      bottom: 57.25vh;
       width: 50vw;
       height: auto;
       z-index: 50;
       pointer-events: none;
       user-select: none;
       display: block;
-      border: 1px solid blue;
+      /* border: 1px solid blue; */
     }
     
     /* Стили для года 2025 в мобильной версии */
@@ -340,17 +344,20 @@ html, body {
     
     /* Стили для текстового блока в section-2 на мобильных */
     .mobile-device .section-2-mobile-text {
-      display: block;
+      position: relative;
+      top: auto;
+      right: auto;
       width: 60vw;
-      padding: 2vw;
+      /* max-width: 500px; */
+      text-align: left;
+      margin-bottom: 5vh;
+      margin-right: 0;
+      margin-left: auto;
       font-family: var(--font-family-montserrat);
       font-size: 2.6vw;
       color: var(--text-white);
       line-height: 1.5;
       z-index: 7;
-      position: absolute;
-      top: calc(45% + 24vw); /* Позиционируем под main_photo, учитывая его размер */
-      left: 40vw; /* Выравниваем с правой стороны bg_photo */
     }
     
     /* Новый контейнер для фото и текста */
@@ -494,11 +501,13 @@ html, body {
     .showreel-mobile-desc {
       display: block;
       position: absolute;
-      top: calc(45vh + 2vw);
+      /* top: calc(45vh + 2vw); */
+      bottom: 15vh;
       left: 50%;
       transform: translateX(-50%);
       width: 70vw;
-      font-size: 13px;
+      /* font-size: 13px; */
+      font-size: 1.5vh;
       color: #fff;
       text-align: left;
       padding: 0 16px;
@@ -748,17 +757,21 @@ html, body {
   
   /* Стили для текстового блока в section-2 на мобильных */
   .mobile-device .section-2-mobile-text {
-    display: block;
-    width: 60vw;
-    padding: 2vw;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 70vw;
+    max-width: 500px;
+    text-align: left;
+    margin-bottom: 5vh;
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 5vw;
     font-family: var(--font-family-montserrat);
     font-size: 2.6vw;
     color: var(--text-white);
     line-height: 1.5;
     z-index: 7;
-    position: absolute;
-    top: calc(45% + 24vw); /* Позиционируем под main_photo, учитывая его размер */
-    left: 40vw; /* Выравниваем с правой стороны bg_photo */
   }
 
   /* Новый контейнер для фото и текста */
@@ -806,7 +819,6 @@ html, body {
     color: var(--text-white);
     line-height: 1.2;
     right: 4vw;
-    bottom: 23vw;
     text-shadow: 0 1vw 0 rgba(0, 0, 0, 0.61);
     margin: 0 auto;
     max-width: 80%;
@@ -1216,4 +1228,62 @@ mask-mode: luminance;
   .mobile-device .footer {
     display: none !important;
   }
+}
+
+/* Стили для центрирующего враппера мобильных элементов */
+.section-2-mobile-elements-wrapper {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-elements-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+/* Обновляем позиционирование элементов внутри враппера */
+.mobile-device .section-2-mobile-header {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.mobile-device .section-2-mobile-main-photo {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  max-width: 48vw;
+}
+
+.mobile-device .section-2-mobile-text {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 60vw;
+  max-width: 500px;
+  text-align: left;
+  margin-bottom: 5vh;
+  margin-right: 0;
+  margin-left: auto;
+  padding-right: 5vw;
+}
+
+.mobile-device .section-2-mobile-nav {
+  position: relative;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  width: 100%;
 }
