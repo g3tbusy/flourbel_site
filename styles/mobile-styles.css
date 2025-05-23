@@ -1287,3 +1287,35 @@ mask-mode: luminance;
   bottom: auto;
   width: 100%;
 }
+
+.showreel-mobile-container {
+    display: none;
+  }
+  
+  .mobile-device .showreel-mobile-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 45vh;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .showreel-mp4-mobile-wrapper {
+    display: none;
+  }
+  
+  .mobile-device .showreel-mp4-mobile-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 45vh;
+    max-width: none;
+    pointer-events: none;
+    z-index: 2;
+  }
