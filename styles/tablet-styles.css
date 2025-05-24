@@ -1,0 +1,49 @@
+@media (min-width: 768px) and (max-width: 1024px)
+{
+    .card-11-center,
+    .card-11-center-left,
+    .card-11-lower,
+    .card-11-lower-left,
+    .card-12-center,
+    .card-12-center-left,
+    .card-7-center,
+    .showreel-mp4,
+    .showreel-video {
+      display: none;
+    }
+    
+    .center-image-relative {
+      display: none;
+    }
+
+    .container-1-inner,
+    .center-image-outer {
+      display: none !important;
+    }
+
+    .mobile-device .section-2 .section-2-bg,
+    .mobile-device .section-2 .section-2-signature,
+    .mobile-device .section-2 .section-2-signature-left,
+    .mobile-device .section-2 .image-block-4-wrapper {
+      display: none;
+    }
+
+    .mobile-device .showreel .section-2-signature,
+    .mobile-device .showreel .section-2-signature-left,
+    .mobile-device .showreel .flower-repel,
+    .mobile-device .showreel .showreel-title,
+    .mobile-device .showreel .showreel-center,
+    .mobile-device .showreel .showreel-desc,
+    .mobile-device .showreel .showreel-note,
+    .mobile-device .showreel .showreel-video-wrapper,
+    .mobile-device .showreel .showreel-video,
+    .mobile-device .showreel .showreel-mp4,
+    .mobile-device .showreel .video-container {
+      display: none !important;
+    }
+
+    .mobile-device .container-1 {
+        background: #000 url('../mobile/images/container-1/mobile_background.png') center center/cover no-repeat;
+    }
+
+}

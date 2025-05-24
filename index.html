@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/mobile-styles.css">
+    <link rel="stylesheet" href="styles/tablet-styles.css">
 
     <link rel="preload" href="images/container-1/background.webp" as="image">
     <link rel="preload" href="mobile/images/container-1/mobile_background.png" as="image">
@@ -33,7 +34,7 @@
     <script>
       // Detect mobile and tablet devices
       function isMobileOrTablet() {
-        return window.matchMedia('(max-width: 992px)').matches;
+        return window.matchMedia('(max-width: 1024px)').matches;
       }
       
       // Add a class to the body based on device type
