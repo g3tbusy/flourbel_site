@@ -26,7 +26,7 @@
   
   /* Стили для заголовка */
   .mobile-device .text-3-centered {
-    font-size: 61px;
+    font-size: 6vh;
     margin-bottom: 0;
     padding-top: 0;
     text-align: left;
@@ -48,7 +48,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3vh;
     padding: 1rem 0;
     background: transparent !important; /* Полностью прозрачный фон */
     box-shadow: none !important; /* Убираем тени */
@@ -75,7 +75,7 @@
   .mobile-device .center-block-videoeditor a {
     display: block;
     text-decoration: none;
-    width: 220px;
+    width: 29vh;
     margin: 0 auto;
     background: transparent !important; /* Прозрачный фон для ссылок */
   }
@@ -84,8 +84,8 @@
   .mobile-device .center-block-videoeditor a button.videoeditor-btn,
   .mobile-device .center-block-videoeditor button.videoeditor-btn {
     width: 100% !important; 
-    height: 50px !important;
-    font-size: 16px !important;
+    height: 6vh !important;
+    font-size: 2vh !important;
     border-radius: 15px !important;
     margin: 0 !important;
     padding: 0 !important;

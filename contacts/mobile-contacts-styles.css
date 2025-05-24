@@ -25,7 +25,7 @@
   
   /* Стили для заголовка */
   .mobile-device .text-3-centered {
-    font-size: 42px;
+    font-size: 6vh;
     margin-bottom: 10vh;
     padding-top: 0;
   }
@@ -39,13 +39,14 @@
     width: auto;
     height: auto;
     scale: 1; /* Уменьшаем весь контейнер */
+    gap: 3vh;
   }
   
   /* Стили для кнопок - делаем их меньше */
   .mobile-device .center-block-videoeditor .videoeditor-btn {
-    width: 220px; /* Уменьшенная ширина */
-    height: 50px; /* Уменьшенная высота */
-    font-size: 16px; /* Меньший размер шрифта */
+    width: 29vh; /* Уменьшенная ширина */
+    height: 6vh; /* Уменьшенная высота */
+    font-size: 2vh; /* Меньший размер шрифта */
     border-radius: 15px; /* Меньшее закругление краев */
   }
   
