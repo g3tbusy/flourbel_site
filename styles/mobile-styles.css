@@ -105,6 +105,16 @@ html, body {
     }
   }
 
+  video.mobile-video-case {
+    width: 24vh;
+      height: 23vh;
+      background: #000;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 6vh;
+      transition: filter 0.8s ease;
+  }
+
   /* Mobile and tablet responsiveness */
 @media (max-width: 992px) {
     html, body {
