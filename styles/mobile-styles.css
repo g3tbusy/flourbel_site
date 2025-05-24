@@ -1184,12 +1184,13 @@ mask-mode: luminance;
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
+    font-size: 1.5vh;
   }
 
   .mobile-device .section-4 .mobile-section-4-text {
     display: block;
     width: 100%;
-    font-size: 13px;
+    /* font-size: 13px; */
     font-family: var(--font-family-montserrat);
     color: var(--text-white);
     text-align: left;
@@ -1198,8 +1199,8 @@ mask-mode: luminance;
 
   .mobile-device .section-4 .mobile-section-4-faq-divider {
     display: block;
-    width: 292px;
-    height: 51px;
+    width: 34vh;
+    height: 6vh;
     background: url('../mobile/images/showreel/faq.svg') center no-repeat;
     background-size: contain;
     align-self: flex-start;
@@ -1213,7 +1214,8 @@ mask-mode: luminance;
 
   .mobile-device .section-4 .mobile-section-4-faq-divider span {
     font-family: var(--font-family-montserrat);
-    font-size: 21px;
+    /* font-size: 21px; */
+    font-size: 2.4vh;
     font-weight: 300; /* light */
     color: #FFFFFF;
     text-align: center;
@@ -1222,7 +1224,7 @@ mask-mode: luminance;
   .mobile-device .section-4 .mobile-section-4-faq {
     display: block;
     width: 100%;
-    font-size: 13px;
+    /* font-size: 13px; */
     font-family: var(--font-family-montserrat);
     color: var(--text-white);
     text-align: left;
