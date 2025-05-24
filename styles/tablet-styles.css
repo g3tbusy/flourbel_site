@@ -163,7 +163,7 @@
         display: block;
         position: relative;
         font-family: var(--font-family-montserrat);
-        font-size: 5vw;
+        font-size: 2.4vh;
         font-weight: 700;
         color: var(--text-white);
         line-height: 1.2;
@@ -175,12 +175,12 @@
 
       .mobile-device .section-2-mobile-main-photo
       {
-        width: 30vw;
+        width: 20vh;
       }
 
       .mobile-device .section-2-mobile-text
       {
-        font-size: 2.2vw;
+        font-size: 1.4vh;
         width: 58.5vw !important;
         margin-top: 2vw;
       }
@@ -226,6 +226,11 @@
 
       .mobile-device .section-4 .mobile-section-4-wrapper{
         top: 9vw;
+      }
+
+      .mobile-device .section-2-mobile-nav .mobile-nav-link
+      {
+        font-size: 1.4vh;
       }
 
 }
