@@ -1104,6 +1104,19 @@ mask-mode: luminance;
     text-align: center;
   }
   
+  /* Стили для ссылок на категории кейсов */
+  .mobile-device .mobile-cases-link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .mobile-device .mobile-cases-link:hover,
+  .mobile-device .mobile-cases-link:active {
+    transform: scale(1.05);
+  }
+  
   .mobile-device .section-3-moon {
     display: block !important;
     position: absolute;
