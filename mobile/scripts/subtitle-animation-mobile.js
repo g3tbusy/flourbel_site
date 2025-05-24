@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Проверяем, является ли устройство мобильным
-  if (window.matchMedia('(min-width: 993px)').matches) {
+  if (window.matchMedia('(min-width: 1025px)').matches) {
     return; // Выходим, если это ПК версия
   }
 
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const secondLine = ["ПРОСТО\u00A0", "\u00A0ВИДЕО"];
   
   function resetAnimation() {
-    subtitleElement.innerHTML = "";
+    subtitleElement .innerHTML = "";
     const line1 = document.createElement('div');
     line1.className = 'line';
     const line2 = document.createElement('div');

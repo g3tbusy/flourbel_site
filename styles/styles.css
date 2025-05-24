@@ -1506,22 +1506,22 @@ display: none; /* По умолчанию скрыто */
     display: none; /* Скрыто по умолчанию для десктопных устройств */
   }
 
-  @media (min-width: 993px) {
+  @media (min-width: 1025px) {
     .showreel-mobile-desc {
       display: none !important;
     }
   }
   
-  @media (min-width: 993px) {
+  @media (min-width: 1025px) {
     .mobile-main-header {
       display: none !important;
-    }
+    } 
   
-    .mobile-video-ramka-left {
+     .mobile-video-ramka-left {
       display: none !important;
-    }
+    } 
   
-    .mobile-video-ramka-right {
+     .mobile-video-ramka-right {
       display: none !important;
     }
   }
