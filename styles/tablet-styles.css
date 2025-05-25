@@ -444,4 +444,14 @@
         top: calc(2.5rem + 2.1rem + 1.15rem); /* было calc(2.8rem + 2.34rem + 1.28rem) */
         left: 76%; /* осталось без изменений */
     }
+
+    .text-3-centered
+    {
+      font-size: 8vw;
+    }
+
+    .bottom-block-center
+    {
+      width: 64vw;
+    }
 }
