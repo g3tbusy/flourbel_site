@@ -9,12 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (mp4) {
     mp4.addEventListener('click', function() {
-      mp4.style.display = 'none';
-      if (clickText) clickText.style.display = 'none';
-      if (videoContainer) videoContainer.style.display = 'none';
-      if (vkIframe) {
-        vkIframe.style.zIndex = '5';
-        vkIframe.style.position = 'relative';
+      // Проверяем ширину экрана
+      if (window.innerWidth <= 1367) {
+        // Для планшетов - перенаправляем на VK
+        window.open('https://vk.com/video537084431_456242127', '_blank');
+      } else {
+        // Для десктопов - старое поведение
+        mp4.style.display = 'none';
+        if (clickText) clickText.style.display = 'none';
+        if (videoContainer) videoContainer.style.display = 'none';
+        if (vkIframe) {
+          vkIframe.style.zIndex = '5';
+          vkIframe.style.position = 'relative';
+        }
       }
     });
   }

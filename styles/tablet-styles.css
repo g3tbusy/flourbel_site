@@ -232,5 +232,56 @@
       {
         font-size: 1.4vh;
       }
+}
 
+@media (max-width: 1367px) {
+    .showreel-video-wrapper iframe.showreel-video {
+        display: none !important;
+    }
+
+    /* Уменьшаем размеры элементов showreel на ~15% */
+    .showreel-center {
+        width: 1104px;  /* было 974px */
+        height: 579px; /* было 511px */
+        transform: scale(0.85);
+        transform-origin: center center;
+    }
+
+    .showreel-title {
+        font-size: 5rem; /* было 4.4rem */
+    }
+
+    .showreel-desc {
+        font-size: 2.3rem; /* было 2rem */
+        right: 8.7rem; /* было 7.7rem */
+    }
+
+    .showreel-note {
+        font-size: 0.95rem; /* было 0.85rem */
+        right: 3.65rem; /* было 3.2rem */
+        max-width: 510px; /* было 450px */
+    }
+
+    .showreel-video-wrapper,
+    .showreel-video,
+    .showreel-mp4,
+    .video-container {
+        width: 503px; /* было 444px */
+        height: 283px; /* было 250px */
+    }
+
+    .showreel-video-wrapper {
+        bottom: 5.95rem; /* было 5.25rem */
+    }
+
+    #flower1 { width: 399px; } /* было 352px */
+    #flower2 { width: 1572px; } /* было 1387px */
+    #flower3 { width: 467px; } /* было 412px */
+    #flower4 { width: 289px; } /* было 255px */
+    #flower5 { width: 238px; } /* было 210px */
+
+    .click-text {
+        font-size: 18px; /* было 16px */
+        bottom: 7px; /* было 6px */
+    }
 }
