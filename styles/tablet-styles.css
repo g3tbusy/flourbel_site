@@ -284,4 +284,164 @@
         font-size: 18px; /* было 16px */
         bottom: 7px; /* было 6px */
     }
+
+    /* Уменьшаем размеры элементов section-3 на ~15% */
+    .section-3-content {
+        width: 63.22rem; /* было 74.375rem */
+        height: 38.89rem; /* было 45.75rem */
+        transform: translate(-50%, -50%) scale(0.85);
+        transform-origin: center center;
+    }
+
+    .section-3-title {
+        font-size: 5rem; /* было 5.875rem */
+    }
+
+    .second-block {
+        left: calc(28.16rem + 6.48rem); /* было calc(33.125rem + 7.625rem) */
+    }
+
+    .black-block-title {
+        font-size: 30px; /* было 36px */
+        margin-bottom: 1.7rem; /* было 2rem */
+        width: 123px; /* было 145px */
+    }
+
+    .black-block {
+        width: 28.16rem; /* было 33.125rem */
+        height: 24.12rem; /* было 28.375rem */
+        border-radius: 25px; /* было 30px */
+    }
+
+    /* Уменьшаем размеры облаков */
+    .sky-right {
+        max-width: 1296px; /* было 1728px - уменьшение на 25% */
+        max-height: 729px; /* было 972px - уменьшение на 25% */
+        right: -90px; /* было -120px */
+        top: -20px; /* корректировка позиции */
+        opacity: 0.75; /* было 0.86 */
+    }
+
+    .sky-left {
+        max-width: 1481px; /* было 1975px - уменьшение на 25% */
+        max-height: 833px; /* было 1111px - уменьшение на 25% */
+        bottom: -220px; /* было -300px */
+        left: -80px; /* было -100px */
+        opacity: 0.75; /* было 0.86 */
+    }
+    
+    /* Уменьшаем скорость анимации облаков */
+    @keyframes skyRightMove {
+        from {
+            right: -90px;
+            opacity: 0.75;
+        }
+        to {
+            right: -90vw;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes skyLeftMove {
+        from {
+            left: -80px;
+            opacity: 0.75;
+        }
+        to {
+            left: -90vw;
+            opacity: 0;
+        }
+    }
+
+    /* Уменьшаем размеры элементов section-2 на ~15-20% */
+    .image-block-4-wrapper {
+        width: 61.4rem; /* было 72.2125vw */
+        height: 35.7rem; /* было 42rem */
+        padding-top: 6.8rem; /* было 8rem */
+    }
+    
+    .image-block-4-wrapper .titles-wrapper {
+        transform: translateX(-50%) scale(0.85);
+        transform-origin: center top;
+    }
+    
+    .image-block-4-wrapper .title-2 {
+        font-size: 3.4rem; /* было 4rem */
+    }
+    
+    .subtitle-2 {
+        font-size: 1.06rem; /* было 1.25rem */
+    }
+    
+    .subtitle-2-container {
+        height: 1.3rem; /* было 1.5rem */
+    }
+    
+    .image-block-4-wrapper img {
+        height: 85%; /* уменьшаем высоту изображения */
+        border-radius: 1.3rem; /* было 1.5rem */
+    }
+    
+    .image-caption {
+        bottom: 2.1rem; /* было 2.5rem */
+    }
+    
+    .image-caption-name {
+        font-size: 0.96rem; /* было 1.125rem */
+    }
+    
+    .image-caption-role {
+        font-size: 0.85rem; /* было 1rem */
+    }
+    
+    .about-block {
+        width: 33rem; /* было 38.8688rem */
+        margin-left: 2.3rem; /* было 2.7rem */
+        font-size: 0.91rem; /* было 1.0688rem */
+    }
+    
+    .nav-menu {
+        gap: 1.65rem; /* было 1.9375rem */
+        margin-top: 2.55rem; /* было 3rem */
+    }
+    
+    .nav-link {
+        font-size: 1rem; /* было 1.1875rem */
+    }
+
+    /* Уменьшаем размеры элементов section-4 на ~15-20% */
+    .section-4 .center-block {
+        width: 58.6rem; /* было 65.1rem */
+        height: 35.8rem; /* было 39.8rem */
+        transform: translate(-50%, -50%) scale(0.9); /* добавляем масштабирование */
+        transform-origin: center center;
+    }
+    
+    .section-4 .center-block-title {
+        font-size: 4.5rem; /* было 5rem */
+        top: 0.8rem; /* было 0.85rem */
+    }
+    
+    .section-4 .center-block-text {
+        width: 26.6rem; /* было 29.5rem */
+        height: 27.5rem; /* было 30.5rem */
+        font-size: 0.86rem; /* было 0.96rem */
+        left: 0.4rem; /* было 0.43rem */
+        bottom: 0.8rem; /* было 0.85rem */
+    }
+    
+    .section-4 .center-block-qa-title {
+        font-size: 1.7rem; /* было 1.9rem */
+        width: 18.3rem; /* было 20.35rem */
+        height: 2.1rem; /* было 2.34rem */
+        top: 2.5rem; /* было 2.8rem */
+    }
+    
+    .section-4 .center-block-qa-body {
+        width: 22.8rem; /* было 25.33rem */
+        height: 29.9rem; /* было 33.25rem */
+        font-size: 0.86rem; /* было 0.96rem */
+        top: calc(2.5rem + 2.1rem + 1.15rem); /* было calc(2.8rem + 2.34rem + 1.28rem) */
+        left: 76%; /* осталось без изменений */
+    }
 }
