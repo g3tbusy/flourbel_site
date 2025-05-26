@@ -484,10 +484,10 @@ Blender (3D). Также в этом ролике <br>
         // Показываем если это телефон и landscape
         if (isMobilePhone() && window.innerWidth > window.innerHeight) {
           overlay.style.display = 'flex';
-          document.body.style.overflow = 'hidden';
+          document.body.classList.add('no-scroll');
         } else {
           overlay.style.display = 'none';
-          document.body.style.overflow = '';
+          document.body.classList.remove('no-scroll');
         }
       }
 

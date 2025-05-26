@@ -5,6 +5,60 @@
   --font-family-montserrat: 'Montserrat', Arial, sans-serif;
 }
 
+#orientation-overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95) url('../mobile/images/error_msg_bg.png') center center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-family-montserrat, Arial, sans-serif);
+  font-size: 5vw;
+  padding: 5vw;
+  pointer-events: all;
+}
+
+
+.orientation-error-img {
+  width: 60vw;
+  height: 80vh;
+  background: url('../mobile/images/error_msg.png') center center/contain no-repeat;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.orientation-error-text {
+  color: #fff;
+  text-align: center;
+  margin: 0.8em 0 0 0;
+  font-size: 4vw;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.orientation-error-light {
+  font-weight: 300;
+}
+
+.orientation-error-medium {
+  font-weight: 500;
+}
+
+@media (min-width: 400px) {
+  .orientation-error-text {
+    font-size: 1.7vw;
+  }
+}
+
 .text-white {
     color: var(--text-white);
     font-family: var(--font-family-montserrat);
@@ -1575,56 +1629,12 @@ mask-mode: luminance;
   right: auto;
 }
 
-#orientation-overlay {
-  position: fixed;
-  z-index: 99999;
-  top: 0; left: 0; right: 0; bottom: 0;
+.no-scroll {
+  overflow: hidden !important;
+  position: fixed !important;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.95) url('../mobile/images/error_msg_bg.png') center center/cover no-repeat;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: var(--font-family-montserrat, Arial, sans-serif);
-  font-size: 5vw;
-  padding: 5vw;
-  pointer-events: all;
+  touch-action: none;
+  overscroll-behavior: none;
 }
 
-
-.orientation-error-img {
-  width: 60vw;
-  height: 80vh;
-  background: url('../mobile/images/error_msg.png') center center/contain no-repeat;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.orientation-error-text {
-  color: #fff;
-  text-align: center;
-  margin: 0.8em 0 0 0;
-  font-size: 4vw;
-  line-height: 1.3;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
-
-.orientation-error-light {
-  font-weight: 300;
-}
-
-.orientation-error-medium {
-  font-weight: 500;
-}
-
-@media (min-width: 400px) {
-  .orientation-error-text {
-    font-size: 1.7vw;
-  }
-}
