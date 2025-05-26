@@ -83,15 +83,36 @@
   }
 
 html, body {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: var(--font-family-montserrat);
-  }
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-family-montserrat);
+  overflow-x: hidden;
+}
 
-  @media (max-width: 1440px) {
+body {
+  background-color: #000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 992px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: auto;
+  }
+  
+  .container-1, .section-2, .showreel, .section-3, .section-4 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 1440px) {
     .container-1 {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
@@ -119,13 +140,6 @@ html, body {
 @media (max-width: 992px) {
     html, body {
       overflow-x: hidden;
-      overflow-y: auto;
-    }
-    
-    .scroll-container {
-      position: relative;
-      min-height: 100vh;
-      height: 100%;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }

@@ -1,5 +1,13 @@
 @media (min-width: 768px) and (max-width: 1024px)
 {
+    html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      height: auto;
+      min-height: 100vh;
+    }
+
     .card-11-center,
     .card-11-center-left,
     .card-11-lower,
