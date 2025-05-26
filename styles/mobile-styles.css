@@ -1595,10 +1595,8 @@ mask-mode: luminance;
 
 
 .orientation-error-img {
-  width: 80vw;
+  width: 60vw;
   height: 80vh;
-  max-width: 600px;
-  max-height: 400px;
   background: url('../mobile/images/error_msg.png') center center/contain no-repeat;
   margin: auto;
   display: flex;
