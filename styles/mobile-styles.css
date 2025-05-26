@@ -124,8 +124,10 @@ html, body {
     
     .scroll-container {
       position: relative;
-      height: auto;
-      overflow-y: visible;
+      min-height: 100vh;
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     
     .container-1 {
