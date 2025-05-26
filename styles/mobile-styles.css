@@ -1595,10 +1595,38 @@ mask-mode: luminance;
 
 
 .orientation-error-img {
-  max-width: 80vw;
-  max-height: 80vh;
-  width: auto;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  width: 80vw;
+  height: 80vh;
+  max-width: 600px;
+  max-height: 400px;
+  background: url('../mobile/images/error_msg.png') center center/contain no-repeat;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.orientation-error-text {
+  color: #fff;
+  text-align: center;
+  margin: 0.8em 0 0 0;
+  font-size: 4vw;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.orientation-error-light {
+  font-weight: 300;
+}
+
+.orientation-error-medium {
+  font-weight: 500;
+}
+
+@media (min-width: 400px) {
+  .orientation-error-text {
+    font-size: 1.7vw;
+  }
 }
