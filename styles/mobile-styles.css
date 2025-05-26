@@ -690,7 +690,7 @@ body {
     }
   
     .mobile-device .title-1 {
-      font-size: 8vw;
+      /* font-size: 8vw; */
       margin: 0;
     }
   
@@ -1429,7 +1429,7 @@ mask-mode: luminance;
   z-index: 50;
   pointer-events: none;
   user-select: none;
-  display: none; /* По умолчанию скрыто */
+  display: none;
 }
 
 .mobile-device .mobile-video-ramka-right-container {
@@ -1471,4 +1471,136 @@ mask-mode: luminance;
   .mobile-device .mobile-video-ramka-right-container {
     display: block;
   }
+}
+
+/* Стили для контейнеров text-3 и year-text */
+.mobile-text-3-container,
+.mobile-year-text-container {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile-device .mobile-text-3-container {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 62.25vh;
+    width: 56.5vw;
+    height: 35vh;
+    z-index: 50;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-device .mobile-year-text-container {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 62.25vh;
+    width: 56.5vw;
+    height: 35vh;
+    z-index: 50;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobile-device .mobile-text-3-container {
+  display: flex;
+}
+
+.mobile-device .mobile-text-3-container .text-3 {
+  position: relative;
+  left: 0;
+  font-size: 8vw;
+  opacity: 0.71;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-device .mobile-text-3-container .title-1 {
+  font-size: 8vw;
+  margin: 0;
+  display: inline-block;
+  white-space: pre-line;
+  text-align: left;
+}
+
+.mobile-device .mobile-main-header {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background: none;
+  text-align: left;
+  padding-top: 0;
+}
+
+.mobile-device .mobile-main-header .text-3 {
+  position: relative;
+  left: 7vw;
+  top: auto;
+  font-size: 4vw;
+  opacity: 0.71;
+  margin: 0;
+  line-height: 1;
+  padding-right: 3vw;
+}
+
+/* Стили для контейнера year-text */
+.mobile-year-text-container {
+  display: flex;
+}
+
+.mobile-device .mobile-year-text-container {
+  display: flex;
+}
+
+.mobile-device .mobile-year-text-container .year-text {
+  position: relative;
+  font-size: 8vw;
+  opacity: 0.71;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  bottom: auto;
+  right: auto;
+}
+
+#orientation-overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95) url('../mobile/images/error_msg_bg.png') center center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-family-montserrat, Arial, sans-serif);
+  font-size: 5vw;
+  padding: 5vw;
+  pointer-events: all;
+}
+.orientation-message {
+  
+}
+
+.orientation-error-img {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }

@@ -69,13 +69,24 @@
   </head>
 
   <body>
+
+    <div id="orientation-overlay" style="display:none;">
+      <img src="mobile/images/error_msg.png" alt="Ошибка: поверните телефон вертикально" class="orientation-error-img">
+    </div>
+    
       <header class="container-1" id="container-1">
       <!-- Видео-рамки для мобильных, вне мобильного заголовка -->
+      <div class="mobile-text-3-container">
+        <p class="text-3"><span class="title-1">Melnikov<br>Media</span></p>
+      </div>
       <div class="mobile-video-ramka-left-container">
         <img src="mobile/images/container-1/video-ramka-left.png" loading="eager" decoding="async" alt="video-ramka-left" class="mobile-video-ramka-left">
         <video class="mobile-video-ramka-left-content" autoplay muted loop playsinline preload="auto">
           <source src="videos/main_page/main_1.mp4" type="video/mp4">
         </video>
+      </div>
+      <div class="mobile-year-text-container">
+        <p class="year-text">2025</p>
       </div>
       <div class="mobile-video-ramka-right-container">
         <img src="mobile/images/container-1/video-ramka-right.png" loading="eager" decoding="async" alt="video-ramka-right" class="mobile-video-ramka-right">
@@ -85,9 +96,7 @@
       </div>
       <!-- Мобильный заголовок и подзаголовок -->
       <div class="mobile-main-header">
-        <p class="text-3"><span class="title-1">Melnikov<br>Media</span></p>
         <div class="subtitle-text" id="animated-subtitle-mobile"></div>
-        <p class="year-text">2025</p>
       </div>
       <!-- /Мобильный заголовок и подзаголовок -->
       <div class="container-1-inner">
@@ -452,5 +461,31 @@ Blender (3D). Также в этом ролике <br>
     <script src="scripts/cards-movement.js" defer></script>
     <script src="scripts/cloud-animation.js" defer></script>
     <script src="scripts/flower-movement.js" defer></script>
+    <script>
+      function isMobilePhone() {
+        // userAgent: ищем Android/iPhone, но не iPad/Tablet
+        const ua = navigator.userAgent;
+        const isTablet = /(iPad|Tablet|PlayBook|Silk)|(Android(?!.*Mobile))/i.test(ua);
+        const isMobile = /iPhone|iPod|Android.*Mobile|Windows Phone|webOS|BlackBerry|Opera Mini/i.test(ua) && !isTablet;
+        return isMobile;
+      }
+
+      function checkOrientationOverlay() {
+        const overlay = document.getElementById('orientation-overlay');
+        if (!overlay) return;
+        // Показываем если это телефон и landscape
+        if (isMobilePhone() && window.innerWidth > window.innerHeight) {
+          overlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        } else {
+          overlay.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      }
+
+      window.addEventListener('orientationchange', checkOrientationOverlay);
+      window.addEventListener('resize', checkOrientationOverlay);
+      document.addEventListener('DOMContentLoaded', checkOrientationOverlay);
+    </script>
   </body>
 </html>
