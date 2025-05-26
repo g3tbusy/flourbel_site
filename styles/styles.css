@@ -980,7 +980,6 @@ html, body, .container-1, .header-wrapper, .text-3 {
   left: 50%;
   transform: translate(-50%, -50%);
   background: none;
-  border-radius: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, auto);
@@ -1456,7 +1455,6 @@ body:not(.portfolio-page):not(.contacts-page):not(.videographer-page) .fullscree
   width: 20.5625rem;
   height: 18.6875rem;
   background: none;
-  border-radius: 1.5rem;
 }
 
 html, body {

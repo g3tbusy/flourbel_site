@@ -271,18 +271,11 @@ html, body {
     }
   
     .mobile-video-ramka-left {
-      position: absolute;
+      position: relative;
       left: auto;
-      right: 56.5vw;
-      top: 57.25vh;
+      right: auto;
+      top: auto;
       bottom: auto;
-      width: 50vw;
-      height: auto;
-      z-index: 50;
-      pointer-events: none;
-      user-select: none;
-      display: block;
-      /* border: 1px solid red; */
     }
   
     .mobile-video-ramka-right {
@@ -1353,3 +1346,111 @@ mask-mode: luminance;
     pointer-events: none;
     z-index: 2;
   }
+
+/* Стили для контейнера левой рамки и видео */
+.mobile-video-ramka-left-container {
+  position: absolute;
+  right: 56.5vw;
+  top: 57.25vh;
+  width: 50vw;
+  height: auto;
+  z-index: 50;
+  pointer-events: none;
+  user-select: none;
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .mobile-video-ramka-left-container {
+  display: block; /* Показываем на мобильных */
+}
+
+/* Стили для видео внутри левой рамки */
+.mobile-video-ramka-left-content {
+  position: absolute;
+  top: 3.2%;
+  left: 1.2%;
+  width: 92%;
+  height: 92%;
+  object-fit: cover;
+  border-radius: 0 20vw 0 0; /* Скругляем только правый верхний угол */
+  z-index: 49; /* Под рамкой */
+  pointer-events: none;
+}
+
+/* Обновляем стили для левой рамки, убирая позиционирование */
+.mobile-video-ramka-left {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Обновление стилей в медиазапросе */
+@media (max-width: 992px) {
+  .mobile-video-ramka-left {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+  
+  .mobile-device .mobile-video-ramka-left-container {
+    display: block;
+  }
+}
+
+/* Стили для контейнера правой рамки и видео */
+.mobile-video-ramka-right-container {
+  position: absolute;
+  left: 56.5vw;
+  bottom: 57.25vh;
+  width: 50vw;
+  height: auto;
+  z-index: 50;
+  pointer-events: none;
+  user-select: none;
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .mobile-video-ramka-right-container {
+  display: block; /* Показываем на мобильных */
+}
+
+/* Стили для видео внутри правой рамки */
+.mobile-video-ramka-right-content {
+  position: absolute;
+  bottom: 3.2%;
+  right: 1.2%;
+  width: 92%;
+  height: 92%;
+  object-fit: cover;
+  border-radius: 0 0 0 20vw; /* Скругляем только левый верхний угол */
+  z-index: 49; /* Под рамкой */
+  pointer-events: none;
+}
+
+/* Обновляем стили для правой рамки, убирая позиционирование */
+.mobile-video-ramka-right {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Обновление стилей в медиазапросе */
+@media (max-width: 992px) {
+  .mobile-video-ramka-right {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+  
+  .mobile-device .mobile-video-ramka-right-container {
+    display: block;
+  }
+}

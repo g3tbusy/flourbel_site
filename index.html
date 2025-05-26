@@ -72,8 +72,18 @@
     <div class="scroll-container">
       <header class="container-1" id="container-1">
       <!-- Видео-рамки для мобильных, вне мобильного заголовка -->
-      <img src="mobile/images/container-1/video-ramka-left.png" loading="eager" decoding="async" alt="video-ramka-left" class="mobile-video-ramka-left">
-      <img src="mobile/images/container-1/video-ramka-right.png" loading="eager" decoding="async" alt="video-ramka-right" class="mobile-video-ramka-right">
+      <div class="mobile-video-ramka-left-container">
+        <img src="mobile/images/container-1/video-ramka-left.png" loading="eager" decoding="async" alt="video-ramka-left" class="mobile-video-ramka-left">
+        <video class="mobile-video-ramka-left-content" autoplay muted loop playsinline preload="auto">
+          <source src="videos/main_page/main_1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="mobile-video-ramka-right-container">
+        <img src="mobile/images/container-1/video-ramka-right.png" loading="eager" decoding="async" alt="video-ramka-right" class="mobile-video-ramka-right">
+        <video class="mobile-video-ramka-right-content" autoplay muted loop playsinline preload="auto">
+          <source src="videos/main_page/main_2.mp4" type="video/mp4">
+        </video>
+      </div>
       <!-- Мобильный заголовок и подзаголовок -->
       <div class="mobile-main-header">
         <p class="text-3"><span class="title-1">Melnikov<br>Media</span></p>

@@ -45,30 +45,35 @@
     width: auto;
     height: auto;
     max-height: 60vh;
-    overflow-y: auto;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     gap: 3vh;
-    padding: 1rem 0;
-    background: transparent !important; /* Полностью прозрачный фон */
-    box-shadow: none !important; /* Убираем тени */
-    border: none !important; /* Убираем границы */
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
     z-index: 2; /* Поверх заголовка, если есть наложение */
   }
   
-  /* Стили для скроллбара */
+  /* Стили для скроллбара - убираем их полностью */
   .mobile-device .center-block-videoeditor::-webkit-scrollbar {
-    width: 4px;
+    width: 0;
+    background: transparent;
+    display: none;
   }
   
   .mobile-device .center-block-videoeditor::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    background: transparent;
+    display: none;
   }
   
   .mobile-device .center-block-videoeditor::-webkit-scrollbar-thumb {
-    background-color: #DF9D51;
-    border-radius: 10px;
+    background-color: transparent;
+    display: none;
   }
 
   /* Сброс стилей для ссылок и кнопок */

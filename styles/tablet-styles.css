@@ -232,6 +232,62 @@
       {
         font-size: 1.4vh;
       }
+
+      .mobile-video-ramka-left {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+      }
+
+      .mobile-video-ramka-left {
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 50;
+        pointer-events: none;
+      }
+
+      .mobile-video-ramka-left-content {
+        position: absolute;
+        top: 3.2%;
+        left: 1.2%;
+        width: 92%;
+        height: 92%;
+        object-fit: cover;
+        border-radius: 0 20vw 0 0; /* Скругляем только правый верхний угол */
+        z-index: 49; /* Под рамкой */
+        pointer-events: none;
+      }
+
+      .mobile-video-ramka-right {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+      }
+
+      .mobile-video-ramka-right {
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 50;
+        pointer-events: none;
+      }
+
+      .mobile-video-ramka-right-content {
+        position: absolute;
+        bottom: 3.2%;
+        right: 1.2%;
+        width: 92%;
+        height: 92%;
+        object-fit: cover;
+        border-radius: 0 0 0 20vw; /* Скругляем только левый верхний угол */
+        z-index: 49; /* Под рамкой */
+        pointer-events: none;
+      }
 }
 
 @media (max-width: 1367px) {
