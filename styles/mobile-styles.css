@@ -1045,17 +1045,18 @@ mask-mode: luminance;
     transform: translate(-50%, -50%);
     width: 70vw;
     height: 70vh;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     z-index: 20;
     flex-direction: column;
     position: relative;
+    gap: 4vh;
   }
   
   /* Контейнер для категории и изображения */
   .mobile-device .mobile-cases-container {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1074,6 +1075,7 @@ mask-mode: luminance;
     opacity: 0.75;
     margin: 0;
     padding: 0;
+    position: relative;
   }
   
   /* Стили для отдельного блока кейса */
