@@ -1592,9 +1592,7 @@ mask-mode: luminance;
   padding: 5vw;
   pointer-events: all;
 }
-.orientation-message {
-  
-}
+
 
 .orientation-error-img {
   max-width: 80vw;
