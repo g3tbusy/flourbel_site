@@ -54,4 +54,16 @@
   .mobile-device .bottom-block {
     display: none !important;
   }
+  
+  /* Стиль для анимации нажатия кнопки */
+  .mobile-device .center-block-videoeditor button.videoeditor-btn.button-clicked {
+    transform: scale(1.1) !important;
+    background: #DF9D51 !important;
+    color: #fff !important;
+  }
+  
+  /* Добавляем плавность анимации */
+  .mobile-device .center-block-videoeditor button.videoeditor-btn {
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease !important;
+  }
 }
