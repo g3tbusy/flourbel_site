@@ -1008,7 +1008,7 @@ body {
     z-index: 2;
 
     /* Маска */
-mask-image: url('../mobile/images/showreel/maskvector.svg'); /* белая звезда на прозрачном фоне */
+mask-image: url('../mobile/images/showreel/maskvector_tmp.svg'); /* белая звезда на прозрачном фоне */
 mask-size: contain;
 mask-repeat: no-repeat;
 mask-position: center;
@@ -1024,7 +1024,7 @@ mask-mode: luminance;
     }
 
 /* Добавляем стили для надписи "Клик" на мобильных устройствах */
-/* Стили закомментированы по запросу
+
 .mobile-click-text {
   display: none;
 }
@@ -1032,7 +1032,9 @@ mask-mode: luminance;
 .mobile-device .mobile-click-text {
   display: block;
   position: absolute;
-  bottom: 15%;
+  
+  
+  
   right: 15%;
   font-family: var(--font-family-montserrat);
   font-size: 5vw;
@@ -1044,7 +1046,6 @@ mask-mode: luminance;
   text-align: center;
   transform: translate(0, 0);
 }
-*/
 
 /* Стили для ссылки на мобильное видео */
 .showreel-mobile-link {

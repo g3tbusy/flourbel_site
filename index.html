@@ -224,9 +224,8 @@
       <section class="showreel" id="showreel">
         <a href="https://vk.com/video537084431_456242127" target="_blank" rel="noopener" class="showreel-mobile-link"></a>
         <div class="showreel-mobile-container">
-          <!-- <div class="mobile-click-text">Клик</div> -->
           <div class="showreel-mp4-mobile-wrapper">
-          
+            <div class="mobile-click-text">Клик</div>
             <video class="showreel-mp4-mobile" autoplay muted playsinline loop preload="auto">
               <source src="videos/showreel/mobile_showreel_cutted.mp4" type="video/mp4">
               Ваш браузер не поддерживает видео.
@@ -347,6 +346,48 @@ Blender (3D). Также в этом ролике <br>
         </div>
       </div>
       </section>
+
+      <script>
+        window.addEventListener('load', () => {
+          const video = document.querySelector('.showreel-mp4-mobile');
+          const text = document.querySelector('.mobile-click-text');
+          const wrapper = document.querySelector('.showreel-mp4-mobile-wrapper');
+      
+          const updateTextPosition = () => {
+            if (!video || !text || !wrapper) return;
+      
+            const rect = video.getBoundingClientRect();
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const offsetTop = rect.bottom - wrapperRect.top;
+      
+            // Настройки по умолчанию (мобила)
+            let extraOffset = 50;
+            let horizontalBoost = 70;
+      
+            const screenWidth = window.innerWidth;
+      
+            if (screenWidth >= 768 && screenWidth < 1024) {
+              // iPad Air, mini
+              extraOffset = 90;
+              horizontalBoost = 120;
+            } else if (screenWidth >= 1024) {
+              // iPad Pro
+              extraOffset = 110;         // выше
+              horizontalBoost = 160;     // правее
+            }
+      
+            const verticalBoost = 20;
+      
+            text.style.position = 'absolute';
+            text.style.top = `${offsetTop - text.offsetHeight - extraOffset - verticalBoost}px`;
+            text.style.left = `${rect.left + rect.width / 2 - text.offsetWidth / 2 + horizontalBoost}px`;
+          };
+      
+          video.addEventListener('loadeddata', updateTextPosition);
+          window.addEventListener('resize', updateTextPosition);
+          setTimeout(updateTextPosition, 500);
+        });
+      </script>
 
       <section class="section-4" id="whyme">
       <div class="section-4-bg"></div>
