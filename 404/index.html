@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="404styles.css?v=2"> <!-- бляяя главное сука не забывать менять перед апдейтом -->
+    <link rel="preload" href="../images/general/noise_bg.webp" as="image">
     <title>Melnikov Media - 404</title>
 </head>
 <body>
-    <span>pizdec proebali</span>
+    <section class="page-404">
+        <div class="page-bg"></div>
+        <img src="content/misko_risa.png" alt="Миска риса" class="corner-miska">
+        <div class="wrapper">
+            <div class="error-code">404</div>
+            <div class="error-title">Нихуя не найдено</div>
+            <div class="error-description">
+              Если вы видите эту страницу, значит программист Антоша
+              опять обновил прод через FTP и всё уронил.
+              Теперь он лишён доступа к гитхабу, кошко-жены,
+              миски горячего риса и 3% уважения в чатике.
+              Скоро его загрузят в контейнер и отправят в DevOps-гулаг вместе с его багами.
+            </div>
+            <div class="disrespect-row">
+              <div class="disrespect-btn-wrap">
+                <a href="/" class="disrespect-btn">Кинуть дизреспект</a>
+                <img src="content/dizrespect_parnisha.png" alt="Дизреспект парниша" class="disrespect-img">
+              </div>
+            </div>
+        </div>
+        <img src="content/koshko_zhena.png" alt="Кошко-жена" class="corner-koshko">
+    </section>
+    <script>
+        function toggleBackgroundMirror() {
+            const page404Bg = document.querySelector('.page-bg');
+            const currentTransform = page404Bg.style.transform;
+            const newTransform = currentTransform === 'scaleX(-1)' ? 'scaleX(1)' : 'scaleX(-1)';
+            page404Bg.style.transform = newTransform;
+        }
+
+setInterval(toggleBackgroundMirror, 500); 
+    </script>
 </body>
 </html>
