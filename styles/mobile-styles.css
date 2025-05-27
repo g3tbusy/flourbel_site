@@ -1030,22 +1030,28 @@ mask-mode: luminance;
 }
 
 .mobile-device .mobile-click-text {
+  top: 0;
   display: block;
   position: absolute;
-  
-  
-  
-  right: 15%;
   font-family: var(--font-family-montserrat);
-  font-size: 5vw;
-  font-weight: 700;
+  font-size: 1.8vh;
+  font-weight: 300;
   color: #FFFFFF;
   text-shadow: 0 2px 1.1px rgba(0, 0, 0, 0.54);
   z-index: 11;
   pointer-events: none;
   text-align: center;
-  transform: translate(0, 0);
+  left: 50%;
+  transform: translate(-50%, -105%);
+
+  animation: pulseOpacity 1.2s ease-in-out infinite;
+} 
+@keyframes pulseOpacity {
+  0%   { opacity: 0.2; }
+  50%  { opacity: 0.6; }
+  100% { opacity: 0.2; }
 }
+
 
 /* Стили для ссылки на мобильное видео */
 .showreel-mobile-link {
