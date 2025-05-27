@@ -19,7 +19,7 @@
     <link rel="preload" href="images/general/noise_bg.webp" as="image">
     <link rel="preload" href="images/general/DANIEL MELNIKOV.svg" as="image">
     <!-- <script src="scripts/preload.js" defer></script> -->
-    <link rel="preload" href="videos/main_page/main_1.mp4" as="video" type="video/mp4">
+    <!-- <link rel="preload" href="videos/main_page/main_1.mp4" as="video" type="video/mp4">
     <link rel="preload" href="videos/main_page/main_2.mp4" as="video" type="video/mp4">
     <link rel="preload" href="videos/main_page/main_3.mp4" as="video" type="video/mp4">
     <link rel="preload" href="videos/main_page/main_4.mp4" as="video" type="video/mp4">
@@ -29,7 +29,7 @@
     <link rel="preload" href="videos/showreel/mobile_showreel_cutted.mp4" as="video" type="video/mp4">
     <link rel="preload" href="videos/showreel/showreel_cutted.mp4" as="video" type="video/mp4">
     <link rel="preload" href="videos/cases/case_1.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="videos/cases/case_2.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="videos/cases/case_2.mp4" as="video" type="video/mp4"> -->
     
     <script>
       // Detect mobile and tablet devices
@@ -460,6 +460,47 @@ Blender (3D). Также в этом ролике <br>
       <p class="footer-text"><span class="footer-text-bold">Буду рад сотрудничеству</span><br>Melnikov Media</p>
         <img src="images/general/footer_qr.webp" alt="QR code" class="footer-qr" loading="lazy" decoding="async">
       </footer>
+
+      <script>
+        const head = document.head;
+      
+        function addPreloadVideo(href) {
+          const link = document.createElement("link");
+          link.rel = "preload";
+          link.as = "video";
+          link.type = "video/mp4";
+          link.href = href;
+          head.appendChild(link);
+        }
+      
+        function isMobileOrTablet() {
+          return window.matchMedia("(max-width: 1024px)").matches;
+        }
+      
+        function preloadVideos() {
+          if (isMobileOrTablet()) {
+            // 📱 Мобильные и планшеты
+            addPreloadVideo("videos/main_page/main_1.mp4");
+            addPreloadVideo("videos/main_page/main_2.mp4");
+            addPreloadVideo("videos/showreel/mobile_showreel_cutted.mp4");
+          } else {
+            // 💻 Десктоп
+            addPreloadVideo("videos/main_page/main_1.mp4");
+            addPreloadVideo("videos/main_page/main_2.mp4");
+            addPreloadVideo("videos/main_page/main_3.mp4");
+            addPreloadVideo("videos/main_page/main_4.mp4");
+            addPreloadVideo("videos/main_page/main_5.mp4");
+            addPreloadVideo("videos/main_page/main_6.mp4");
+            addPreloadVideo("videos/main_page/main_7.mp4");
+            addPreloadVideo("videos/showreel/showreel_cutted.mp4");
+            addPreloadVideo("videos/cases/case_1.mp4");
+            addPreloadVideo("videos/cases/case_2.mp4");
+          }
+        }
+      
+        document.addEventListener("DOMContentLoaded", preloadVideos);
+      </script>
+        
 
     <script src="scripts/container-scale.js" defer></script>
     <script src="scripts/subtitle-animation.js" defer></script>
