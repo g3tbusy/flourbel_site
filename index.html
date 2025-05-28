@@ -315,6 +315,12 @@ Blender (3D). Также в этом ролике <br>
         <img src="images/general/DANIEL MELNIKOV.svg" alt="DANIEL MELNIKOV" class="section-2-signature-left" loading="lazy" decoding="async">
         <img src="images/section-3/sky_right.webp" alt="Sky Right" class="sky-right" loading="lazy" decoding="async">
         <img src="images/section-3/sky_left.webp" alt="Sky Left" class="sky-left" loading="lazy" decoding="async">
+        
+        <!-- Добавляем облака для мобильной версии -->
+        <img src="mobile/images/section-3/right-cloud.png" alt="Right cloud" class="right-cloud" loading="lazy" decoding="async">
+        <img src="mobile/images/section-3/left-cloud.png" alt="Left cloud" class="left-cloud" loading="lazy" decoding="async">
+        <img src="mobile/images/section-3/bottom-cloud.png" alt="Bottom cloud" class="bottom-cloud" loading="lazy" decoding="async">
+        
       <!-- Мобильный враппер для заголовка "КЕЙСЫ" -->
       <div class="mobile-cases-wrapper">
         <h2 class="mobile-cases-title">КЕЙСЫ</h2>
@@ -518,6 +524,33 @@ Blender (3D). Также в этом ролике <br>
 
     
     <script src="scripts/remove-preload-anim.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+  if (!document.body.classList.contains('mobile-device')) return;
+
+  const section3 = document.querySelector('.section-3');
+  if (!section3) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Добавляем небольшую задержку для гарантии
+          setTimeout(() => {
+            section3.classList.add('clouds-animated');
+          }, 100);
+        }
+      });
+    },
+    {
+      threshold: 0.3,  // Увеличили порог появления
+      rootMargin: '-10% 0px'  // Добавили отступ сверху и снизу
+    }
+  );
+
+  observer.observe(section3);
+});
+    </script>
 
   </body>
 </html>
