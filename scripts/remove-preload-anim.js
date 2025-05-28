@@ -5,7 +5,8 @@ window.addEventListener("load", () => {
     if (!preloader) return;
   
     let loadedVideos = 0;
-    const totalVideos = videos.length;
+    // const totalVideos = videos.length;
+    const totalVideos = 5;
   
     if (totalVideos === 0) {
       removePreloader();
