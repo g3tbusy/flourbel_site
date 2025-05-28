@@ -1087,11 +1087,11 @@ mask-mode: luminance;
     z-index: 2;
   }
 
-@media only screen and (max-width: 375px) {
+/* @media only screen and (max-width: 375px) {
   .mobile-device .mobile-cases-wrapper {
     height: 80vh !important;
   }
-}
+} */
 
 @media (max-width: 1024px) {
   .mobile-device .section-3 {
@@ -1204,8 +1204,7 @@ mask-mode: luminance;
     position: absolute;
     top: 0;
     right: 0;
-    width: 70vw;
-    /* max-width: 180px; */
+    width: 35vh;
     height: auto;
     z-index: 10;
     pointer-events: none;
