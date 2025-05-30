@@ -10,9 +10,11 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
 
-    <link rel="stylesheet" href="styles/styles.css?v=6"> <!-- бляяя главное сука не забывать менять перед апдейтом -->
-    <link rel="stylesheet" href="styles/mobile-styles.css?v=6"> <!-- бляяя главное сука не забывать менять перед апдейтом -->
-    <link rel="stylesheet" href="styles/tablet-styles.css?v=6"> <!-- бляяя главное сука не забывать менять перед апдейтом -->
+    <script src="scripts/remove-preload-anim.js" defer></script>
+
+    <link rel="stylesheet" href="styles/styles.css?v=10"> 
+    <link rel="stylesheet" href="styles/mobile-styles.css?v=10"> 
+    <link rel="stylesheet" href="styles/tablet-styles.css?v=10"> 
 
     <link rel="preload" href="images/container-1/background.webp" as="image">
     <link rel="preload" href="mobile/images/container-1/mobile_background.png" as="image">
@@ -37,7 +39,6 @@
 <!-- /Yandex.Metrika counter -->
     
     <script>
-      // Detect mobile and tablet devices
       function isMobileOrTablet() {
         return window.matchMedia('(max-width: 1024px)').matches;
       }
@@ -71,6 +72,7 @@
       });
     </script>
     <script src="scripts/orientation-reload.js"></script>
+    
   </head>
 
   <body>
@@ -96,8 +98,7 @@
         <div class="side"></div>
         <div class="side"></div>
       </div>
-    </div>
-    
+    </div>    
     
       <header class="container-1" id="container-1">
       <!-- Видео-рамки для мобильных, вне мобильного заголовка -->
@@ -106,38 +107,21 @@
       </div>
       <div class="mobile-video-ramka-left-container">
         <img src="mobile/images/container-1/video-ramka-left.png" loading="eager" decoding="async" alt="video-ramka-left" class="mobile-video-ramka-left">
-        <video class="mobile-video-ramka-left-content" playsinline
-  webkit-playsinline
-  x5-playsinline
-  autoplay
-  muted
-  loop
-  preload="auto"
-  x5-video-player-type="h5"
-  x-webkit-airplay="allow"
-  disablePictureInPicture
-  disableRemotePlayback>
+        <!-- <video class="mobile-video-ramka-left-content" autoplay playsinline preload="auto">
           <source src="https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/main_page/main_1.mp4" type="video/mp4">
-        </video>
+        </video> -->
+        <img src="mobile/images/container-1/main_1.gif" loading="eager" decoding="async" alt="video" class="mobile-video-ramka-left-content">
+        
       </div>
       <div class="mobile-year-text-container">
         <p class="year-text">2025</p>
       </div>
       <div class="mobile-video-ramka-right-container">
         <img src="mobile/images/container-1/video-ramka-right.png" loading="eager" decoding="async" alt="video-ramka-right" class="mobile-video-ramka-right">
-        <video class="mobile-video-ramka-right-content" playsinline
-  webkit-playsinline
-  x5-playsinline
-  autoplay
-  muted
-  loop
-  preload="auto"
-  x5-video-player-type="h5"
-  x-webkit-airplay="allow"
-  disablePictureInPicture
-  disableRemotePlayback>
+        <!-- <video class="mobile-video-ramka-right-content" autoplay playsinline preload="auto">
           <source src="https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/main_page/main_2.mp4" type="video/mp4">
-        </video>
+        </video> -->
+        <img src="mobile/images/container-1/main_2.gif" loading="eager" decoding="async" alt="video" class="mobile-video-ramka-right-content">
       </div>
       <!-- Мобильный заголовок и подзаголовок -->
       <div class="mobile-main-header">
@@ -262,21 +246,11 @@
         <a href="https://vk.com/video537084431_456242127" target="_blank" rel="noopener" class="showreel-mobile-link"></a>
         <div class="showreel-mobile-container">
           <div class="showreel-mp4-mobile-wrapper">
-            <video class="showreel-mp4-mobile" playsinline
-  webkit-playsinline
-  x5-playsinline
-  autoplay
-  muted
-  loop
-  preload="auto"
-  x5-video-player-type="h5"
-  x-webkit-airplay="allow"
-  disablePictureInPicture
-  disableRemotePlayback>
+            <!-- <video class="showreel-mp4-mobile" autoplay muted playsinline loop preload="auto">
               <source src="https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/showreel/mobile_showreel_cutted.mp4" type="video/mp4">
               Ваш браузер не поддерживает видео.
-            </video>
-          
+            </video>        -->
+            <img src="mobile/images/showreel/mobile_showreel_cutted.gif" loading="eager" decoding="async" alt="video" class="showreel-mp4-mobile">
         </div>
         </div>
         
@@ -359,42 +333,22 @@ Blender (3D). Также в этом ролике <br>
             <div class="mobile-cases-item">
               <span class="mobile-cases-category">Монтажер</span>
               <div class="mobile-video-cases">
-                <video class="mobile-video-case" playsinline
-  webkit-playsinline
-  x5-playsinline
-  autoplay
-  muted
-  loop
-  preload="auto"
-  x5-video-player-type="h5"
-  x-webkit-airplay="allow"
-  disablePictureInPicture
-  disableRemotePlayback>
+                <!-- <video class="mobile-video-case" autoplay="" muted="" loop="" playsinline="" preload="auto">
                   <source src="https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/cases/case_1.mp4" type="video/mp4">
-                </video>
+                </video> -->
+                <img src="mobile/images/section-3/case-1.gif" loading="eager" decoding="async" alt="video" class="mobile-video-case">
               </div>
-              <!-- <img src="mobile/images/section-3/mobile-video-cases.png" alt="Видео кейсы монтажер" class="mobile-video-cases" loading="lazy" decoding="async"> -->
             </div>
           </a>
           <a href="videomaker" class="mobile-cases-link">
             <div class="mobile-cases-item">
               <span class="mobile-cases-category">Оператор</span>
               <div class="mobile-video-cases">
-                <video class="mobile-video-case" playsinline
-  webkit-playsinline
-  x5-playsinline
-  autoplay
-  muted
-  loop
-  preload="auto"
-  x5-video-player-type="h5"
-  x-webkit-airplay="allow"
-  disablePictureInPicture
-  disableRemotePlayback>
+                <!-- <video class="mobile-video-case" autoplay="" muted="" loop="" playsinline="" preload="auto">
                   <source src="https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/cases/case_2.mp4" type="video/mp4">
-                </video>
+                </video> -->
+                <img src="mobile/images/section-3/case-2.gif" loading="eager" decoding="async" alt="video" class="mobile-video-case">
               </div>
-              <!-- <img src="mobile/images/section-3/mobile-video-cases.png" alt="Видео кейсы оператор" class="mobile-video-cases" loading="lazy" decoding="async"> -->
             </div>
           </a>
         </div>
@@ -534,6 +488,7 @@ Blender (3D). Также в этом ролике <br>
         <img src="images/general/footer_qr.webp" alt="QR code" class="footer-qr" loading="lazy" decoding="async">
       </footer>
 
+
     <script src="scripts/preload-videos.js" defer></script>  
 
     <script src="scripts/container-scale.js" defer></script>
@@ -573,7 +528,6 @@ Blender (3D). Также в этом ролике <br>
     </script>
 
     
-    <script src="scripts/remove-preload-anim.js" defer></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
   if (!document.body.classList.contains('mobile-device')) return;
@@ -593,8 +547,8 @@ Blender (3D). Также в этом ролике <br>
       });
     },
     {
-      threshold: 0.3,  // Увеличили порог появления
-      rootMargin: '-10% 0px'  // Добавили отступ сверху и снизу
+      threshold: 0.1,  // Уменьшаем порог появления с 0.3 до 0.1
+      rootMargin: '10% 0px'  // Увеличиваем отступ сверху для более раннего срабатывания
     }
   );
 

@@ -164,6 +164,24 @@ body {
     width: 100%;
     min-height: 100vh;
   }
+
+  .mobile-video-case {
+    width: 24vh;
+    height: 23vh;
+    background: #000;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 6vh;
+    transition: filter 0.8s ease;
+  }
+
+  .container-1 {
+    background: #000 url('../mobile/images/container-1/mobile_background.png') center center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 1440px) {
@@ -196,6 +214,71 @@ body {
       overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+    }
+
+    #preloader {
+      position: fixed;
+      z-index: 9999;
+      background-color: black;
+      background-image: url('../images/general/noise_bg_prel.webp');
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .cube {
+      font-size: 24px;
+      height: 1em;
+      width: 1em;
+      position: relative;
+      transform: rotateX(30deg) rotateY(45deg);
+      transform-style: preserve-3d;
+      animation: cube-spin 1.5s infinite ease-in-out alternate;
+      color: white;
+    }
+    
+    .side {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform-style: preserve-3d;
+    }
+    
+    .side::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: currentcolor;
+      transform: translateZ(0.5em);
+      animation: cube-explode 1.5s infinite ease-in-out;
+      opacity: 0.5;
+    }
+    
+    .side:nth-child(1) { transform: rotateY(90deg); }
+    .side:nth-child(2) { transform: rotateY(180deg); }
+    .side:nth-child(3) { transform: rotateY(270deg); }
+    .side:nth-child(4) { transform: rotateY(360deg); }
+    .side:nth-child(5) { transform: rotateX(90deg); }
+    .side:nth-child(6) { transform: rotateX(270deg); }
+    
+    @keyframes cube-spin {
+      0% { transform: rotateX(30deg) rotateY(45deg); }
+      100% { transform: rotateX(30deg) rotateY(405deg); }
+    }
+    
+    @keyframes cube-explode {
+      0%   { transform: translateZ(0.5em); }
+      50%  { transform: translateZ(0.75em); }
+      100% { transform: translateZ(0.5em); }
     }
     
     .container-1 {
@@ -413,6 +496,7 @@ body {
       z-index: 6;
       pointer-events: none;
       margin: 2px 0;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
     }
     
     /* Стили для текстового блока в section-2 на мобильных */
@@ -983,6 +1067,7 @@ body {
     z-index: 6;
     pointer-events: none;
     margin: 2px 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   }
 
   html, body {
@@ -1008,13 +1093,13 @@ body {
     z-index: 2;
 
     /* Маска */
-mask-image: url('../mobile/images/showreel/maskvector_tmp.svg'); /* белая звезда на прозрачном фоне */
+mask-image: url('../mobile/images/showreel/maskvector.png');
 mask-size: contain;
 mask-repeat: no-repeat;
 mask-position: center;
 
 /* Для браузеров WebKit (Safari, Chrome) */
--webkit-mask-image: url('../mobile/images/showreel/maskvector.svg');
+-webkit-mask-image: url('../mobile/images/showreel/maskvector.png');
 -webkit-mask-size: contain;
 -webkit-mask-repeat: no-repeat;
 -webkit-mask-position: center;
@@ -1489,6 +1574,7 @@ mask-mode: luminance;
   border-radius: 0 20vw 0 0; /* Скругляем только правый верхний угол */
   z-index: 49; /* Под рамкой */
   pointer-events: none;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Обновляем стили для левой рамки, убирая позиционирование */
@@ -1543,6 +1629,7 @@ mask-mode: luminance;
   border-radius: 0 0 0 20vw; /* Скругляем только левый верхний угол */
   z-index: 49; /* Под рамкой */
   pointer-events: none;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Обновляем стили для правой рамки, убирая позиционирование */
@@ -1705,7 +1792,7 @@ mask-mode: luminance;
     height: auto;
     z-index: 21;
     pointer-events: none;
-    transition: right 1.1s cubic-bezier(.77,0,.18,1);
+    transition: right 2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobile-device .section-3 .left-cloud {
@@ -1717,7 +1804,7 @@ mask-mode: luminance;
     height: auto;
     z-index: 21;
     pointer-events: none;
-    transition: left 1.1s cubic-bezier(.77,0,.18,1);
+    transition: left 2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobile-device .section-3 .bottom-cloud {
@@ -1729,7 +1816,7 @@ mask-mode: luminance;
     height: auto;
     z-index: 21;
     pointer-events: none;
-    transition: top 1.1s cubic-bezier(.77,0,.18,1);
+    transition: top 2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Анимированное состояние */

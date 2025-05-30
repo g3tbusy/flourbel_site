@@ -16,9 +16,9 @@ const head = document.head;
         function preloadVideos() {
           if (isMobileOrTablet()) {
             // 📱 Мобильные и планшеты
-            addPreloadVideo("https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/main_page/main_1.mp4");
-            addPreloadVideo("https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/main_page/main_2.mp4");
-            addPreloadVideo("https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/showreel/mobile_showreel_cutted.mp4");
+            // addPreloadVideo("https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/main_page/main_1.mp4");
+            // addPreloadVideo("https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/main_page/main_2.mp4");
+            // addPreloadVideo("https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/showreel/mobile_showreel_cutted.mp4");
           } else {
             // 💻 Десктоп
             addPreloadVideo("https://cdn.jsdelivr.net/gh/g3tbusy/cdn-content@main/desktop/main_page/main_1.mp4");
