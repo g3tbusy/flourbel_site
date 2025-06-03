@@ -156,7 +156,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    height: auto;
+    /* height: auto; */
   }
   
   .container-1, .section-2, .showreel, .section-3, .section-4 {
@@ -299,7 +299,7 @@ body {
     }
     
     .center-image-outer {
-      min-height: auto;
+      /* min-height: auto; */
       height: 100%;
       width: 100%;
       display: flex;
@@ -438,7 +438,7 @@ body {
       top: auto;
       bottom: calc(var(--vh) * 57.25) /* vh fixed */;
       width: 50vw;
-      height: auto;
+      /* height: auto; */
       z-index: 50;
       pointer-events: none;
       user-select: none;
@@ -492,7 +492,7 @@ body {
       left: 55%;
       transform: translate(-50%, -50%);
       width: 48vw;
-      height: auto;
+      /* height: auto; */
       z-index: 6;
       pointer-events: none;
       margin: 2px 0;
@@ -1088,7 +1088,7 @@ body {
     transform: translateX(-50%);
     width: 250vw;
     max-width: none;
-    height: auto;
+    /* height: auto; */
     pointer-events: none;
     z-index: 2;
 
@@ -1195,7 +1195,7 @@ mask-mode: luminance;
     top: 50%;
     transform: translateY(-50%);
     width: calc(var(--vh) * 35) /* vh fixed */;
-    height: auto;
+    /* height: auto; */
     z-index: 15;
     pointer-events: none;
   }
@@ -1206,7 +1206,7 @@ mask-mode: luminance;
     left: 0;
     top: 0;
     width: calc(var(--vh) * 35) /* vh fixed */;
-    height: auto;
+    /* height: auto; */
     z-index: 15;
     pointer-events: none;
   }
@@ -1217,7 +1217,7 @@ mask-mode: luminance;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: auto;
+    /* height: auto; */
     z-index: 15;
     pointer-events: none;
   }
@@ -1287,7 +1287,7 @@ mask-mode: luminance;
   .mobile-device .mobile-video-cases {
     display: block !important;
     width: calc(var(--vh) * 24) /* vh fixed */;
-    height: auto;
+    /* height: auto; */
     max-height: calc(var(--vh) * 30) /* vh fixed */;
     object-fit: contain;
     z-index: 5;
@@ -1326,7 +1326,7 @@ mask-mode: luminance;
     top: 0;
     right: 0;
     width: calc(var(--vh) * 35) /* vh fixed */;
-    height: auto;
+    /* height: auto; */
     z-index: 10;
     pointer-events: none;
   }
@@ -1371,7 +1371,7 @@ mask-mode: luminance;
     top: 0;
     right: 0;
     width: 70vw;
-    height: auto;
+    /* height: auto; */
     z-index: 10;
     pointer-events: none;
   }
@@ -1382,7 +1382,7 @@ mask-mode: luminance;
     bottom: 0;
     left: 0;
     width: 70vw;
-    height: auto;
+    /* height: auto; */
     z-index: 10;
     pointer-events: none;
     transform: scaleX(-1) scaleY(-1);
@@ -1552,7 +1552,7 @@ mask-mode: luminance;
   right: 56.5vw;
   top: calc(var(--vh) * 57.25) /* vh fixed */;
   width: 50vw;
-  height: auto;
+  /* height: auto; */
   z-index: 50;
   pointer-events: none;
   user-select: none;
@@ -1581,7 +1581,7 @@ mask-mode: luminance;
 .mobile-video-ramka-left {
   position: relative;
   width: 100%;
-  height: auto;
+  /* height: auto; */
   z-index: 50;
   pointer-events: none;
 }
@@ -1607,7 +1607,7 @@ mask-mode: luminance;
   left: 56.5vw;
   bottom: calc(var(--vh) * 57.25) /* vh fixed */;
   width: 50vw;
-  height: auto;
+  /* height: auto; */
   z-index: 50;
   pointer-events: none;
   user-select: none;
@@ -1636,7 +1636,7 @@ mask-mode: luminance;
 .mobile-video-ramka-right {
   position: relative;
   width: 100%;
-  height: auto;
+  /* height: auto; */
   z-index: 50;
   pointer-events: none;
 }
@@ -1789,7 +1789,7 @@ mask-mode: luminance;
     top: 50%;
     transform: translateY(-50%);
     width: calc(var(--vh) * 50) /* vh fixed */;
-    height: auto;
+    /* height: auto; */
     z-index: 21;
     pointer-events: none;
     transition: right 2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1801,7 +1801,7 @@ mask-mode: luminance;
     left: -100%;  /* Начальная позиция за пределами экрана */
     top: 0;
     width: calc(var(--vh) * 50) /* vh fixed */;
-    height: auto;
+    /* height: auto; */
     z-index: 21;
     pointer-events: none;
     transition: left 2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1813,7 +1813,7 @@ mask-mode: luminance;
     left: 0;
     top: calc(var(--vh, 1vh) * 120);;  /* Начальная позиция за пределами экрана */
     width: 100%;
-    height: auto;
+    /* height: auto; */
     z-index: 21;
     pointer-events: none;
     transition: top 2s cubic-bezier(0.4, 0, 0.2, 1);
