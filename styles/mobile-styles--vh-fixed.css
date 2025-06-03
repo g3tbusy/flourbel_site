@@ -159,7 +159,13 @@ body {
     /* height: auto; */
   }
   
-  .container-1, .section-2, .showreel, .section-3, .section-4 {
+  .section-2, .showreel, .section-3, .section-4 {
+    position: relative;
+    width: 100%;
+    height: calc(var(--vh) * 100) /* vh fixed */;
+  }
+
+  .container-1 {
     position: relative;
     width: 100%;
     min-height: calc(var(--vh) * 100) /* vh fixed */;
