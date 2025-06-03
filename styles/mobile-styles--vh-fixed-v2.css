@@ -1,0 +1,1841 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+
+:root {
+  --text-white: rgba(255, 255, 255, 1);
+  --font-family-montserrat: 'Montserrat', Arial, sans-serif;
+}
+
+#orientation-overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95) url('../mobile/images/error_msg_bg.png') center center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-family-montserrat, Arial, sans-serif);
+  font-size: 5vw;
+  padding: 5vw;
+  pointer-events: all;
+}
+
+
+.orientation-error-img {
+  width: 60vw;
+  height: 80vh /* vh fixed */;
+  background: url('../mobile/images/error_msg.png') center center/contain no-repeat;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.orientation-error-text {
+  color: #fff;
+  text-align: center;
+  margin: 0.8em 0 0 0;
+  font-size: 4vw;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.orientation-error-light {
+  font-weight: 300;
+}
+
+.orientation-error-medium {
+  font-weight: 500;
+}
+
+@media (min-width: 400px) {
+  .orientation-error-text {
+    font-size: 1.7vw;
+  }
+}
+
+.text-white {
+    color: var(--text-white);
+    font-family: var(--font-family-montserrat);
+  }
+
+  .title-1 {
+    font-size: 48px;
+    margin-bottom: 56px;
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+  
+  .subtitle-text {
+    position: absolute;
+    bottom: 50px;
+    font-family: var(--font-family-montserrat);
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--text-white);
+    text-align: center;
+    width: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .subtitle-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    white-space: pre;
+  }
+  
+  .subtitle-text span.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .subtitle-text .line {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 3px 0;
+  }
+  
+  .subtitle-appear {
+    opacity: 1;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .subtitle-disappear {
+    animation: fadeOut 0.8s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh /* vh fixed */;
+  font-family: var(--font-family-montserrat);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 992px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* height: auto; */
+  }
+  
+  .section-2, .showreel, .section-3, .section-4 {
+    position: relative;
+    width: 100%;
+    height: 100vh /* vh fixed */;
+  }
+
+  .container-1 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh /* vh fixed */;
+  }
+
+  .mobile-video-case {
+    width: 24vh /* vh fixed */;
+    height: 23vh /* vh fixed */;
+    background: #000;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 6vh /* vh fixed */;
+    transition: filter 0.8s ease;
+  }
+
+  .container-1 {
+    background: #000 url('../mobile/images/container-1/mobile_background.png') center center/cover no-repeat;
+    height: 80vh /* vh fixed */;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1440px) {
+    .container-1 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container-1 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  video.mobile-video-case {
+    width: 24vh /* vh fixed */;
+      height: 23vh /* vh fixed */;
+      background: #000;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 6vh /* vh fixed */;
+      transition: filter 0.8s ease;
+  }
+
+  /* Mobile and tablet responsiveness */
+@media (max-width: 992px) {
+    html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #preloader {
+      position: fixed;
+      z-index: 9999;
+      background-color: black;
+      background-image: url('../images/general/noise_bg_prel.webp');
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh /* vh fixed */;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .cube {
+      font-size: 24px;
+      height: 1em;
+      width: 1em;
+      position: relative;
+      transform: rotateX(30deg) rotateY(45deg);
+      transform-style: preserve-3d;
+      animation: cube-spin 1.5s infinite ease-in-out alternate;
+      color: white;
+    }
+    
+    .side {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform-style: preserve-3d;
+    }
+    
+    .side::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: currentcolor;
+      transform: translateZ(0.5em);
+      animation: cube-explode 1.5s infinite ease-in-out;
+      opacity: 0.5;
+    }
+    
+    .side:nth-child(1) { transform: rotateY(90deg); }
+    .side:nth-child(2) { transform: rotateY(180deg); }
+    .side:nth-child(3) { transform: rotateY(270deg); }
+    .side:nth-child(4) { transform: rotateY(360deg); }
+    .side:nth-child(5) { transform: rotateX(90deg); }
+    .side:nth-child(6) { transform: rotateX(270deg); }
+    
+    @keyframes cube-spin {
+      0% { transform: rotateX(30deg) rotateY(45deg); }
+      100% { transform: rotateX(30deg) rotateY(405deg); }
+    }
+    
+    @keyframes cube-explode {
+      0%   { transform: translateZ(0.5em); }
+      50%  { transform: translateZ(0.75em); }
+      100% { transform: translateZ(0.5em); }
+    }
+    
+    .container-1 {
+      background: #000 url('../mobile/images/container-1/mobile_background.png') center center/cover no-repeat;
+      height: 80vh /* vh fixed */;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .container-1-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      left: 0;
+      top: 0;
+      transform: none;
+    }
+    
+    .center-image-outer {
+      /* min-height: auto; */
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .header-wrapper {
+      position: absolute;
+      top: 8vh /* vh fixed */;
+      left: 8vw;
+      width: auto;
+      transform: none;
+      margin: 0;
+      text-align: left;
+    }
+    
+    .text-3 {
+      font-size: 4vw;
+      padding: 0;
+      text-align: left;
+      opacity: 0.71;
+      line-height: 1;
+    }
+    
+    .title-1 {
+      font-size: 4vw;
+      margin: 0;
+      display: inline-block;
+      white-space: pre-line;
+      content: "Melnikov\nMedia";
+    }
+    
+    .text-3 .title-1:after {
+      content: "\AMelnikov\AMedia";
+      white-space: pre;
+    }
+    
+    /* Hide videos on mobile and tablet */
+    .card-11-center,
+    .card-11-center-left,
+    .card-11-lower,
+    .card-11-lower-left,
+    .card-12-center,
+    .card-12-center-left,
+    .card-7-center,
+    .showreel-mp4,
+    .showreel-video {
+      display: none;
+    }
+    
+    .center-image-relative {
+      display: none;
+    }
+    
+    .subtitle-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12.8vw;
+      margin-top: 3vw;
+      line-height: 1.2;
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .subtitle-text .line {
+      margin: 0;
+    }
+  
+    .container-1-inner,
+    .center-image-outer {
+      display: none !important;
+    }
+  
+    .mobile-main-header {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh /* vh fixed */;
+      z-index: 10;
+      background: none;
+      text-align: left;
+      padding-top: 8vw;
+    }
+    .mobile-main-header .text-3 {
+      position: absolute;
+      left: 7vw;
+      top: 35vw;
+      font-size: 4vw;
+      opacity: 0.71;
+      margin: 0;
+      line-height: 1;
+    }
+    .mobile-main-header .title-1 {
+      font-size: 4vw;
+      margin: 0;
+      display: inline-block;
+      white-space: pre-line;
+    }
+    .mobile-main-header .subtitle-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3.8vw;
+      width: 100vw;
+      text-align: center;
+      padding-left: 0;
+      margin-top: 3vw;
+      line-height: 1.2;
+      z-index: 100;
+    }
+    .mobile-main-header .subtitle-text .line {
+      white-space: nowrap;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .mobile-video-ramka-left {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+    }
+  
+    .mobile-video-ramka-right {
+      position: absolute;
+      right: auto;
+      left: 56.5vw;
+      top: auto;
+      bottom: 57.25vh /* vh fixed */;
+      width: 50vw;
+      /* height: auto; */
+      z-index: 50;
+      pointer-events: none;
+      user-select: none;
+      display: block;
+      /* border: 1px solid blue; */
+    }
+    
+    /* Стили для года 2025 в мобильной версии */
+    .mobile-main-header .year-text {
+      position: absolute;
+      bottom: 6.4vw;
+      right: 7.4vw;
+      font-size: 6.4vw;
+      display: block; /* Показать на мобильных */
+    }
+    
+    .year-text {
+      display: block; /* Показать на мобильных */
+    }
+    
+    /* Адаптация section-2 для мобильных устройств */
+    .mobile-device .section-2 {
+      background: #000 url('../mobile/images/section-2/main_bg.png') center center/cover no-repeat;
+    }
+    
+    .mobile-device .section-2 .section-2-bg,
+    .mobile-device .section-2 .section-2-signature,
+    .mobile-device .section-2 .section-2-signature-left,
+    .mobile-device .section-2 .image-block-4-wrapper {
+      display: none;
+    }
+    
+    /* Стили для изображения слева в section-2 на мобильных */
+    .mobile-device .section-2-mobile-photo {
+      display: block;
+      position: relative;
+      width: 40vw;
+      height: 100vh /* vh fixed */;
+      object-fit: cover;
+      z-index: 5;
+      pointer-events: none;
+    }
+    
+  
+    
+    /* Стили для основного изображения в section-2 на мобильных */
+    .mobile-device .section-2-mobile-main-photo {
+      display: block;
+      position: absolute;
+      top: 45%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      width: 48vw;
+      /* height: auto; */
+      z-index: 6;
+      pointer-events: none;
+      margin: 2px 0;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Стили для текстового блока в section-2 на мобильных */
+    .mobile-device .section-2-mobile-text {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: 60vw;
+      /* max-width: 500px; */
+      text-align: left;
+      margin-bottom: 5vh /* vh fixed */;
+      margin-right: 0;
+      margin-left: auto;
+      font-family: var(--font-family-montserrat);
+      font-size: 2.6vw;
+      color: var(--text-white);
+      line-height: 1.5;
+      z-index: 7;
+    }
+    
+    /* Новый контейнер для фото и текста */
+    .mobile-device .section-2-mobile-container {
+      display: flex;
+      width: 100%;
+      height: 100vh /* vh fixed */;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .mobile-device .section-2-mobile-container {
+      display: flex;
+      align-items: center;
+    }
+  
+    /* Медиа-запросы для адаптивности */
+    @media (max-width: 768px) {
+      .mobile-device .section-2-mobile-text {
+        font-size: 3vw;
+        padding: 2.3vw;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .mobile-device .section-2-mobile-text {
+        font-size: 3.5vw;
+        padding: 2.3vw;
+      }
+    }
+  
+    /* Стили для мобильной навигации в section-2 */
+    .mobile-device .section-2-mobile-nav {
+      display: flex;
+      position: absolute;
+      bottom: auto;
+      top: calc(45% + 24vw + 20vw);
+      left: 0;
+      right: 0;
+      justify-content: center;
+      align-items: center;
+      gap: 3.2vw;
+      z-index: 8;
+      width: 100%;
+    }
+    
+    .mobile-device .section-2-mobile-nav .mobile-nav-link {
+      font-family: var(--font-family-montserrat);
+      font-weight: 700;
+      font-size: 2.6vw;
+      color: var(--text-white);
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+  
+    .mobile-device .section-2-mobile-nav .mobile-nav-link:active {
+      opacity: 0.7;
+      transform: scale(0.95);
+    }
+  
+    /* Медиа-запросы для адаптивности навигации */
+    @media (max-width: 768px) {
+      .mobile-device .section-2-mobile-nav {
+        top: calc(63% + 24vw + 22vw);
+        gap: 2.8vw;
+      }
+      
+      .mobile-device .section-2-mobile-nav .mobile-nav-link {
+        font-size: 2.8vw;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .mobile-device .section-2-mobile-nav {
+        top: calc(63% + 24vw + 24vw);
+        gap: 2.5vw;
+      }
+      
+      .mobile-device .section-2-mobile-nav .mobile-nav-link {
+        font-size: 3vw;
+      }
+    }
+  
+    /* Стили для верхнего блока заголовка в section-2 на мобильных */
+    .mobile-device .section-2-mobile-header {
+      display: block;
+      position: absolute;
+      top: calc(45% - 48vw/2 - 5vw); /* Позиционируем над фото: центр фото (45%) минус половина высоты фото (48vw/2) минус небольшой отступ (5vw) */
+      left: 0;
+      width: 100%;
+      padding: 0 5vw;
+      text-align: center;
+      z-index: 10;
+    }
+  
+    /* Адаптация showreel для мобильных устройств */
+    .mobile-device .showreel {
+      background-image: url("../mobile/images/showreel/showreel_bg.png");
+      min-height: 100vh/* vh fixed */;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .mobile-device .showreel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../mobile/images/showreel/flowers_bg_temp.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+  
+    .mobile-device .showreel .section-2-signature,
+    .mobile-device .showreel .section-2-signature-left,
+    .mobile-device .showreel .flower-repel,
+    .mobile-device .showreel .showreel-title,
+    .mobile-device .showreel .showreel-center,
+    .mobile-device .showreel .showreel-desc,
+    .mobile-device .showreel .showreel-note,
+    .mobile-device .showreel .showreel-video-wrapper,
+    .mobile-device .showreel .showreel-video,
+    .mobile-device .showreel .showreel-mp4,
+    .mobile-device .showreel .video-container {
+      display: none !important;
+    }
+  
+    .showreel-mobile-desc {
+      display: block;
+      position: absolute;
+      /* top: calc(45vh + 2vw); */
+      bottom: 15vh /* vh fixed */;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70vw;
+      /* font-size: 13px; */
+      font-size: 1.5vh /* vh fixed */;
+      color: #fff;
+      text-align: left;
+      padding: 0 16px;
+      z-index: 10;
+      font-family: var(--font-family-montserrat);
+      line-height: 1.5;
+      pointer-events: none;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .showreel-mobile-desc {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .mobile-main-header {
+      display: none !important;
+    }
+  
+    .mobile-video-ramka-left {
+      display: none !important;
+    }
+  
+    .mobile-video-ramka-right {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .container-1 {
+      background-position: center top;
+    }
+    
+    .header-wrapper {
+      top: 5.3vw;
+      position: relative;
+      margin-bottom: 0;
+    }
+    
+    .text-3 {
+      font-size: 6.4vw;
+    }
+    
+    .title-1 {
+      font-size: 6.4vw;
+    }
+    
+    .subtitle-text {
+      font-size: 12.8vw;
+      padding: 0 3.2vw;
+    }
+    
+    .subtitle-text .line {
+      margin: 0;
+      padding: 1.3vw 0;
+    }
+    
+    .year-text {
+      bottom: 4.2vw;
+      right: 6.4vw;
+      font-size: 9vw;
+    }
+  }
+  
+  /* Extra small devices */
+  @media (max-width: 375px) {
+    .header-wrapper {
+      top: 5.3vw;
+      left: 5.3vw;
+    }
+    
+    .text-3 {
+      font-size: 6.4vw;
+    }
+    
+    .title-1 {
+      font-size: 6.4vw;
+    }
+    
+    .subtitle-text {
+      font-size: 15.4vw;
+    }
+    
+    .year-text {
+      bottom: 4.2vw;
+      right: 4.2vw;
+      font-size: 7.7vw;
+    }
+  }
+
+  /* Стили для года 2025 */
+.year-text {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-family: var(--font-family-montserrat);
+    font-weight: 700;
+    font-size: 56px;
+    color: var(--text-white);
+    text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.25);
+    line-height: 1;
+    z-index: 10;
+    opacity: 0.71;
+    display: none; /* Скрыто по умолчанию для десктопных устройств */
+  }
+  
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 992px) {
+    .mobile-main-header .year-text {
+      position: absolute;
+      bottom: 35vw;
+      right: 80px;
+      font-size: 30px;
+      display: block; /* Показать на мобильных */
+    }
+    
+    .year-text {
+      display: block; /* Показать на мобильных */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .year-text {
+      bottom: 20px;
+      right: 30px;
+      font-size: 42px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .year-text {
+      bottom: 20px;
+      right: 20px;
+      font-size: 36px;
+    }
+  }
+
+  /* ПОЛНОСТЬЮ ОТДЕЛЬНЫЕ мобильные стили, которые никак не влияют на десктоп */
+@media (max-width: 992px) {
+    .mobile-device .container-1 {
+      background: #000 url('../mobile/images/container-1/mobile_background.png') center center/cover no-repeat;
+    }
+  
+    .mobile-device .header-wrapper {
+      position: fixed;
+      top: 8vw;
+      left: 8vw;
+      width: auto;
+      margin: 0;
+      display: block;
+    }
+  
+    .mobile-device .text-3 {
+      font-size: 8vw;
+      padding: 0;
+      text-align: left;
+      opacity: 0.71;
+      margin: 0;
+    }
+  
+    .mobile-device .title-1 {
+      /* font-size: 8vw; */
+      margin: 0;
+    }
+  
+    .mobile-device .center-image-relative {
+      display: none;
+    }
+  
+    /* Скрываем дублирующийся текст */
+    .mobile-device .text-3:before,
+    .mobile-device .text-3:after {
+      display: none;
+    }
+  
+    .mobile-device .text-3 span:before,
+    .mobile-device .text-3 span:after {
+      display: none;
+    }
+    
+    /* Адаптация section-2 для мобильных устройств */
+    .mobile-device .section-2 {
+      background: #000 url('../mobile/images/section-2/main_bg.png') center center/cover no-repeat;
+    }
+    
+    .mobile-device .section-2 .section-2-bg,
+    .mobile-device .section-2 .section-2-signature,
+    .mobile-device .section-2 .section-2-signature-left,
+    .mobile-device .section-2 .image-block-4-wrapper {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .mobile-device .text-3 {
+      font-size: 8vw;
+    }
+  
+    .mobile-device .title-1 {
+      font-size: 8vw;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .mobile-device .header-wrapper {
+      top: 5.3vw;
+      left: 5.3vw;
+    }
+  
+    .mobile-device .text-3 {
+      font-size: 8vw;
+    }
+  
+    .mobile-device .title-1 {
+      font-size: 8vw;
+    }
+  }
+
+  /* Адаптация section-2 для мобильных устройств */
+.mobile-device .section-2 {
+    background: #000 url('../mobile/images/section-2/main_bg.png') center center/cover no-repeat;
+  }
+  
+  .mobile-device .section-2 .section-2-bg,
+  .mobile-device .section-2 .section-2-signature,
+  .mobile-device .section-2 .section-2-signature-left,
+  .mobile-device .section-2 .image-block-4-wrapper {
+    display: none;
+  }
+  
+  /* Стили для изображения слева в section-2 на мобильных */
+  .section-2-mobile-photo {
+    display: none; /* По умолчанию скрыто */
+  }
+  
+  .mobile-device .section-2-mobile-photo {
+    display: block;
+    position: relative;
+    width: 40vw;
+    height: 100vh /* vh fixed */;
+    object-fit: cover;
+    z-index: 5;
+    pointer-events: none;
+  }
+  
+  /* Стили для текстового блока в section-2 на мобильных */
+  .mobile-device .section-2-mobile-text {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 70vw;
+    /* max-width: 500px; */
+    text-align: left;
+    margin-bottom: 5vh /* vh fixed */;
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 5vw;
+    font-family: var(--font-family-montserrat);
+    font-size: 2.6vw;
+    color: var(--text-white);
+    line-height: 1.5;
+    z-index: 7;
+  }
+
+  /* Новый контейнер для фото и текста */
+.section-2-mobile-container {
+    display: flex;
+    width: 100%;
+    height: 100vh /* vh fixed */;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .mobile-device .section-2-mobile-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Медиа-запросы для адаптивности */
+  @media (max-width: 768px) {
+    .mobile-device .section-2-mobile-text {
+      font-size: 3vw;
+      padding: 2.3vw;
+      margin-top: 3vw;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .mobile-device .section-2-mobile-text {
+      font-size: 3vw;
+      padding: 2.3vw;
+      margin-top: 3vw;
+    }
+  }
+  
+  /* Стили для заголовка над фото в section-2 на мобильных */
+  .section-2-mobile-title {
+    display: none; /* По умолчанию скрыто */
+  }
+  
+  .mobile-device .section-2-mobile-title {
+    display: block;
+    position: relative;
+    font-family: var(--font-family-montserrat);
+    font-size: 6.8vw;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.2;
+    right: 4vw;
+    text-shadow: 0 1vw 0 rgba(0, 0, 0, 0.61);
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  
+  .mobile-device .section-2-mobile-title p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mobile-device .section-2-mobile-header {
+    display: block;
+    position: absolute;
+    top: calc(45% - 48vw/2 - 5vw); /* Позиционируем над фото: центр фото (45%) минус половина высоты фото (48vw/2) минус небольшой отступ (5vw) */
+    left: 0;
+    width: 100%;
+    padding: 0 5vw;
+    text-align: center;
+    z-index: 10;
+  }
+  
+  /* Стили для мобильной навигации в section-2 */
+  .section-2-mobile-nav {
+    display: none; /* По умолчанию скрыто */
+  }
+  
+  .mobile-device .section-2-mobile-nav {
+    display: flex;
+    position: absolute;
+    bottom: auto;
+    top: calc(63% + 24vw + 20vw);
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2vw;
+    z-index: 8;
+    width: 100%;
+  }
+  
+  .mobile-device .section-2-mobile-nav .mobile-nav-link {
+    font-family: var(--font-family-montserrat);
+    font-weight: 700;
+    font-size: 2.6vw;
+    color: var(--text-white);
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .mobile-device .section-2-mobile-nav .mobile-nav-link:active {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  
+  /* Медиа-запросы для адаптивности навигации */
+  @media (max-width: 768px) {
+    .mobile-device .section-2-mobile-nav {
+      top: calc(63% + 24vw + 22vw);
+      gap: 2.8vw;
+    }
+    
+    .mobile-device .section-2-mobile-nav .mobile-nav-link {
+      font-size: 2.8vw;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .mobile-device .section-2-mobile-nav {
+      top: calc(63% + 24vw + 24vw);
+      gap: 2.5vw;
+    }
+    
+    .mobile-device .section-2-mobile-nav .mobile-nav-link {
+      font-size: 3vw;
+    }
+  }
+  
+  /* Стили для основного изображения в section-2 на мобильных */
+  .mobile-device .section-2-mobile-main-photo {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 48vw;
+    height: auto;
+    z-index: 6;
+    pointer-events: none;
+    margin: 2px 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  html, body {
+    margin: 0;
+    padding-top: env(safe-area-inset-top); /* Для iPhone с вырезами */
+    background-color: #000; /* Цвет статус-бара */
+  }
+
+  .showreel-mp4-mobile {
+    display: none;
+  }
+  
+  .mobile-device .showreel-mp4-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250vw;
+    max-width: none;
+    /* height: auto; */
+    pointer-events: none;
+    z-index: 2;
+
+    /* Маска */
+mask-image: url('../mobile/images/showreel/maskvector.png');
+mask-size: contain;
+mask-repeat: no-repeat;
+mask-position: center;
+
+/* Для браузеров WebKit (Safari, Chrome) */
+-webkit-mask-image: url('../mobile/images/showreel/maskvector.png');
+-webkit-mask-size: contain;
+-webkit-mask-repeat: no-repeat;
+-webkit-mask-position: center;
+
+mask-mode: luminance;
+-webkit-mask-mode: luminance;
+    }
+
+/* Добавляем стили для надписи "Клик" на мобильных устройствах */
+
+.mobile-click-text {
+  display: none;
+}
+
+.mobile-device .mobile-click-text {
+  top: 0;
+  display: block;
+  position: absolute;
+  font-family: var(--font-family-montserrat);
+  font-size: 1.8vh /* vh fixed */;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-shadow: 0 2px 1.1px rgba(0, 0, 0, 0.54);
+  z-index: 11;
+  pointer-events: none;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, -105%);
+
+  animation: pulseOpacity 1.2s ease-in-out infinite;
+} 
+@keyframes pulseOpacity {
+  0%   { opacity: 0.2; }
+  50%  { opacity: 0.6; }
+  100% { opacity: 0.2; }
+}
+
+
+/* Стили для ссылки на мобильное видео */
+.showreel-mobile-link {
+  display: none;
+  position: static;
+}
+
+.mobile-device .showreel-mobile-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45vh /* vh fixed */;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.showreel-mp4-mobile-wrapper {
+    display: none;
+  }
+  
+  .mobile-device .showreel-mp4-mobile-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 45vh /* vh fixed */;
+    max-width: none;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+@media only screen and (max-width: 375px) {
+  .mobile-device .mobile-cases-wrapper {
+    height: 80vh;  /* vh fixed */
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-device .section-3 {
+    background: #000 url('../mobile/images/section-3/sect-3-bg.png') center center/cover no-repeat !important;
+    position: relative;
+    min-height: 100vh /* vh fixed */;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  /* Стили для облаков */
+  .mobile-device .section-3 .right-cloud {
+    display: block !important;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35vh /* vh fixed */;
+    /* height: auto; */
+    z-index: 15;
+    pointer-events: none;
+  }
+
+  .mobile-device .section-3 .left-cloud {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35vh /* vh fixed */;
+    /* height: auto; */
+    z-index: 15;
+    pointer-events: none;
+  }
+
+  .mobile-device .section-3 .bottom-cloud {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* height: auto; */
+    z-index: 15;
+    pointer-events: none;
+  }
+
+  .mobile-device .section-3 > *,
+  .mobile-device .section-3 .section-2-signature,
+  .mobile-device .section-3 .section-2-signature-left,
+  .mobile-device .section-3 .sky-right,
+  .mobile-device .section-3 .sky-left,
+  .mobile-device .section-3-content,
+  .mobile-device .section-3-title,
+  .mobile-device .black-block-wrapper,
+  .mobile-device .black-block-title {
+    display: none !important;
+  }
+  
+  /* Добавляем стили для мобильного враппера с надписью "КЕЙСЫ" */
+  .mobile-device .mobile-cases-wrapper {
+    display: flex !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 70vh/* vh fixed */;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 20;
+    flex-direction: column;
+    position: relative;
+    gap: 4vh /* vh fixed */;
+  }
+  
+  /* Контейнер для категории и изображения */
+  .mobile-device .mobile-cases-container {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3vh /* vh fixed */;
+  }
+  
+  /* Стили для заголовка КЕЙСЫ */
+  .mobile-device .mobile-cases-title {
+    display: block !important;
+    font-family: var(--font-family-montserrat);
+    font-weight: 700;
+    font-size: 8vh /* vh fixed */;
+    color: #FFFFFF;
+    opacity: 0.75;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  /* Стили для отдельного блока кейса */
+  .mobile-device .mobile-cases-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Стили для изображения с кейсами */
+  .mobile-device .mobile-video-cases {
+    display: block !important;
+    width: 24vh /* vh fixed */;
+    /* height: auto; */
+    max-height: 30vh /* vh fixed */;
+    object-fit: contain;
+    z-index: 5;
+    /* border-radius: 68px; */
+  }
+  
+  /* Стили для категории над изображением */
+  .mobile-device .mobile-cases-category {
+    display: block !important;
+    font-family: var(--font-family-montserrat);
+    font-weight: 300; /* light */
+    font-size: 2vh /* vh fixed */;
+    color: #FFFFFF;
+    margin: 0;
+    margin-bottom: 15px;
+    z-index: 6;
+    text-align: center;
+  }
+  
+  /* Стили для ссылок на категории кейсов */
+  .mobile-device .mobile-cases-link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .mobile-device .mobile-cases-link:hover,
+  .mobile-device .mobile-cases-link:active {
+    transform: scale(1.05);
+  }
+  
+  .mobile-device .section-3-moon {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35vh /* vh fixed */;
+    /* height: auto; */
+    z-index: 10;
+    pointer-events: none;
+  }
+  .mobile-device .section-3 .section-3-moon {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-device .section-4 .section-2-signature,
+  .mobile-device .section-4 .section-2-signature-left,
+  .mobile-device .section-4 .center-block,
+  .mobile-device .section-4 .center-block-title,
+  .mobile-device .section-4 .center-block-qa-title,
+  .mobile-device .section-4 .center-block-qa-body,
+  .mobile-device .section-4 .center-block-text {
+    display: none !important;
+  }
+  
+  .mobile-device .section-4 {
+    min-height: 100vh /* vh fixed */;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mobile-device .section-4 .section-4-bg {
+    display: block !important;
+  }
+  
+  /* Скрываем старые псевдоэлементы */
+  .mobile-device .section-4::after,
+  .mobile-device .section-4::before {
+    display: none;
+  }
+  
+  /* Стили для верхнего правого эллипса */
+  .mobile-device .top-right-ellipse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    /* height: auto; */
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* Стили для нижнего левого эллипса */
+  .mobile-device .bottom-left-ellipse {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70vw;
+    /* height: auto; */
+    z-index: 10;
+    pointer-events: none;
+    transform: scaleX(-1) scaleY(-1);
+  }
+  
+  .mobile-device .section-4 .mobile-section-4-wrapper {
+    width: 85vw;
+    height: 85vh /* vh fixed */;
+    position: relative;
+    background: rgba(0,0,0,0.0);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 1.5vh /* vh fixed */;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-text {
+    display: block;
+    width: 100%;
+    /* font-size: 13px; */
+    font-family: var(--font-family-montserrat);
+    color: var(--text-white);
+    text-align: left;
+    margin-top: 5.5vh /* vh fixed */;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq-divider {
+    display: block;
+    width: 34vh /* vh fixed */;
+    height: 6vh/* vh fixed */;
+    background: url('../mobile/images/showreel/faq.svg') center no-repeat;
+    background-size: contain;
+    align-self: flex-start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq-divider span {
+    font-family: var(--font-family-montserrat);
+    /* font-size: 21px; */
+    font-size: 2.4vh /* vh fixed */;
+    font-weight: 300; /* light */
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq {
+    display: block;
+    width: 100%;
+    /* font-size: 13px; */
+    font-family: var(--font-family-montserrat);
+    color: var(--text-white);
+    text-align: left;
+  }
+
+  .mobile-device .section-4 .mobile-section-4-faq .faq-question {
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 5px;
+  }
+
+  .mobile-device .footer {
+    display: none !important;
+  }
+}
+
+/* Стили для центрирующего враппера мобильных элементов */
+.section-2-mobile-elements-wrapper {
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .section-2-mobile-elements-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh /* vh fixed */;
+  z-index: 10;
+}
+
+/* Обновляем позиционирование элементов внутри враппера */
+.mobile-device .section-2-mobile-header {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.mobile-device .section-2-mobile-main-photo {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  max-width: 48vw;
+}
+
+.mobile-device .section-2-mobile-text {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 60vw;
+  /* max-width: 500px; */
+  text-align: left;
+  margin-bottom: 5vh/* vh fixed */;
+  margin-right: 0;
+  margin-left: auto;
+  padding-right: 5vw;
+}
+
+.mobile-device .section-2-mobile-nav {
+  position: relative;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  width: 100%;
+}
+
+.showreel-mobile-container {
+    display: none;
+  }
+  
+  .mobile-device .showreel-mobile-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 45vh /* vh fixed */;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .showreel-mp4-mobile-wrapper {
+    display: none;
+  }
+  
+  .mobile-device .showreel-mp4-mobile-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 45vh /* vh fixed */;
+    max-width: none;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+/* Стили для контейнера левой рамки и видео */
+.mobile-video-ramka-left-container {
+  position: absolute;
+  right: 56.5vw;
+  top: 57.25vh /* vh fixed */;
+  width: 50vw;
+  /* height: auto; */
+  z-index: 50;
+  pointer-events: none;
+  user-select: none;
+  display: none; /* По умолчанию скрыто */
+}
+
+.mobile-device .mobile-video-ramka-left-container {
+  display: block; /* Показываем на мобильных */
+}
+
+/* Стили для видео внутри левой рамки */
+.mobile-video-ramka-left-content {
+  position: absolute;
+  top: 3.2%;
+  left: 1.2%;
+  width: 92%;
+  height: 92%;
+  object-fit: cover;
+  border-radius: 0 20vw 0 0; /* Скругляем только правый верхний угол */
+  z-index: 49; /* Под рамкой */
+  pointer-events: none;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Обновляем стили для левой рамки, убирая позиционирование */
+.mobile-video-ramka-left {
+  position: relative;
+  width: 100%;
+  /* height: auto; */
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Обновление стилей в медиазапросе */
+@media (max-width: 992px) {
+  .mobile-video-ramka-left {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+  
+  .mobile-device .mobile-video-ramka-left-container {
+    display: block;
+  }
+}
+
+/* Стили для контейнера правой рамки и видео */
+.mobile-video-ramka-right-container {
+  position: absolute;
+  left: 56.5vw;
+  bottom: 57.25vh/* vh fixed */;
+  width: 50vw;
+  /* height: auto; */
+  z-index: 50;
+  pointer-events: none;
+  user-select: none;
+  display: none;
+}
+
+.mobile-device .mobile-video-ramka-right-container {
+  display: block; /* Показываем на мобильных */
+}
+
+/* Стили для видео внутри правой рамки */
+.mobile-video-ramka-right-content {
+  position: absolute;
+  bottom: 3.2%;
+  right: 1.2%;
+  width: 92%;
+  height: 92%;
+  object-fit: cover;
+  border-radius: 0 0 0 20vw; /* Скругляем только левый верхний угол */
+  z-index: 49; /* Под рамкой */
+  pointer-events: none;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Обновляем стили для правой рамки, убирая позиционирование */
+.mobile-video-ramka-right {
+  position: relative;
+  width: 100%;
+  /* height: auto; */
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Обновление стилей в медиазапросе */
+@media (max-width: 992px) {
+  .mobile-video-ramka-right {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+  
+  .mobile-device .mobile-video-ramka-right-container {
+    display: block;
+  }
+}
+
+/* Стили для контейнеров text-3 и year-text */
+.mobile-text-3-container,
+.mobile-year-text-container {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile-device .mobile-text-3-container {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 62.25vh /* vh fixed */;
+    width: 56.5vw;
+    height: 35vh /* vh fixed */;
+    z-index: 50;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-device .mobile-year-text-container {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 62.25vh /* vh fixed */;
+    width: 56.5vw;
+    height: 35vh/* vh fixed */;
+    z-index: 50;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobile-device .mobile-text-3-container {
+  display: flex;
+}
+
+.mobile-device .mobile-text-3-container .text-3 {
+  position: relative;
+  left: 0;
+  font-size: 8vw;
+  opacity: 0.71;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-device .mobile-text-3-container .title-1 {
+  font-size: 8vw;
+  margin: 0;
+  display: inline-block;
+  white-space: pre-line;
+  text-align: left;
+}
+
+.mobile-device .mobile-main-header {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh /* vh fixed */;
+  z-index: 10;
+  background: none;
+  text-align: left;
+  padding-top: 0;
+}
+
+.mobile-device .mobile-main-header .text-3 {
+  position: relative;
+  left: 7vw;
+  top: auto;
+  font-size: 4vw;
+  opacity: 0.71;
+  margin: 0;
+  line-height: 1;
+  padding-right: 3vw;
+}
+
+/* Стили для контейнера year-text */
+.mobile-year-text-container {
+  display: flex;
+}
+
+.mobile-device .mobile-year-text-container {
+  display: flex;
+}
+
+.mobile-device .mobile-year-text-container .year-text {
+  position: relative;
+  font-size: 8vw;
+  opacity: 0.71;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  bottom: auto;
+  right: auto;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100vw;
+  height: 100vh /* vh fixed */;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+/* Стили для облаков в section-3 на мобильных устройствах */
+.mobile-device .section-3 .right-cloud {
+  display: none;
+}
+
+.mobile-device .section-3 .left-cloud {
+  display: none;
+}
+
+.mobile-device .section-3 .bottom-cloud {
+  display: none;
+}
+
+/* Заменим существующие стили для облаков */
+@media (max-width: 1024px) {
+  .mobile-device .section-3 .right-cloud {
+    display: block;
+    position: absolute;
+    right: -100%;  /* Начальная позиция за пределами экрана */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50vh /* vh fixed */;
+    /* height: auto; */
+    z-index: 21;
+    pointer-events: none;
+    transition: right 2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-device .section-3 .left-cloud {
+    display: block;
+    position: absolute;
+    left: -100%;  /* Начальная позиция за пределами экрана */
+    top: 0;
+    width: 50vh /* vh fixed */;
+    /* height: auto; */
+    z-index: 21;
+    pointer-events: none;
+    transition: left 2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-device .section-3 .bottom-cloud {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 120vh;  /* Начальная позиция за пределами экрана */
+    width: 100%;
+    /* height: auto; */
+    z-index: 21;
+    pointer-events: none;
+    transition: top 2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Анимированное состояние */
+  .mobile-device .section-3.clouds-animated .right-cloud {
+    right: 0;
+  }
+
+  .mobile-device .section-3.clouds-animated .left-cloud {
+    left: 0;
+  }
+
+  .mobile-device .section-3.clouds-animated .bottom-cloud {
+    top: 52vh /* vh fixed */;
+  }
+}
+
