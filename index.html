@@ -74,17 +74,6 @@
         var vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', vh + 'px');
       }
-
-      function isTelegramWebView() {
-        return /Telegram/i.test(navigator.userAgent);
-      }
-
-      if (!isTelegramWebView()) {
-        window.addEventListener('resize', setVhVar);
-        window.addEventListener('orientationchange', setVhVar);
-      }
-
-      document.addEventListener('DOMContentLoaded', setVhVar);
       setVhVar();
     </script>
     
