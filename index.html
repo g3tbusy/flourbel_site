@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="styles/styles.css?v=10"> 
     <!-- <link rel="stylesheet" href="styles/mobile-styles.css?v=11">  -->
-    <link rel="stylesheet" href="styles/mobile-styles--vh-fixed-v2.css?v=12"> 
+    <link rel="stylesheet" href="styles/mobile-styles--vh-fixed.css?v=12"> 
     <link rel="stylesheet" href="styles/tablet-styles.css?v=11"> 
 
     <link rel="preload" href="images/container-1/background.webp" as="image">
@@ -70,12 +70,22 @@
     <script src="scripts/orientation-reload.js"></script>
     
     <script>
+      
       function setVhVar() {
         var vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', vh + 'px');
       }
-      setVhVar();
+
+      if (navigator.userAgent.includes("iPhone") && typeof window.TelegramWebviewProxy !== 'undefined' && typeof window.TelegramWebviewProxyProto !== 'undefined') {
+        setVhVar();
+      }
+
+      else {
+        document.documentElement.style.setProperty('--vh', '1vh');
+      }
+      
     </script>
+
     
   </head>
 
